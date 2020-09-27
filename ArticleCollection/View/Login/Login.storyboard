@@ -4,23 +4,109 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="xB2-SI-z7F">
             <objects>
-                <viewController id="7xQ-NA-shK" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController id="7xQ-NA-shK" customClass="LoginViewController" customModule="ArticleCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Vk-lO-aYO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRU-J1-ern">
+                                <rect key="frame" x="145" y="170" width="124" height="35.5"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="35"/>
+                                <color key="textColor" red="0.48137390610000003" green="0.35822802780000002" blue="0.25095897909999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lue-0k-EW4">
+                                <rect key="frame" x="113.5" y="230.5" width="187" height="35.5"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="35"/>
+                                <color key="textColor" red="0.48137390610000003" green="0.35822802780000002" blue="0.25095897909999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q7R-yg-ga3">
+                                <rect key="frame" x="73" y="425" width="268" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="0Th-0N-Ykg"/>
+                                    <constraint firstAttribute="width" constant="268" id="fuU-U8-Jnz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XbK-8g-Qov">
+                                <rect key="frame" x="70" y="481" width="274" height="41"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="W1k-MS-Zxo"/>
+                                </constraints>
+                                <string key="text">※ 現時点ではQiitaユーザーのみサポートしています</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDT-2U-QTN">
+                                <rect key="frame" x="157" y="730" width="100" height="32"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
+                                <state key="normal" title="はじめる→">
+                                    <color key="titleColor" red="0.48137390610000003" green="0.35822802780000002" blue="0.25095897909999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtionTap:" destination="7xQ-NA-shK" eventType="touchUpInside" id="hAk-0o-g9B"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="yNX-Y2-5P3"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.93903201820000004" green="0.61078369619999995" blue="0.3646451235" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="XbK-8g-Qov" firstAttribute="centerX" secondItem="3Vk-lO-aYO" secondAttribute="centerX" id="3Np-9c-8JZ"/>
+                            <constraint firstItem="eRU-J1-ern" firstAttribute="centerX" secondItem="3Vk-lO-aYO" secondAttribute="centerX" id="3jG-Mo-ex1"/>
+                            <constraint firstItem="XbK-8g-Qov" firstAttribute="leading" secondItem="yNX-Y2-5P3" secondAttribute="leading" constant="70" id="NRG-Un-Lvc"/>
+                            <constraint firstItem="Q7R-yg-ga3" firstAttribute="centerY" secondItem="3Vk-lO-aYO" secondAttribute="centerY" id="OoY-qd-0SC"/>
+                            <constraint firstItem="Lue-0k-EW4" firstAttribute="top" secondItem="eRU-J1-ern" secondAttribute="bottom" constant="25" id="Tmv-Cz-sSg"/>
+                            <constraint firstItem="XbK-8g-Qov" firstAttribute="top" secondItem="Q7R-yg-ga3" secondAttribute="bottom" constant="10" id="Yv8-da-nCY"/>
+                            <constraint firstItem="yNX-Y2-5P3" firstAttribute="bottom" secondItem="jDT-2U-QTN" secondAttribute="bottom" constant="100" id="ZfM-Zx-P8U"/>
+                            <constraint firstItem="yNX-Y2-5P3" firstAttribute="trailing" secondItem="XbK-8g-Qov" secondAttribute="trailing" constant="70" id="dbp-bl-lkr"/>
+                            <constraint firstItem="eRU-J1-ern" firstAttribute="top" secondItem="yNX-Y2-5P3" secondAttribute="top" constant="126" id="iO9-zg-4A0"/>
+                            <constraint firstItem="Lue-0k-EW4" firstAttribute="centerX" secondItem="3Vk-lO-aYO" secondAttribute="centerX" id="lnD-pO-fIn"/>
+                            <constraint firstItem="Q7R-yg-ga3" firstAttribute="centerX" secondItem="3Vk-lO-aYO" secondAttribute="centerX" id="qHo-Av-7qU"/>
+                            <constraint firstItem="Q7R-yg-ga3" firstAttribute="centerX" secondItem="3Vk-lO-aYO" secondAttribute="centerX" id="qdb-3y-9F8"/>
+                            <constraint firstItem="jDT-2U-QTN" firstAttribute="centerX" secondItem="3Vk-lO-aYO" secondAttribute="centerX" id="vR7-nc-8R6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="appTitleLabel" destination="eRU-J1-ern" id="bWo-j8-pBn"/>
+                        <outlet property="appTitleLowLabel" destination="Lue-0k-EW4" id="SDO-bd-YgN"/>
+                        <outlet property="attensionTextView" destination="XbK-8g-Qov" id="SIu-nN-7Rq"/>
+                        <outlet property="nextButton" destination="jDT-2U-QTN" id="NjR-OK-6w9"/>
+                        <outlet property="usernameTextField" destination="Q7R-yg-ga3" id="sLG-J3-gMS"/>
+                        <segue destination="LFG-3L-yxi" kind="show" id="aJJ-zU-JVK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M5J-Ti-59b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="252" y="164"/>
+            <point key="canvasLocation" x="250.72463768115944" y="163.39285714285714"/>
+        </scene>
+        <!--TabBar-->
+        <scene sceneID="III-dz-ZWS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TabBar" id="LFG-3L-yxi" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="kDR-9m-xUP"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pyZ-nZ-ANf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="767" y="163"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
