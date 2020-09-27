@@ -10,7 +10,16 @@ import UIKit
 
 extension UIAlertController {
     
-    class func doubleBtnAlertWithTitle(title: String, message: String, okActionTitle: String, otherBtnTitle: String, completion: (() -> Void)?) -> UIAlertController {
+    public class func singleBtnAlertWithTitle(title: String, message: String, okActionTitle: String, completion: (() -> Void)?) -> UIAlertController {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: okActionTitle, style: .default) {
+            _ in completion?()
+        })
+        
+        return alert
+    }
+    
+    public class func doubleBtnAlertWithTitle(title: String, message: String, okActionTitle: String, otherBtnTitle: String, completion: (() -> Void)?) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: otherBtnTitle, style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: okActionTitle, style: .cancel) {

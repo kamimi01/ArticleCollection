@@ -38,7 +38,19 @@ class LoginViewController: UIViewController {
         nextButton.customizeButton(.mainActive, "はじめる→")
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    private func showAlert() {
+        let alert = UIAlertController.singleBtnAlertWithTitle(title: "ユーザー名を入力してください。", message: "", okActionTitle: "OK", completion: {})
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func nextButtionTap(_ sender: Any) {
+        if usernameTextField.text!.isEmpty {
+            showAlert()
+        }
         Transition.transitionDestination(self, "TabBar", .fullScreen)
     }
 }
