@@ -38,15 +38,18 @@ class LoginViewController: UIViewController {
         nextButton.customizeButton(.mainActive, "はじめる→")
     }
     
+    // 画面外をタップするとキーボードが閉じる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
+    // アラート画面を表示する
     private func showAlert() {
         let alert = UIAlertController.singleBtnAlertWithTitle(title: "ユーザー名を入力してください。", message: "", okActionTitle: "OK", completion: {})
         self.present(alert, animated: true, completion: nil)
     }
     
+    // はじめるボタンタップ時の挙動
     @IBAction func nextButtionTap(_ sender: Any) {
         if usernameTextField.text!.isEmpty {
             showAlert()
