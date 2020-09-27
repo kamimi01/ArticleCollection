@@ -16,10 +16,11 @@ extension UITextField {
     func customizeTextField(_ type: TextFieldCustomType, _ placeholderText: String) {
         switch type {
         case .main:
-            self.backgroundColor = UIColor.clear
+            self.backgroundColor = UIColor.white
             self.textColor = UIColor.driftWood
             self.tintColor = UIColor.driftWood
             self.borderStyle = UITextField.BorderStyle.none
+            self.layer.cornerRadius = 15
             self.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightDriftWood])
             self.font = UIFont.systemFont(ofSize: 20)
             self.returnKeyType = .done
