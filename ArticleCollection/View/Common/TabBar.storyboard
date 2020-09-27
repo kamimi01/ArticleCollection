@@ -6,11 +6,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="6MD-15-PVV">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MyH-Re-4fr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tabBarController id="QW5-EE-9Q9" sceneMemberID="viewController">
+                <tabBarController id="QW5-EE-9Q9" customClass="TabBarViewController" customModule="ArticleCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iwl-lg-m7G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
