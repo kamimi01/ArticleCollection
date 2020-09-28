@@ -29,10 +29,17 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         view.backgroundColor = UIColor.mushRoom
         
         // ナビゲーションバーの設定
-        self.navigationController?.navigationBar.barTintColor = UIColor.mushRoom
-        self.navigationController?.navigationBar.titleTextAttributes = [
+        let navBar = self.navigationController?.navigationBar
+        navBar?.barTintColor = UIColor.mushRoom
+        navBar?.titleTextAttributes = [
             .foregroundColor: UIColor.gray
         ]
+        
+        // ナビゲーションバーに下線を加える
+        let bottomLine = CALayer()
+        bottomLine.frame = CGRect(x: 0, y: navBar?.frame.size.height ?? 50 - 1, width: self.view.frame.width, height: 1)
+        bottomLine.backgroundColor = UIColor.gray.cgColor
+        navBar?.layer.addSublayer(bottomLine)
         
         // tableViewの設定
         tableViewSetUp()
