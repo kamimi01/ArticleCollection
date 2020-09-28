@@ -23,6 +23,10 @@
 		D410A53825206FCD00900114 /* UITextField+type.swift in Sources */ = {isa = PBXBuildFile; fileRef = D410A53725206FCD00900114 /* UITextField+type.swift */; };
 		D410A53D252071B400900114 /* UIButton+type.swift in Sources */ = {isa = PBXBuildFile; fileRef = D410A53C252071B400900114 /* UIButton+type.swift */; };
 		D410A5422520734D00900114 /* UIAlertController+type.swift in Sources */ = {isa = PBXBuildFile; fileRef = D410A5412520734D00900114 /* UIAlertController+type.swift */; };
+		D42E88D1252221D900403BE5 /* MyArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E88D0252221D900403BE5 /* MyArticleViewController.swift */; };
+		D42E88D72522233F00403BE5 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E88D52522233F00403BE5 /* ArticleTableViewCell.swift */; };
+		D42E88D82522233F00403BE5 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D42E88D62522233F00403BE5 /* ArticleTableViewCell.xib */; };
+		D42E88DD252226A800403BE5 /* UIImageView+type.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E88DC252226A800403BE5 /* UIImageView+type.swift */; };
 		D48F022C25207C5E00B2DE40 /* UITextView+type.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F022B25207C5E00B2DE40 /* UITextView+type.swift */; };
 		D48F02322520807200B2DE40 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D48F02312520807200B2DE40 /* TabBar.storyboard */; };
 		D48F02372520838A00B2DE40 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F02362520838A00B2DE40 /* Transition.swift */; };
@@ -73,6 +77,10 @@
 		D410A53725206FCD00900114 /* UITextField+type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+type.swift"; sourceTree = "<group>"; };
 		D410A53C252071B400900114 /* UIButton+type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+type.swift"; sourceTree = "<group>"; };
 		D410A5412520734D00900114 /* UIAlertController+type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+type.swift"; sourceTree = "<group>"; };
+		D42E88D0252221D900403BE5 /* MyArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyArticleViewController.swift; sourceTree = "<group>"; };
+		D42E88D52522233F00403BE5 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		D42E88D62522233F00403BE5 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
+		D42E88DC252226A800403BE5 /* UIImageView+type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+type.swift"; sourceTree = "<group>"; };
 		D48F022B25207C5E00B2DE40 /* UITextView+type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+type.swift"; sourceTree = "<group>"; };
 		D48F02312520807200B2DE40 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		D48F02362520838A00B2DE40 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
@@ -172,6 +180,7 @@
 				D410A53C252071B400900114 /* UIButton+type.swift */,
 				D410A5412520734D00900114 /* UIAlertController+type.swift */,
 				D48F022B25207C5E00B2DE40 /* UITextView+type.swift */,
+				D42E88DC252226A800403BE5 /* UIImageView+type.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -217,6 +226,8 @@
 			children = (
 				D48F02312520807200B2DE40 /* TabBar.storyboard */,
 				D48F025A2520913E00B2DE40 /* TabBarViewController.swift */,
+				D42E88D52522233F00403BE5 /* ArticleTableViewCell.swift */,
+				D42E88D62522233F00403BE5 /* ArticleTableViewCell.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -225,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				D48F023C25208A0800B2DE40 /* MyArticle.storyboard */,
+				D42E88D0252221D900403BE5 /* MyArticleViewController.swift */,
 			);
 			path = MyArticle;
 			sourceTree = "<group>";
@@ -351,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D42E88D82522233F00403BE5 /* ArticleTableViewCell.xib in Resources */,
 				D48F024325208A4A00B2DE40 /* FavoriteArticle.storyboard in Resources */,
 				D48F02322520807200B2DE40 /* TabBar.storyboard in Resources */,
 				D48F023D25208A0800B2DE40 /* MyArticle.storyboard in Resources */,
@@ -394,7 +407,10 @@
 				D410A4E32520413F00900114 /* AppDelegate.swift in Sources */,
 				D410A4E52520413F00900114 /* SceneDelegate.swift in Sources */,
 				D410A53D252071B400900114 /* UIButton+type.swift in Sources */,
+				D42E88DD252226A800403BE5 /* UIImageView+type.swift in Sources */,
+				D42E88D72522233F00403BE5 /* ArticleTableViewCell.swift in Sources */,
 				D410A5422520734D00900114 /* UIAlertController+type.swift in Sources */,
+				D42E88D1252221D900403BE5 /* MyArticleViewController.swift in Sources */,
 				D48F022C25207C5E00B2DE40 /* UITextView+type.swift in Sources */,
 				D410A53825206FCD00900114 /* UITextField+type.swift in Sources */,
 			);
