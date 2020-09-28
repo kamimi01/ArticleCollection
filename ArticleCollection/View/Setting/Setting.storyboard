@@ -15,15 +15,43 @@
                     <view key="view" contentMode="scaleToFill" id="ocU-LZ-nw8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L2O-5x-Mmo">
+                                <rect key="frame" x="0.0" y="113" width="414" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Su7-hY-oYM"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Ola-eq-2dr" customClass="AppSettingTableViewCell" customModule="ArticleCollection" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ola-eq-2dr" id="05W-4C-s8H">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="AppSettingTableViewCell"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="a4f-3P-qhU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="L2O-5x-Mmo" firstAttribute="trailing" secondItem="a4f-3P-qhU" secondAttribute="trailing" id="Znz-yD-cdo"/>
+                            <constraint firstItem="L2O-5x-Mmo" firstAttribute="top" secondItem="a4f-3P-qhU" secondAttribute="top" constant="25" id="beE-Kc-5Z4"/>
+                            <constraint firstItem="L2O-5x-Mmo" firstAttribute="leading" secondItem="a4f-3P-qhU" secondAttribute="leading" id="cbr-hI-xGD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="設定" id="Ieg-yg-Gi3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="L2O-5x-Mmo" id="SOn-gM-jtu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YeY-6c-wMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1200" y="77.678571428571431"/>
+            <point key="canvasLocation" x="1198.5507246376812" y="77.678571428571431"/>
         </scene>
         <!--設定-->
         <scene sceneID="Vhb-Nf-epw">
