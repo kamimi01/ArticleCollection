@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
     
     // アラート画面を表示する
     private func showAlert() {
-        let alert = UIAlertController.singleBtnAlertWithTitle(title: "ユーザー名を入力してください。", message: "", okActionTitle: "OK", completion: {})
+        let alert = UIAlertController.singleBtnAlertWithTitle(title: "ユーザー名を\n入力してください。", message: "", okActionTitle: "OK", completion: {})
         self.present(alert, animated: true, completion: nil)
     }
     

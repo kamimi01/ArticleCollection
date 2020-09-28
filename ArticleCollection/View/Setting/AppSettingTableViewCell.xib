@@ -23,7 +23,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOR-Tt-647">
-                        <rect key="frame" x="209" y="11.5" width="76" height="21"/>
+                        <rect key="frame" x="234" y="11.5" width="76" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -31,7 +31,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="muV-Bw-lNX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="17" id="7YN-DL-YwH"/>
-                    <constraint firstAttribute="trailing" secondItem="vOR-Tt-647" secondAttribute="trailing" constant="35" id="CRf-Vd-bnc"/>
+                    <constraint firstAttribute="trailing" secondItem="vOR-Tt-647" secondAttribute="trailing" constant="10" id="CRf-Vd-bnc"/>
                     <constraint firstItem="vOR-Tt-647" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="TN8-tH-94j"/>
                     <constraint firstItem="muV-Bw-lNX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="shj-dF-oRH"/>
                 </constraints>
