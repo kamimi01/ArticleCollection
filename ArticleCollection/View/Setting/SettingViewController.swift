@@ -10,6 +10,7 @@ import UIKit
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var versionView: UIView!
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var versionNowLabel: UILabel!
     
@@ -37,6 +38,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableViewSetUp()
         
         // バージョンセルの設定
+        versionView.backgroundColor = UIColor.white
         versionLabel.textColor = UIColor.gray
         versionNowLabel.textColor = UIColor.gray
         versionNowLabel.text = version

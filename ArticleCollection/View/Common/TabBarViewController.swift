@@ -18,6 +18,8 @@ class TabBarViewController: UITabBarController {
     private func setup() {
         // タブアイコンがアクティブな時の設定
         UITabBar.appearance().tintColor = UIColor.driftWood
+        // タブバーの背景色の設定
+        UITabBar.appearance().barTintColor = UIColor.white
     }
 
 }

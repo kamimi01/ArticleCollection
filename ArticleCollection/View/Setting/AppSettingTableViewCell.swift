@@ -18,6 +18,7 @@ class AppSettingTableViewCell: UITableViewCell {
     }
     
     private func setup() {
+        backgroundColor = UIColor.white
         usernameLabel.textColor = UIColor.gray
         usernameNowLabel.textColor = UIColor.gray
     }
