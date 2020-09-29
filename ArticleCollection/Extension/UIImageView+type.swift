@@ -16,7 +16,7 @@ extension UIImageView {
     func customizeImage(_ type: ImageCustomType, _ imageName: String) {
         switch type {
         case .main:
-            self.frame = CGRect(x: 50, y: 50, width: 60, height: 60)
+            self.layer.cornerRadius = self.frame.height / 2
             self.image = UIImage(named: imageName)
         }
     }

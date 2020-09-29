@@ -30,7 +30,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="articleName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgM-l2-e3e">
-                        <rect key="frame" x="90" y="43" width="89" height="15"/>
+                        <rect key="frame" x="90" y="43" width="220" height="15"/>
                         <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -60,6 +60,7 @@
                     <constraint firstItem="drR-G6-hIk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="Ak5-Ff-iNH"/>
                     <constraint firstItem="8nw-fY-Ez1" firstAttribute="leading" secondItem="drR-G6-hIk" secondAttribute="trailing" constant="16" id="ICx-2U-Dfr"/>
                     <constraint firstItem="kLI-2q-53S" firstAttribute="leading" secondItem="8nw-fY-Ez1" secondAttribute="trailing" constant="17" id="NY5-c2-aDZ"/>
+                    <constraint firstAttribute="trailing" secondItem="PgM-l2-e3e" secondAttribute="trailing" constant="10" id="RdR-Ph-SFm"/>
                     <constraint firstItem="drR-G6-hIk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="U3C-6y-tgJ"/>
                     <constraint firstItem="egu-mV-y4t" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="XFh-gp-ys1"/>
                     <constraint firstItem="PgM-l2-e3e" firstAttribute="top" secondItem="egu-mV-y4t" secondAttribute="bottom" constant="10" id="a4r-Ht-f5O"/>

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fny-LO-Iez">
-                                <rect key="frame" x="0.0" y="113" width="414" height="700"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="u3F-ha-vd0" customClass="ArticleTableViewCell" customModule="ArticleCollection" customModuleProvider="target">
@@ -36,8 +36,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fny-LO-Iez" firstAttribute="trailing" secondItem="tLi-Ig-E8J" secondAttribute="trailing" id="Deh-aw-hhT"/>
-                            <constraint firstItem="fny-LO-Iez" firstAttribute="bottom" secondItem="tLi-Ig-E8J" secondAttribute="bottom" id="QL6-zf-mzw"/>
-                            <constraint firstItem="fny-LO-Iez" firstAttribute="top" secondItem="tLi-Ig-E8J" secondAttribute="top" constant="25" id="Tnh-l0-77j"/>
+                            <constraint firstItem="fny-LO-Iez" firstAttribute="top" secondItem="tLi-Ig-E8J" secondAttribute="top" id="Tnh-l0-77j"/>
+                            <constraint firstItem="fny-LO-Iez" firstAttribute="bottom" secondItem="tLi-Ig-E8J" secondAttribute="bottom" id="hLL-Rt-dDH"/>
                             <constraint firstItem="fny-LO-Iez" firstAttribute="leading" secondItem="tLi-Ig-E8J" secondAttribute="leading" id="rbM-k9-CMl"/>
                         </constraints>
                     </view>

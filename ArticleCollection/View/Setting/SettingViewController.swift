@@ -60,6 +60,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.register(nib, forCellReuseIdentifier: "AppSettingTableViewCell")
         
         tableView.rowHeight = CGFloat(cellHeight)
+        tableView.backgroundColor = UIColor.white
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -97,7 +98,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
             // アラート画面を表示する
             showAlert()
         default:
-            print("選択された行番号：" ,indexRow)
+            print("選択された行番号：", indexRow)
         }
     }
     

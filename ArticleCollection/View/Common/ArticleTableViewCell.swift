@@ -23,14 +23,16 @@ class ArticleTableViewCell: UITableViewCell {
 
     private func setup() {
         backgroundColor = UIColor.white
-    
-        
+
         // 各ラベルの設定
         siteNameLabel.textColor = UIColor.driftWood
         articleNameLabel.textColor = UIColor.gray
         userNameLabel.textColor = UIColor.gray
         goodNameLabel.textColor = UIColor.gray
         goodNumLabel.textColor = UIColor.gray
+        
+        // 記事名の最大表示行数の設定
+        articleNameLabel.numberOfLines = 2
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
