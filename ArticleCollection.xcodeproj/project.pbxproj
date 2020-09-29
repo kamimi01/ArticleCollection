@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D404FF9A25237E5F008387B5 /* FavoriteArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404FF9925237E5F008387B5 /* FavoriteArticleViewController.swift */; };
 		D406B0EA2520CF33000F0A76 /* AppSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406B0E82520CF33000F0A76 /* AppSettingTableViewCell.swift */; };
 		D406B0EB2520CF33000F0A76 /* AppSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D406B0E92520CF33000F0A76 /* AppSettingTableViewCell.xib */; };
 		D410A4E32520413F00900114 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D410A4E22520413F00900114 /* AppDelegate.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D404FF9925237E5F008387B5 /* FavoriteArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteArticleViewController.swift; sourceTree = "<group>"; };
 		D406B0E82520CF33000F0A76 /* AppSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingTableViewCell.swift; sourceTree = "<group>"; };
 		D406B0E92520CF33000F0A76 /* AppSettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppSettingTableViewCell.xib; sourceTree = "<group>"; };
 		D410A4DF2520413F00900114 /* ArticleCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArticleCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				D48F024225208A4A00B2DE40 /* FavoriteArticle.storyboard */,
+				D404FF9925237E5F008387B5 /* FavoriteArticleViewController.swift */,
 			);
 			path = FavoriteArticle;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				D410A533252066D700900114 /* UIColor+rgba.swift in Sources */,
 				D410A52E25204A0B00900114 /* LoginViewController.swift in Sources */,
 				D406B0EA2520CF33000F0A76 /* AppSettingTableViewCell.swift in Sources */,
+				D404FF9A25237E5F008387B5 /* FavoriteArticleViewController.swift in Sources */,
 				D48F025B2520913E00B2DE40 /* TabBarViewController.swift in Sources */,
 				D410A4E72520413F00900114 /* ViewController.swift in Sources */,
 				D410A4E32520413F00900114 /* AppDelegate.swift in Sources */,

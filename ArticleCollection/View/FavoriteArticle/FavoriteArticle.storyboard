@@ -11,15 +11,40 @@
         <!--お気に入り-->
         <scene sceneID="UMw-o9-gAy">
             <objects>
-                <viewController id="vpa-Bj-be9" sceneMemberID="viewController">
+                <viewController id="vpa-Bj-be9" customClass="FavoriteArticleViewController" customModule="ArticleCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KaZ-1b-H1W">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CYY-0g-cdw">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="dRS-i3-c78" customClass="ArticleTableViewCell" customModule="ArticleCollection" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dRS-i3-c78" id="OFs-V5-99F">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1zX-gz-amv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CYY-0g-cdw" firstAttribute="bottom" secondItem="1zX-gz-amv" secondAttribute="bottom" id="5kj-St-d0M"/>
+                            <constraint firstItem="CYY-0g-cdw" firstAttribute="leading" secondItem="1zX-gz-amv" secondAttribute="leading" id="TCv-xY-1WP"/>
+                            <constraint firstItem="CYY-0g-cdw" firstAttribute="top" secondItem="1zX-gz-amv" secondAttribute="top" id="dJR-A8-wug"/>
+                            <constraint firstItem="CYY-0g-cdw" firstAttribute="trailing" secondItem="1zX-gz-amv" secondAttribute="trailing" id="u8Q-Lf-reg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="お気に入り" id="sLg-wO-RAB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="CYY-0g-cdw" id="pW9-UT-shj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUX-FV-Bvi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
