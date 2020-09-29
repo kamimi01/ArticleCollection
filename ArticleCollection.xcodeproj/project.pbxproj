@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D404FF9A25237E5F008387B5 /* FavoriteArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404FF9925237E5F008387B5 /* FavoriteArticleViewController.swift */; };
+		D404FF9F25238017008387B5 /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D404FF9E25238017008387B5 /* WebView.storyboard */; };
+		D404FFA4252380C4008387B5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404FFA3252380C4008387B5 /* WebViewController.swift */; };
 		D406B0EA2520CF33000F0A76 /* AppSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406B0E82520CF33000F0A76 /* AppSettingTableViewCell.swift */; };
 		D406B0EB2520CF33000F0A76 /* AppSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D406B0E92520CF33000F0A76 /* AppSettingTableViewCell.xib */; };
 		D410A4E32520413F00900114 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D410A4E22520413F00900114 /* AppDelegate.swift */; };
@@ -57,6 +59,8 @@
 
 /* Begin PBXFileReference section */
 		D404FF9925237E5F008387B5 /* FavoriteArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteArticleViewController.swift; sourceTree = "<group>"; };
+		D404FF9E25238017008387B5 /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
+		D404FFA3252380C4008387B5 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		D406B0E82520CF33000F0A76 /* AppSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingTableViewCell.swift; sourceTree = "<group>"; };
 		D406B0E92520CF33000F0A76 /* AppSettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppSettingTableViewCell.xib; sourceTree = "<group>"; };
 		D410A4DF2520413F00900114 /* ArticleCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArticleCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,6 +234,8 @@
 				D48F025A2520913E00B2DE40 /* TabBarViewController.swift */,
 				D42E88D52522233F00403BE5 /* ArticleTableViewCell.swift */,
 				D42E88D62522233F00403BE5 /* ArticleTableViewCell.xib */,
+				D404FF9E25238017008387B5 /* WebView.storyboard */,
+				D404FFA3252380C4008387B5 /* WebViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 				D48F02322520807200B2DE40 /* TabBar.storyboard in Resources */,
 				D48F023D25208A0800B2DE40 /* MyArticle.storyboard in Resources */,
 				D410A51E2520487800900114 /* Login.storyboard in Resources */,
+				D404FF9F25238017008387B5 /* WebView.storyboard in Resources */,
 				D410A4EF2520413F00900114 /* LaunchScreen.storyboard in Resources */,
 				D406B0EB2520CF33000F0A76 /* AppSettingTableViewCell.xib in Resources */,
 				D410A4EC2520413F00900114 /* Assets.xcassets in Resources */,
@@ -401,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D48F02372520838A00B2DE40 /* Transition.swift in Sources */,
+				D404FFA4252380C4008387B5 /* WebViewController.swift in Sources */,
 				D48F024E25208E0400B2DE40 /* SettingViewController.swift in Sources */,
 				D410A533252066D700900114 /* UIColor+rgba.swift in Sources */,
 				D410A52E25204A0B00900114 /* LoginViewController.swift in Sources */,

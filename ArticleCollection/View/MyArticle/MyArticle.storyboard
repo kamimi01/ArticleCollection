@@ -45,11 +45,22 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="fny-LO-Iez" id="nCE-rc-qXT"/>
+                        <segue destination="wrb-t7-mMe" kind="show" id="6N9-k8-S0z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cf-Ab-P4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1202.8985507246377" y="146.65178571428569"/>
+        </scene>
+        <!--WebView-->
+        <scene sceneID="m97-27-2e8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WebView" id="wrb-t7-mMe" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="OLP-nY-on1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r7y-oJ-HB7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1784" y="147"/>
         </scene>
         <!--My記事-->
         <scene sceneID="TVv-Yk-JXn">

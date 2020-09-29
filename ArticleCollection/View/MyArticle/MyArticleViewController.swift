@@ -72,4 +72,9 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // webViewに遷移する
+        Transition.transitionDestination(self, "WebView", .fullScreen)
+    }
 }
