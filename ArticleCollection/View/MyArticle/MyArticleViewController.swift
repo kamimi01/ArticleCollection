@@ -29,7 +29,7 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
     private func setup() {
         // ナビゲーションバーの設定
         let navBar = self.navigationController?.navigationBar
-        navBar?.barTintColor = UIColor.mushRoom
+        navBar?.barTintColor = UIColor.onion
         navBar?.titleTextAttributes = [
             .foregroundColor: UIColor.gray
         ]
