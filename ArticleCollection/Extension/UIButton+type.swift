@@ -16,8 +16,8 @@ extension UIButton {
     func customizeButton (_ type: ButtonCustomType, _ buttonName: String) {
         switch type {
         case .mainActive:
-            self.backgroundColor = UIColor.clear
-            self.setTitleColor(UIColor.driftWood, for: .normal)
+            self.backgroundColor = UIColor.driftWood
+            self.setTitleColor(UIColor.white, for: .normal)
             self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
             self.setTitle(buttonName, for: .normal)
             self.isEnabled = true

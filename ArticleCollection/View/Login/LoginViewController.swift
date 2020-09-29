@@ -22,11 +22,11 @@ class LoginViewController: UIViewController {
     
     private func setup() {
         // 全体の設定
-        view.backgroundColor = UIColor.onion
+        view.addBackground(name: "home")
         
         // アプリタイトルの設定
-        appTitleLabel.textColor = UIColor.driftWood
-        appTitleLowLabel.textColor = UIColor.driftWood
+        appTitleLabel.textColor = UIColor.white
+        appTitleLowLabel.textColor = UIColor.white
         
         // ユーザー名入力欄の設定
         usernameTextField.customizeTextField(.main, " ユーザー名")
@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
         attensionTextView.customizeTextView(.main)
         
         // はじめるボタンの設定
-        nextButton.customizeButton(.mainActive, "はじめる→")
+        nextButton.customizeButton(.mainActive, "はじめる")
     }
     
     // 画面外をタップするとキーボードが閉じる

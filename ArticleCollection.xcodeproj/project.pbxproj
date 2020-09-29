@@ -30,6 +30,7 @@
 		D42E88D72522233F00403BE5 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E88D52522233F00403BE5 /* ArticleTableViewCell.swift */; };
 		D42E88D82522233F00403BE5 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D42E88D62522233F00403BE5 /* ArticleTableViewCell.xib */; };
 		D42E88DD252226A800403BE5 /* UIImageView+type.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E88DC252226A800403BE5 /* UIImageView+type.swift */; };
+		D485109825239D0C007D6856 /* UIView+backgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D485109725239D0C007D6856 /* UIView+backgroundImage.swift */; };
 		D48F022C25207C5E00B2DE40 /* UITextView+type.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F022B25207C5E00B2DE40 /* UITextView+type.swift */; };
 		D48F02322520807200B2DE40 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D48F02312520807200B2DE40 /* TabBar.storyboard */; };
 		D48F02372520838A00B2DE40 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F02362520838A00B2DE40 /* Transition.swift */; };
@@ -87,6 +88,7 @@
 		D42E88D52522233F00403BE5 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		D42E88D62522233F00403BE5 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 		D42E88DC252226A800403BE5 /* UIImageView+type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+type.swift"; sourceTree = "<group>"; };
+		D485109725239D0C007D6856 /* UIView+backgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+backgroundImage.swift"; sourceTree = "<group>"; };
 		D48F022B25207C5E00B2DE40 /* UITextView+type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+type.swift"; sourceTree = "<group>"; };
 		D48F02312520807200B2DE40 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		D48F02362520838A00B2DE40 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				D410A5412520734D00900114 /* UIAlertController+type.swift */,
 				D48F022B25207C5E00B2DE40 /* UITextView+type.swift */,
 				D42E88DC252226A800403BE5 /* UIImageView+type.swift */,
+				D485109725239D0C007D6856 /* UIView+backgroundImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				D406B0EA2520CF33000F0A76 /* AppSettingTableViewCell.swift in Sources */,
 				D404FF9A25237E5F008387B5 /* FavoriteArticleViewController.swift in Sources */,
 				D48F025B2520913E00B2DE40 /* TabBarViewController.swift in Sources */,
+				D485109825239D0C007D6856 /* UIView+backgroundImage.swift in Sources */,
 				D410A4E72520413F00900114 /* ViewController.swift in Sources */,
 				D410A4E32520413F00900114 /* AppDelegate.swift in Sources */,
 				D410A4E52520413F00900114 /* SceneDelegate.swift in Sources */,

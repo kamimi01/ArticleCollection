@@ -43,16 +43,20 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="W1k-MS-Zxo"/>
                                 </constraints>
-                                <string key="text">※ 現時点ではQiitaユーザーのみサポートしています</string>
+                                <string key="text">※ 現時点ではQiitaユーザーのみ
+サポートしています</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDT-2U-QTN">
-                                <rect key="frame" x="157" y="730" width="100" height="32"/>
+                                <rect key="frame" x="113" y="716" width="188" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="uG6-88-7rD"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
-                                <state key="normal" title="はじめる→">
-                                    <color key="titleColor" red="0.48137390610000003" green="0.35822802780000002" blue="0.25095897909999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="はじめる">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="nextButtionTap:" destination="7xQ-NA-shK" eventType="touchUpInside" id="hAk-0o-g9B"/>
@@ -66,8 +70,10 @@
                             <constraint firstItem="eRU-J1-ern" firstAttribute="centerX" secondItem="3Vk-lO-aYO" secondAttribute="centerX" id="3jG-Mo-ex1"/>
                             <constraint firstItem="XbK-8g-Qov" firstAttribute="leading" secondItem="yNX-Y2-5P3" secondAttribute="leading" constant="70" id="NRG-Un-Lvc"/>
                             <constraint firstItem="Q7R-yg-ga3" firstAttribute="centerY" secondItem="3Vk-lO-aYO" secondAttribute="centerY" id="OoY-qd-0SC"/>
+                            <constraint firstItem="yNX-Y2-5P3" firstAttribute="trailing" secondItem="jDT-2U-QTN" secondAttribute="trailing" constant="113" id="Sh5-ro-2qT"/>
                             <constraint firstItem="Lue-0k-EW4" firstAttribute="top" secondItem="eRU-J1-ern" secondAttribute="bottom" constant="25" id="Tmv-Cz-sSg"/>
                             <constraint firstItem="XbK-8g-Qov" firstAttribute="top" secondItem="Q7R-yg-ga3" secondAttribute="bottom" constant="10" id="Yv8-da-nCY"/>
+                            <constraint firstItem="jDT-2U-QTN" firstAttribute="leading" secondItem="yNX-Y2-5P3" secondAttribute="leading" constant="113" id="Z6p-KA-Vcc"/>
                             <constraint firstItem="yNX-Y2-5P3" firstAttribute="bottom" secondItem="jDT-2U-QTN" secondAttribute="bottom" constant="100" id="ZfM-Zx-P8U"/>
                             <constraint firstItem="yNX-Y2-5P3" firstAttribute="trailing" secondItem="XbK-8g-Qov" secondAttribute="trailing" constant="70" id="dbp-bl-lkr"/>
                             <constraint firstItem="eRU-J1-ern" firstAttribute="top" secondItem="yNX-Y2-5P3" secondAttribute="top" constant="126" id="iO9-zg-4A0"/>
