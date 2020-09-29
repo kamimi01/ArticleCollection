@@ -22,7 +22,7 @@ class WebViewController: UIViewController {
     }
     
     private func setup() {
-        if let url = NSURL(string: "https://www.google.com") {
+        if let url = NSURL(string: "https://qiita.com/kamimi01/items/353ed9502ed62cbe9864") {
                     let request = NSURLRequest(url: url as URL)
                     webView.load(request as URLRequest)
         }
