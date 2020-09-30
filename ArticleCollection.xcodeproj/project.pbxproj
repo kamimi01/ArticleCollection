@@ -39,6 +39,7 @@
 		D48F024925208A8000B2DE40 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D48F024825208A8000B2DE40 /* Setting.storyboard */; };
 		D48F024E25208E0400B2DE40 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F024D25208E0400B2DE40 /* SettingViewController.swift */; };
 		D48F025B2520913E00B2DE40 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F025A2520913E00B2DE40 /* TabBarViewController.swift */; };
+		D4F890642524B05D0000D916 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F890632524B05D0000D916 /* Article.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		D48F024825208A8000B2DE40 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		D48F024D25208E0400B2DE40 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		D48F025A2520913E00B2DE40 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		D4F890632524B05D0000D916 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 		D410A516252043BF00900114 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D4F890632524B05D0000D916 /* Article.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				D404FFA4252380C4008387B5 /* WebViewController.swift in Sources */,
 				D48F024E25208E0400B2DE40 /* SettingViewController.swift in Sources */,
 				D410A533252066D700900114 /* UIColor+rgba.swift in Sources */,
+				D4F890642524B05D0000D916 /* Article.swift in Sources */,
 				D410A52E25204A0B00900114 /* LoginViewController.swift in Sources */,
 				D406B0EA2520CF33000F0A76 /* AppSettingTableViewCell.swift in Sources */,
 				D404FF9A25237E5F008387B5 /* FavoriteArticleViewController.swift in Sources */,
