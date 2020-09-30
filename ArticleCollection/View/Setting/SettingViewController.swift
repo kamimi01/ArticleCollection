@@ -83,7 +83,10 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "AppSettingTableViewCell", for: indexPath ) as! AppSettingTableViewCell
         
         cell.usernameLabel.text = appSettingKind[indexPath.row]
-        cell.usernameNowLabel.text = "Kamimi01"
+        
+        // ログイン画面で入力したユーザー名の取得
+        let userName = UserDefaults.standard.string(forKey: "userName")
+        cell.usernameNowLabel.text = userName
         
         cell.selectionStyle = .none
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator

@@ -54,6 +54,14 @@ class LoginViewController: UIViewController {
         if usernameTextField.text!.isEmpty {
             showAlert()
         }
+        
+        // 入力したユーザー名の取得
+        let userName = usernameTextField.text ?? ""
+        
+        // ユーザー名をUserdefaultにセット
+        UserDefaults.standard.set(userName, forKey: "userName")
+        
+        // Tabbar画面に遷移
         Transition.transitionDestination(self, "TabBar", .fullScreen)
     }
 }
