@@ -149,6 +149,7 @@
 		D410A4E12520413F00900114 /* ArticleCollection */ = {
 			isa = PBXGroup;
 			children = (
+				D4F890682524C3DD0000D916 /* ViewModel */,
 				D410A518252043D000900114 /* View */,
 				D410A517252043C700900114 /* Utility */,
 				D410A516252043BF00900114 /* Model */,
@@ -273,6 +274,13 @@
 				D406B0E92520CF33000F0A76 /* AppSettingTableViewCell.xib */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		D4F890682524C3DD0000D916 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
