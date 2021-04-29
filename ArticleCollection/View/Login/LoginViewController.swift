@@ -10,14 +10,17 @@ import UIKit
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var appTitleLabel: UILabel!
-    @IBOutlet weak var appTitleLowLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var attensionTextView: UITextView!
     @IBOutlet weak var nextButton: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // ユーザー名入力欄の設定
+        usernameTextField.customizeTextField(.main, " user name")
     }
     
     private func setup() {
@@ -26,13 +29,9 @@ class LoginViewController: UIViewController {
         
         // アプリタイトルの設定
         appTitleLabel.textColor = UIColor.white
-        appTitleLowLabel.textColor = UIColor.white
         
-        // ユーザー名入力欄の設定
-        usernameTextField.customizeTextField(.main, " ユーザー名")
-        
-        // 注意書きの設定
-        attensionTextView.customizeTextView(.main)
+//        // ユーザー名入力欄の設定
+//        usernameTextField.customizeTextField(.main, " user name")
         
         // はじめるボタンの設定
         nextButton.customizeButton(.mainActive, "はじめる")
@@ -49,6 +48,29 @@ class LoginViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    private func getArticles(userName: String) {
+//        let urlString = "https://qiita.com/api/v2/users/" + userName + "/items"
+
+        let urlString = ApiConfig.baseUrl + ApiConfig.articlesPath + "?" +
+            ApiConfig.articlesUserNamePram + "=" + userName
+
+        guard let url: URL = URL(string: urlString) else {
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.addValue(apikey, forHTTPHeaderField: ApiConfig.apiKeyHeader)
+        request.httpMethod = "GET"
+
+        let task: URLSessionTask = URLSession.shared.dataTask(with: request, completionHandler: {data, response, error in
+            print("data: \(data)")
+            print("response: \(response)")
+            print("error: \(error)")
+        })
+
+        task.resume()
+    }
+    
     // はじめるボタンタップ時の挙動
     @IBAction func nextButtionTap(_ sender: Any) {
         if usernameTextField.text!.isEmpty {
@@ -60,6 +82,9 @@ class LoginViewController: UIViewController {
         
         // ユーザー名をUserdefaultにセット
         UserDefaults.standard.set(userName, forKey: "userName")
+        
+        // APIを呼び出す
+        getArticles(userName: userName)
         
         // Tabbar画面に遷移
         Transition.transitionDestination(self, "TabBar", .fullScreen)

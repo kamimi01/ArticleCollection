@@ -13,15 +13,29 @@ extension UITextField {
         case main
     }
     
+    func setUnderLine() {
+        // 枠線を非表示にする
+        borderStyle = .none
+        let underline = UIView()
+        // heightにはアンダーラインの高さを入れる
+        underline.frame = CGRect(x: 0, y: frame.height, width: frame.width, height: 1.0)
+        // 枠線の色
+        underline.backgroundColor = .white
+        addSubview(underline)
+        // 枠線を最前面に
+        bringSubviewToFront(underline)
+    }
+    
     func customizeTextField(_ type: TextFieldCustomType, _ placeholderText: String) {
         switch type {
         case .main:
-            self.backgroundColor = UIColor.white
-            self.textColor = UIColor.driftWood
-            self.tintColor = UIColor.driftWood
-            self.borderStyle = UITextField.BorderStyle.none
-            self.layer.cornerRadius = 15
-            self.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightDriftWood])
+            self.backgroundColor = UIColor.clear
+            self.textColor = UIColor.white
+            self.tintColor = UIColor.white
+
+            self.setUnderLine()
+
+            self.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
             self.font = UIFont.systemFont(ofSize: 20)
             self.returnKeyType = .done
         }

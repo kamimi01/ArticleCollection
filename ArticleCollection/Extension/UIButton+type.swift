@@ -16,11 +16,12 @@ extension UIButton {
     func customizeButton (_ type: ButtonCustomType, _ buttonName: String) {
         switch type {
         case .mainActive:
-            self.backgroundColor = UIColor.driftWood
+            self.backgroundColor = UIColor.onion
             self.setTitleColor(UIColor.white, for: .normal)
-            self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+            self.titleLabel?.font = UIFont.systemFont(ofSize: 20)
             self.setTitle(buttonName, for: .normal)
             self.isEnabled = true
+            self.layer.cornerRadius = 15.0
         }
     }
 }

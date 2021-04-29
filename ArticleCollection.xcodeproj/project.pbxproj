@@ -30,6 +30,9 @@
 		D42E88D72522233F00403BE5 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E88D52522233F00403BE5 /* ArticleTableViewCell.swift */; };
 		D42E88D82522233F00403BE5 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D42E88D62522233F00403BE5 /* ArticleTableViewCell.xib */; };
 		D42E88DD252226A800403BE5 /* UIImageView+type.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E88DC252226A800403BE5 /* UIImageView+type.swift */; };
+		D4745BFD2638423900C0CDDC /* SecretConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4745BFC2638423900C0CDDC /* SecretConstants.swift */; };
+		D4745C0D263848CC00C0CDDC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4745C0C263848CC00C0CDDC /* Constants.swift */; };
+		D4745C162638567500C0CDDC /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4745C152638567500C0CDDC /* ApiClient.swift */; };
 		D485109825239D0C007D6856 /* UIView+backgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D485109725239D0C007D6856 /* UIView+backgroundImage.swift */; };
 		D48F022C25207C5E00B2DE40 /* UITextView+type.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F022B25207C5E00B2DE40 /* UITextView+type.swift */; };
 		D48F02322520807200B2DE40 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D48F02312520807200B2DE40 /* TabBar.storyboard */; };
@@ -89,6 +92,9 @@
 		D42E88D52522233F00403BE5 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		D42E88D62522233F00403BE5 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 		D42E88DC252226A800403BE5 /* UIImageView+type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+type.swift"; sourceTree = "<group>"; };
+		D4745BFC2638423900C0CDDC /* SecretConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretConstants.swift; sourceTree = "<group>"; };
+		D4745C0C263848CC00C0CDDC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D4745C152638567500C0CDDC /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		D485109725239D0C007D6856 /* UIView+backgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+backgroundImage.swift"; sourceTree = "<group>"; };
 		D48F022B25207C5E00B2DE40 /* UITextView+type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+type.swift"; sourceTree = "<group>"; };
 		D48F02312520807200B2DE40 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
@@ -149,7 +155,8 @@
 		D410A4E12520413F00900114 /* ArticleCollection */ = {
 			isa = PBXGroup;
 			children = (
-				D4F890682524C3DD0000D916 /* ViewModel */,
+				D4745C142638503100C0CDDC /* ApiClient */,
+				D4745C042638475100C0CDDC /* Resource */,
 				D410A518252043D000900114 /* View */,
 				D410A517252043C700900114 /* Utility */,
 				D410A516252043BF00900114 /* Model */,
@@ -158,9 +165,9 @@
 				D410A4E42520413F00900114 /* SceneDelegate.swift */,
 				D410A4E62520413F00900114 /* ViewController.swift */,
 				D410A4E82520413F00900114 /* Main.storyboard */,
-				D410A4EB2520413F00900114 /* Assets.xcassets */,
-				D410A4ED2520413F00900114 /* LaunchScreen.storyboard */,
 				D410A4F02520413F00900114 /* Info.plist */,
+				D410A4ED2520413F00900114 /* LaunchScreen.storyboard */,
+				D4745BFC2638423900C0CDDC /* SecretConstants.swift */,
 			);
 			path = ArticleCollection;
 			sourceTree = "<group>";
@@ -209,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				D48F02362520838A00B2DE40 /* Transition.swift */,
+				D4745C0C263848CC00C0CDDC /* Constants.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -232,6 +240,22 @@
 				D410A52D25204A0B00900114 /* LoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		D4745C042638475100C0CDDC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D410A4EB2520413F00900114 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D4745C142638503100C0CDDC /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				D4745C152638567500C0CDDC /* ApiClient.swift */,
+			);
+			path = ApiClient;
 			sourceTree = "<group>";
 		};
 		D48F02302520805C00B2DE40 /* Common */ = {
@@ -274,13 +298,6 @@
 				D406B0E92520CF33000F0A76 /* AppSettingTableViewCell.xib */,
 			);
 			path = Setting;
-			sourceTree = "<group>";
-		};
-		D4F890682524C3DD0000D916 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,8 +439,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D48F02372520838A00B2DE40 /* Transition.swift in Sources */,
+				D4745C0D263848CC00C0CDDC /* Constants.swift in Sources */,
 				D404FFA4252380C4008387B5 /* WebViewController.swift in Sources */,
 				D48F024E25208E0400B2DE40 /* SettingViewController.swift in Sources */,
+				D4745C162638567500C0CDDC /* ApiClient.swift in Sources */,
 				D410A533252066D700900114 /* UIColor+rgba.swift in Sources */,
 				D4F890642524B05D0000D916 /* Article.swift in Sources */,
 				D410A52E25204A0B00900114 /* LoginViewController.swift in Sources */,
@@ -436,6 +455,7 @@
 				D410A4E52520413F00900114 /* SceneDelegate.swift in Sources */,
 				D410A53D252071B400900114 /* UIButton+type.swift in Sources */,
 				D42E88DD252226A800403BE5 /* UIImageView+type.swift in Sources */,
+				D4745BFD2638423900C0CDDC /* SecretConstants.swift in Sources */,
 				D42E88D72522233F00403BE5 /* ArticleTableViewCell.swift in Sources */,
 				D410A5422520734D00900114 /* UIAlertController+type.swift in Sources */,
 				D42E88D1252221D900403BE5 /* MyArticleViewController.swift in Sources */,
