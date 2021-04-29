@@ -30,9 +30,6 @@ class LoginViewController: UIViewController {
         // アプリタイトルの設定
         appTitleLabel.textColor = UIColor.white
         
-//        // ユーザー名入力欄の設定
-//        usernameTextField.customizeTextField(.main, " user name")
-        
         // はじめるボタンの設定
         nextButton.customizeButton(.mainActive, "はじめる")
     }

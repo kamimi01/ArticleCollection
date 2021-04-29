@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My記事-->
+        <!--My kiji-->
         <scene sceneID="rTa-RW-GGI">
             <objects>
                 <viewController id="46s-TM-oAC" customClass="MyArticleViewController" customModule="ArticleCollection" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,7 +41,7 @@
                             <constraint firstItem="fny-LO-Iez" firstAttribute="leading" secondItem="tLi-Ig-E8J" secondAttribute="leading" id="rbM-k9-CMl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="My記事" id="rxY-aK-JiG"/>
+                    <navigationItem key="navigationItem" title="My kiji" id="rxY-aK-JiG"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="fny-LO-Iez" id="nCE-rc-qXT"/>
@@ -62,11 +62,11 @@
             </objects>
             <point key="canvasLocation" x="1784" y="147"/>
         </scene>
-        <!--My記事-->
+        <!--Navigation Controller-->
         <scene sceneID="TVv-Yk-JXn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Jk-BS-zTs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My記事" image="person.crop.circle" catalog="system" id="tYr-WW-SFZ"/>
+                    <tabBarItem key="tabBarItem" title="" image="homekit" catalog="system" selectedImage="homekit" id="tYr-WW-SFZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="y5F-NI-QQW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -83,7 +83,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
+        <image name="homekit" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

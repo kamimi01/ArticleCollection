@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--お気に入り-->
+        <!--Favorites-->
         <scene sceneID="UMw-o9-gAy">
             <objects>
                 <viewController id="vpa-Bj-be9" customClass="FavoriteArticleViewController" customModule="ArticleCollection" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +40,7 @@
                             <constraint firstItem="CYY-0g-cdw" firstAttribute="trailing" secondItem="1zX-gz-amv" secondAttribute="trailing" id="u8Q-Lf-reg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="お気に入り" id="sLg-wO-RAB"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="sLg-wO-RAB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="CYY-0g-cdw" id="pW9-UT-shj"/>
@@ -61,11 +61,11 @@
             </objects>
             <point key="canvasLocation" x="1706" y="114"/>
         </scene>
-        <!--お気に入り-->
+        <!--Navigation Controller-->
         <scene sceneID="rJ8-cL-HE1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KN2-sf-8rX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="お気に入り" image="suit.heart.fill" catalog="system" id="Mgj-Ou-7tu"/>
+                    <tabBarItem key="tabBarItem" title="" image="suit.heart.fill" catalog="system" selectedImage="heart.fill" id="Mgj-Ou-7tu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wnZ-e6-p6m">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -82,6 +82,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="suit.heart.fill" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
