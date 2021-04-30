@@ -71,13 +71,29 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.goodNumLabel.text = String(goodNumList[indexRow])
         cell.iconImageView.customizeImage(.urlShow, "", iconImageList[indexRow])
         
+        // ハートアイコンのタップ検知
+        // タップ検知のためisUserInteractionEnabledをtrueに
+        // ※親Viewもすべてtrueじゃないと効かないっぽい
+        cell.isUserInteractionEnabled = true
+        cell.favoriteImageView.isUserInteractionEnabled = true
+        // タップ時イベント設定
+        cell.favoriteImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageViewTapped)))
+
+        // タップ時処理で使用するためrowをtagに持たせておく
+        cell.favoriteImageView.tag = indexPath.row
+
         cell.selectionStyle = .none
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // webViewに遷移する
-        Transition.transitionDestination(self, "WebView", .fullScreen)
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        // webViewに遷移する
+//        Transition.transitionDestination(self, "WebView", .fullScreen)
+//    }
+    
+    // ImageViewタップ時のイベント
+    @objc func imageViewTapped(sender:UITapGestureRecognizer){
+        print("タップされた")
     }
 }

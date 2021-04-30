@@ -59,12 +59,12 @@ class ArticleTableViewCell: UITableViewCell {
         goodNumLabel.textColor = UIColor.gray
         createdDateLabel.textColor = UIColor.gray
         postedLabel.textColor = UIColor.gray
-        
+    
         // 記事名の最大表示行数の設定
         articleNameLabel.numberOfLines = 2
         
         //アニメーション表示
-        addAnimationView()
+//        addAnimationView()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
