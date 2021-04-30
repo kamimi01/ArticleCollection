@@ -46,6 +46,7 @@
 		D48F025B2520913E00B2DE40 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F025A2520913E00B2DE40 /* TabBarViewController.swift */; };
 		D4C53C47263AE8FA00B488D0 /* UILabel+type.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C53C46263AE8FA00B488D0 /* UILabel+type.swift */; };
 		D4F2CBC8263BC5E00023E5B2 /* heartAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = D4F2CBC7263BC5E00023E5B2 /* heartAnimation.json */; };
+		D4F2CBCD263BE7C00023E5B2 /* ArticleStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F2CBCC263BE7C00023E5B2 /* ArticleStateManager.swift */; };
 		D4F890642524B05D0000D916 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F890632524B05D0000D916 /* Article.swift */; };
 		DF4AC43570C4755F4CEFDF9A /* Pods_ArticleCollectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A0C3C07C5111704CDBEAEE /* Pods_ArticleCollectionTests.framework */; };
 /* End PBXBuildFile section */
@@ -119,6 +120,7 @@
 		D48F025A2520913E00B2DE40 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D4C53C46263AE8FA00B488D0 /* UILabel+type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+type.swift"; sourceTree = "<group>"; };
 		D4F2CBC7263BC5E00023E5B2 /* heartAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heartAnimation.json; sourceTree = "<group>"; };
+		D4F2CBCC263BE7C00023E5B2 /* ArticleStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleStateManager.swift; sourceTree = "<group>"; };
 		D4F890632524B05D0000D916 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		EE94D730C3353949F00AF271 /* Pods-ArticleCollectionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArticleCollectionTests.release.xcconfig"; path = "Target Support Files/Pods-ArticleCollectionTests/Pods-ArticleCollectionTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -253,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				D4F890632524B05D0000D916 /* Article.swift */,
+				D4F2CBCC263BE7C00023E5B2 /* ArticleStateManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				D4C53C47263AE8FA00B488D0 /* UILabel+type.swift in Sources */,
 				D48F02372520838A00B2DE40 /* Transition.swift in Sources */,
 				D4745C0D263848CC00C0CDDC /* Constants.swift in Sources */,
+				D4F2CBCD263BE7C00023E5B2 /* ArticleStateManager.swift in Sources */,
 				D404FFA4252380C4008387B5 /* WebViewController.swift in Sources */,
 				D48F024E25208E0400B2DE40 /* SettingViewController.swift in Sources */,
 				D4745C162638567500C0CDDC /* ApiClient.swift in Sources */,
