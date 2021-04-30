@@ -87,10 +87,10 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        // webViewに遷移する
-//        Transition.transitionDestination(self, "WebView", .fullScreen)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // webViewに遷移する
+        Transition.transitionDestination(self, "WebView", .fullScreen)
+    }
     
     // ImageViewタップ時のイベント
     @objc func imageViewTapped(sender:UITapGestureRecognizer){
