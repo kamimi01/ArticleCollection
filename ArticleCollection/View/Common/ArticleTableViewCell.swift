@@ -8,6 +8,10 @@
 import UIKit
 import Lottie
 
+protocol ArticleCellDelegate {
+    func reloadCell(index: IndexPath)
+}
+
 class ArticleTableViewCell: UITableViewCell {
 
     @IBOutlet weak var iconImageView: UIImageView!
@@ -20,32 +24,15 @@ class ArticleTableViewCell: UITableViewCell {
     @IBOutlet weak var postedLabel: UILabel!
     @IBOutlet weak var favoriteImageView: UIImageView!
     
-    //AnimationViewの宣言
-    var animationView = AnimationView()
+    var delegte: ArticleCellDelegate?
+    var index:IndexPath!
+    
+    // シングルトンのインスタンスを作成する
+    let articleStateManager: ArticleStateManager = ArticleStateManager.shared
 
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
-    }
-
-    //アニメーションの準備
-    private func addAnimationView() {
-
-        //アニメーションファイルの指定
-        animationView = AnimationView(name: "heartAnimation")
-
-        //アニメーションの位置指定（画面中央）
-        animationView.frame = CGRect(x: articleTableView.frame.size.width - 93, y: 90, width: 50, height: 50)
-        print(articleTableView.frame.size.width)
-        print(articleTableView.frame.size.height - 10)
-
-        //アニメーションのアスペクト比を指定＆ループで開始
-        animationView.contentMode = .scaleAspectFit
-        animationView.loopMode = .loop
-        animationView.play()
-
-        //ViewControllerに配置
-        articleTableView.addSubview(animationView)
     }
 
     private func setup() {
@@ -62,15 +49,39 @@ class ArticleTableViewCell: UITableViewCell {
     
         // 記事名の最大表示行数の設定
         articleNameLabel.numberOfLines = 2
-        
-        //アニメーション表示
-//        addAnimationView()
+
+        // ハートアイコンのタップ検知
+        // タップ検知のためisUserInteractionEnabledをtrueに
+        favoriteImageView.isUserInteractionEnabled = true
+        // タップ時イベント設定
+        favoriteImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageViewTapped)))
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+//    var myArticleVC = MyArticleViewController()
+    // ImageViewタップ時のイベント
+    @objc func imageViewTapped(sender:UITapGestureRecognizer){
+        // お気に入り状態の切り替え
+        // セルごとの状態を保持する方法がわからない
+        // セルごとの状態をどうやってクラス間で共有するかがわからない
+        print("タップされたのは：", index)
+        
+        var favoriteStatusListForMyArticleCell = articleStateManager.favoriteStatusList
+
+        favoriteStatusListForMyArticleCell[index[1]] = !favoriteStatusListForMyArticleCell[index[1]]
+        
+        print("タップ後：", favoriteStatusListForMyArticleCell[index[1]])
+        
+        // 共有オブジェクトに保存
+        articleStateManager.favoriteStatusList[index[1]] = favoriteStatusListForMyArticleCell[index[1]]
+        print(favoriteStatusListForMyArticleCell)
+        // セルの更新をviewcontrollerに移譲する
+        delegte?.reloadCell(index: index)
     }
     
 }

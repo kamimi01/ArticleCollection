@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import Lottie
 
-class MyArticleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MyArticleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ArticleCellDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -20,7 +21,13 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
     let urlList = ["https://qiita.com/kamimi01/items/353ed9502ed62cbe9864", "https://note.com/kamimi01/n/n3f1bbf2c3d09", "https://qiita.com/kamimi01/items/7d9584cd9b5988421c4a"]
     let iconImageList = ["https://avatars1.githubusercontent.com/u/47489629?v=4", "https://assets.st-note.com/production/uploads/images/41663416/profile_9c349fef5e606ef83cce8b4704a77620.jpg?fit=bounds&format=jpeg&quality=85&width=330", "https://avatars1.githubusercontent.com/u/47489629?v=4"]
     let createdDateList = ["2021/10/10に", "2020/6/24に", "2020/6/24に"]
+    // シングルトンのインスタンスを作成する
+    let articleStateManager: ArticleStateManager = ArticleStateManager.shared
+    
     let cellHeight = 142
+    
+    //AnimationViewの宣言
+    var animationView = AnimationView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +48,8 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         
         // 
         tableView.backgroundColor = UIColor.white
+        
+        articleStateManager.favoriteStatusList = [Bool](repeating: false, count: 3)
     }
     
     private func tableViewSetUp() {
@@ -70,17 +79,20 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.goodNameLabel.text = goodNameList[indexRow]
         cell.goodNumLabel.text = String(goodNumList[indexRow])
         cell.iconImageView.customizeImage(.urlShow, "", iconImageList[indexRow])
-        
-        // ハートアイコンのタップ検知
-        // タップ検知のためisUserInteractionEnabledをtrueに
-        // ※親Viewもすべてtrueじゃないと効かないっぽい
-        cell.isUserInteractionEnabled = true
-        cell.favoriteImageView.isUserInteractionEnabled = true
-        // タップ時イベント設定
-        cell.favoriteImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageViewTapped)))
 
-        // タップ時処理で使用するためrowをtagに持たせておく
-        cell.favoriteImageView.tag = indexPath.row
+        cell.delegte = self
+        cell.index = indexPath
+        
+        print("どこが呼ばれてる？", articleStateManager.favoriteStatusList[indexRow])
+        
+        if articleStateManager.favoriteStatusList[indexRow] {
+            print("表示切り替えが呼ばれる")
+            // ピンクのハートを表示する
+            addAnimationView(cell: cell)
+        } else {
+            // 灰色画像を表示する
+            cell.iconImageView.isHidden = false
+        }
 
         cell.selectionStyle = .none
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
@@ -92,8 +104,26 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         Transition.transitionDestination(self, "WebView", .fullScreen)
     }
     
-    // ImageViewタップ時のイベント
-    @objc func imageViewTapped(sender:UITapGestureRecognizer){
-        print("タップされた")
+    func reloadCell(index: IndexPath) {
+        print("ここでは", articleStateManager.favoriteStatusList)
+        tableView.reloadRows(at: [index], with: .fade)
+    }
+    
+    //アニメーションの準備
+    private func addAnimationView(cell: ArticleTableViewCell) {
+
+        //アニメーションファイルの指定
+        animationView = AnimationView(name: "heartAnimation")
+
+        //アニメーションの位置指定（画面中央）
+        animationView.frame = CGRect(x: cell.articleTableView.frame.size.width - 93, y: 90, width: 50, height: 50)
+
+        //アニメーションのアスペクト比を指定＆ループで開始
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .playOnce
+        animationView.play()
+
+        //ViewControllerに配置
+        cell.articleTableView.addSubview(animationView)
     }
 }
