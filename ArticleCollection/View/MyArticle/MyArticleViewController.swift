@@ -12,7 +12,8 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
 
     @IBOutlet weak var tableView: UITableView!
     
-    let siteNameList = ["Qiita", "note", "Hatena Blog"]
+    let siteNameList = ["Qiita", "note", "hatena"]
+    let displaySiteNameList = [" Qiita ", " note ", " Hatena Blog "]
     let articleNameList = ["色んな人向けにバーチャルSNS - cluster - に関するリンクを広く浅くまとめてみた", "せるふ - いんとろだくしょん", "色んな人向けにバーチャルSNS - cluster - に関するリンクを広く浅くまとめてみた"]
     let usernameList = ["kamimi01"]
     let goodNameList = ["LGTM", "スキ", "いいね"]
@@ -72,7 +73,7 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let indexRow = indexPath.row
 
-        cell.siteNameLabel.text = siteNameList[indexRow]
+        cell.siteNameLabel.text = displaySiteNameList[indexRow]
         cell.siteNameLabel.customizeLabel(.tag, siteNameList[indexRow])
         cell.articleNameLabel.text = articleNameList[indexRow]
         cell.createdDateLabel.text = createdDateList[indexRow]

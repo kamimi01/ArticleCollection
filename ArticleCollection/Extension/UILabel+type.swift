@@ -8,30 +8,11 @@
 import UIKit
 
 class TagLabel: UILabel {
-
-    let tagPadding: CGFloat = 5
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
-//        layer.cornerRadius = 2
-//        layer.borderColor = UIColor.blackColor().CGColor
-//        layer.borderWidth = 1
-//        textColor = UIColor.blackColor()
-//        clipsToBounds = true
-//        numberOfLines = 1
-        self.customizeLabel(.tag, "")
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func draw(_ rect: CGRect) {
+    var tagPadding: CGFloat = 7
+    override func drawText(in rect: CGRect) {
         let insets = UIEdgeInsets(top: tagPadding, left: tagPadding, bottom: tagPadding, right: tagPadding)
-        return super.drawText(in: rect.inset(by: insets))
+        super.drawText(in: rect.inset(by: insets))
     }
-
 }
 
 extension UILabel {
