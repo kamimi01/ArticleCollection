@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My kiji-->
+        <!--Home-->
         <scene sceneID="rTa-RW-GGI">
             <objects>
                 <viewController id="46s-TM-oAC" customClass="MyArticleViewController" customModule="ArticleCollection" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,7 +41,7 @@
                             <constraint firstItem="fny-LO-Iez" firstAttribute="leading" secondItem="tLi-Ig-E8J" secondAttribute="leading" id="rbM-k9-CMl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="My kiji" id="rxY-aK-JiG"/>
+                    <navigationItem key="navigationItem" title="Home" id="rxY-aK-JiG"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="fny-LO-Iez" id="nCE-rc-qXT"/>
