@@ -16,13 +16,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kiji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRU-J1-ern">
-                                <rect key="frame" x="56" y="218" width="65" height="64"/>
+                                <rect key="frame" x="56" y="201" width="65" height="64"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="45"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q7R-yg-ga3">
-                                <rect key="frame" x="55" y="378" width="303" height="46"/>
+                                <rect key="frame" x="55" y="361" width="303" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="0Th-0N-Ykg"/>
                                 </constraints>
@@ -30,7 +30,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDT-2U-QTN">
-                                <rect key="frame" x="55" y="464" width="303" height="46"/>
+                                <rect key="frame" x="55" y="447" width="303" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="uG6-88-7rD"/>
                                 </constraints>
@@ -43,8 +43,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ｺﾚ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWl-D9-xaQ">
-                                <rect key="frame" x="122.5" y="229" width="45" height="50.5"/>
-                                <fontDescription key="fontDescription" name="Arial-BoldItalicMT" family="Arial" pointSize="45"/>
+                                <rect key="frame" x="122.5" y="212" width="45" height="45"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="45"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -59,13 +59,14 @@
                             <constraint firstItem="eRU-J1-ern" firstAttribute="leading" secondItem="yNX-Y2-5P3" secondAttribute="leading" constant="56" id="VUI-c9-mjQ"/>
                             <constraint firstItem="Q7R-yg-ga3" firstAttribute="leading" secondItem="yNX-Y2-5P3" secondAttribute="leading" constant="55" id="W0N-kV-f7a"/>
                             <constraint firstItem="jDT-2U-QTN" firstAttribute="leading" secondItem="yNX-Y2-5P3" secondAttribute="leading" constant="55" id="Z6p-KA-Vcc"/>
-                            <constraint firstItem="bWl-D9-xaQ" firstAttribute="top" secondItem="yNX-Y2-5P3" secondAttribute="top" constant="185" id="aQd-ra-hRs"/>
+                            <constraint firstItem="bWl-D9-xaQ" firstAttribute="top" secondItem="yNX-Y2-5P3" secondAttribute="top" constant="168" id="aQd-ra-hRs"/>
                             <constraint firstItem="Q7R-yg-ga3" firstAttribute="top" secondItem="eRU-J1-ern" secondAttribute="bottom" constant="96" id="goV-0N-JyH"/>
-                            <constraint firstItem="eRU-J1-ern" firstAttribute="top" secondItem="yNX-Y2-5P3" secondAttribute="top" constant="174" id="iO9-zg-4A0"/>
+                            <constraint firstItem="eRU-J1-ern" firstAttribute="top" secondItem="yNX-Y2-5P3" secondAttribute="top" constant="157" id="iO9-zg-4A0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="appTitleLabel" destination="eRU-J1-ern" id="bWo-j8-pBn"/>
+                        <outlet property="appTitleLatterLabel" destination="bWl-D9-xaQ" id="MJ1-x9-fZy"/>
                         <outlet property="nextButton" destination="jDT-2U-QTN" id="NjR-OK-6w9"/>
                         <outlet property="usernameTextField" destination="Q7R-yg-ga3" id="sLG-J3-gMS"/>
                         <segue destination="LFG-3L-yxi" kind="show" id="aJJ-zU-JVK"/>

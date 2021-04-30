@@ -91,6 +91,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="articleNameLabel" destination="PgM-l2-e3e" id="n7B-8h-RQI"/>
+                <outlet property="articleTableView" destination="H2p-sc-9uM" id="S6f-uE-s1D"/>
                 <outlet property="createdDateLabel" destination="lLm-sb-rO3" id="5yc-Tw-S8l"/>
                 <outlet property="favoriteImageView" destination="psf-TM-N8U" id="t2o-4g-y5L"/>
                 <outlet property="goodNameLabel" destination="kLI-2q-53S" id="8cB-Co-mS0"/>

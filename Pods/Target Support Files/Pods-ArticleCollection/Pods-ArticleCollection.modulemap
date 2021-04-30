@@ -1,0 +1,6 @@
+framework module Pods_ArticleCollection {
+  umbrella header "Pods-ArticleCollection-umbrella.h"
+
+  export *
+  module * { export * }
+}

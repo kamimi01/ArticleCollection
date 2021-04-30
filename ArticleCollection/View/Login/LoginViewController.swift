@@ -12,7 +12,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var appTitleLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
-
+    @IBOutlet weak var appTitleLatterLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -29,6 +30,7 @@ class LoginViewController: UIViewController {
         
         // アプリタイトルの設定
         appTitleLabel.textColor = UIColor.white
+        appTitleLatterLabel.textColor = UIColor.white
         
         // はじめるボタンの設定
         nextButton.customizeButton(.mainActive, "はじめる")
