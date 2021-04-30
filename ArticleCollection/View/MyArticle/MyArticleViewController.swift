@@ -115,8 +115,10 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         //アニメーションファイルの指定
         animationView = AnimationView(name: "heartAnimation")
 
+        print(cell.articleTableView.frame.size.width)
         //アニメーションの位置指定（画面中央）
-        animationView.frame = CGRect(x: cell.articleTableView.frame.size.width - 93, y: 90, width: 50, height: 50)
+//        animationView.frame = CGRect(x: cell.articleTableView.frame.size.width - 93, y: 90, width: 50, height: 50)
+        animationView.frame = CGRect(x: 282, y: 90, width: 50, height: 50)
 
         //アニメーションのアスペクト比を指定＆ループで開始
         animationView.contentMode = .scaleAspectFit

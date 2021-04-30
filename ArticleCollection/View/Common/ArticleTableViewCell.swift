@@ -63,7 +63,6 @@ class ArticleTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-//    var myArticleVC = MyArticleViewController()
     // ImageViewタップ時のイベント
     @objc func imageViewTapped(sender:UITapGestureRecognizer){
         // お気に入り状態の切り替え
