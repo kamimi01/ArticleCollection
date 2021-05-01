@@ -7,11 +7,6 @@
 
 import Foundation
 
-//struct ArticleState {
-////    var isFavorite: Bool
-//    var isFavorite: [Bool] = []
-//}
-
 // シングルトンパターンを使用し、常に1つのインスタンスのみが存在することを保証する
 final public class ArticleStateManager {
     public static let shared = ArticleStateManager()

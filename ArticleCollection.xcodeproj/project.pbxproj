@@ -16,7 +16,6 @@
 		D406B0EB2520CF33000F0A76 /* AppSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D406B0E92520CF33000F0A76 /* AppSettingTableViewCell.xib */; };
 		D410A4E32520413F00900114 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D410A4E22520413F00900114 /* AppDelegate.swift */; };
 		D410A4E52520413F00900114 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D410A4E42520413F00900114 /* SceneDelegate.swift */; };
-		D410A4E72520413F00900114 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D410A4E62520413F00900114 /* ViewController.swift */; };
 		D410A4EA2520413F00900114 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D410A4E82520413F00900114 /* Main.storyboard */; };
 		D410A4EC2520413F00900114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D410A4EB2520413F00900114 /* Assets.xcassets */; };
 		D410A4EF2520413F00900114 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D410A4ED2520413F00900114 /* LaunchScreen.storyboard */; };
@@ -85,7 +84,6 @@
 		D410A4DF2520413F00900114 /* ArticleCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArticleCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D410A4E22520413F00900114 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D410A4E42520413F00900114 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D410A4E62520413F00900114 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D410A4E92520413F00900114 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D410A4EB2520413F00900114 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D410A4EE2520413F00900114 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -209,7 +207,6 @@
 				D410A515252043B600900114 /* Extension */,
 				D410A4E22520413F00900114 /* AppDelegate.swift */,
 				D410A4E42520413F00900114 /* SceneDelegate.swift */,
-				D410A4E62520413F00900114 /* ViewController.swift */,
 				D410A4E82520413F00900114 /* Main.storyboard */,
 				D410A4F02520413F00900114 /* Info.plist */,
 				D410A4ED2520413F00900114 /* LaunchScreen.storyboard */,
@@ -610,7 +607,6 @@
 				D404FF9A25237E5F008387B5 /* FavoriteArticleViewController.swift in Sources */,
 				D48F025B2520913E00B2DE40 /* TabBarViewController.swift in Sources */,
 				D485109825239D0C007D6856 /* UIView+backgroundImage.swift in Sources */,
-				D410A4E72520413F00900114 /* ViewController.swift in Sources */,
 				D410A4E32520413F00900114 /* AppDelegate.swift in Sources */,
 				D410A4E52520413F00900114 /* SceneDelegate.swift in Sources */,
 				D410A53D252071B400900114 /* UIButton+type.swift in Sources */,
