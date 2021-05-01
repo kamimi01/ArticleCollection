@@ -88,6 +88,7 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
             // ピンクのハートを表示する
 //            addAnimationView(cell: cell)
             cell.animationView.isHidden = false
+            cell.animationView.play()
             cell.favoriteImageView.isHidden = true
         } else {
             // 灰色画像を表示する
