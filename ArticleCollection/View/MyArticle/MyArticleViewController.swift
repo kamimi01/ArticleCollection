@@ -27,9 +27,6 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
     
     let cellHeight = 142
     
-    //AnimationViewの宣言
-    var animationView = AnimationView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -84,15 +81,18 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.delegte = self
         cell.index = indexPath
         
-        print("どこが呼ばれてる？", articleStateManager.favoriteStatusList[indexRow])
+        print("tableviewどこが呼ばれてる？", articleStateManager.favoriteStatusList[indexRow])
         
         if articleStateManager.favoriteStatusList[indexRow] {
             print("表示切り替えが呼ばれる")
             // ピンクのハートを表示する
-            addAnimationView(cell: cell)
+//            addAnimationView(cell: cell)
+            cell.animationView.isHidden = false
+            cell.favoriteImageView.isHidden = true
         } else {
             // 灰色画像を表示する
-            cell.iconImageView.isHidden = false
+            cell.animationView.isHidden = true
+            cell.favoriteImageView.isHidden = false
         }
 
         cell.selectionStyle = .none
@@ -108,25 +108,5 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
     func reloadCell(index: IndexPath) {
         print("ここでは", articleStateManager.favoriteStatusList)
         tableView.reloadRows(at: [index], with: .fade)
-    }
-    
-    //アニメーションの準備
-    private func addAnimationView(cell: ArticleTableViewCell) {
-
-        //アニメーションファイルの指定
-        animationView = AnimationView(name: "heartAnimation")
-
-        print(cell.articleTableView.frame.size.width)
-        //アニメーションの位置指定（画面中央）
-//        animationView.frame = CGRect(x: cell.articleTableView.frame.size.width - 93, y: 90, width: 50, height: 50)
-        animationView.frame = CGRect(x: 282, y: 90, width: 50, height: 50)
-
-        //アニメーションのアスペクト比を指定＆ループで開始
-        animationView.contentMode = .scaleAspectFit
-        animationView.loopMode = .playOnce
-        animationView.play()
-
-        //ViewControllerに配置
-        cell.articleTableView.addSubview(animationView)
     }
 }
