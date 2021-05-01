@@ -86,7 +86,6 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         if articleStateManager.favoriteStatusList[indexRow] {
             print("表示切り替えが呼ばれる")
             // ピンクのハートを表示する
-//            addAnimationView(cell: cell)
             cell.animationView.isHidden = false
             cell.animationView.play()
             cell.favoriteImageView.isHidden = true
