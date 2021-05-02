@@ -25,7 +25,7 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
     // シングルトンのインスタンスを作成する
     let articleStateManager: ArticleStateManager = ArticleStateManager.shared
     
-    let cellHeight = 142
+    let cellHeight = 157
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +96,6 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         }
 
         cell.selectionStyle = .none
-        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         return cell
     }
     

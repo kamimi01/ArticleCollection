@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,12 +49,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favoriteBorder" translatesAutoresizingMaskIntoConstraints="NO" id="psf-TM-N8U">
-                        <rect key="frame" x="324.5" y="122.5" width="19" height="19"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartInactive" translatesAutoresizingMaskIntoConstraints="NO" id="psf-TM-N8U">
+                        <rect key="frame" x="288.5" y="89" width="70" height="70"/>
                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="19" id="825-am-DjW"/>
-                            <constraint firstAttribute="height" constant="19" id="s1E-Sa-jkD"/>
+                            <constraint firstAttribute="width" constant="70" id="825-am-DjW"/>
+                            <constraint firstAttribute="height" constant="70" id="s1E-Sa-jkD"/>
                         </constraints>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="drR-G6-hIk">
@@ -74,10 +74,9 @@
                 <constraints>
                     <constraint firstItem="PgM-l2-e3e" firstAttribute="top" secondItem="egu-mV-y4t" secondAttribute="bottom" constant="20" id="9fi-jN-RUw"/>
                     <constraint firstItem="3Uo-xS-ecJ" firstAttribute="leading" secondItem="kLI-2q-53S" secondAttribute="trailing" constant="5" id="Aa7-QY-Vi5"/>
-                    <constraint firstItem="psf-TM-N8U" firstAttribute="centerY" secondItem="3Uo-xS-ecJ" secondAttribute="centerY" id="Chp-oj-n9h"/>
                     <constraint firstItem="3Uo-xS-ecJ" firstAttribute="centerY" secondItem="kLI-2q-53S" secondAttribute="centerY" id="LuC-Ge-S4l"/>
                     <constraint firstItem="PgM-l2-e3e" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="31.5" id="MKp-z8-v5a"/>
-                    <constraint firstAttribute="trailing" secondItem="psf-TM-N8U" secondAttribute="trailing" constant="31.5" id="Ojl-Ue-Fgl"/>
+                    <constraint firstAttribute="trailing" secondItem="psf-TM-N8U" secondAttribute="trailing" constant="16.5" id="Ojl-Ue-Fgl"/>
                     <constraint firstAttribute="bottomMargin" secondItem="kLI-2q-53S" secondAttribute="bottom" constant="10" id="QxG-a8-7Zu"/>
                     <constraint firstAttribute="trailing" secondItem="O4m-0a-lXt" secondAttribute="trailing" constant="31.5" id="USI-Fi-yBt"/>
                     <constraint firstItem="drR-G6-hIk" firstAttribute="centerY" secondItem="O4m-0a-lXt" secondAttribute="centerY" id="aid-9e-fkJ"/>
@@ -88,6 +87,7 @@
                     <constraint firstItem="egu-mV-y4t" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="31.5" id="jfo-wM-IBP"/>
                     <constraint firstItem="kLI-2q-53S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="31.5" id="kIs-zu-pXW"/>
                     <constraint firstItem="egu-mV-y4t" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="pBm-a6-wsc"/>
+                    <constraint firstAttribute="bottom" secondItem="psf-TM-N8U" secondAttribute="bottom" id="sIQ-OX-Amg"/>
                     <constraint firstItem="O4m-0a-lXt" firstAttribute="centerY" secondItem="egu-mV-y4t" secondAttribute="centerY" id="z1L-HU-YcL"/>
                 </constraints>
             </tableViewCellContentView>
@@ -107,6 +107,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="favoriteBorder" width="23" height="20"/>
+        <image name="heartInactive" width="74" height="74"/>
     </resources>
 </document>
