@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kiji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRU-J1-ern">
-                                <rect key="frame" x="56" y="201" width="65" height="64"/>
+                                <rect key="frame" x="56" y="204" width="65" height="64"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="45"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ｺﾚ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWl-D9-xaQ">
-                                <rect key="frame" x="122.5" y="212" width="45" height="45"/>
+                                <rect key="frame" x="122.5" y="216.5" width="45" height="45"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="45"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -60,8 +60,8 @@
                             <constraint firstItem="eRU-J1-ern" firstAttribute="leading" secondItem="yNX-Y2-5P3" secondAttribute="leading" constant="56" id="VUI-c9-mjQ"/>
                             <constraint firstItem="Q7R-yg-ga3" firstAttribute="leading" secondItem="yNX-Y2-5P3" secondAttribute="leading" constant="55" id="W0N-kV-f7a"/>
                             <constraint firstItem="jDT-2U-QTN" firstAttribute="leading" secondItem="yNX-Y2-5P3" secondAttribute="leading" constant="55" id="Z6p-KA-Vcc"/>
-                            <constraint firstItem="bWl-D9-xaQ" firstAttribute="top" secondItem="yNX-Y2-5P3" secondAttribute="top" constant="168" id="aQd-ra-hRs"/>
-                            <constraint firstItem="eRU-J1-ern" firstAttribute="top" secondItem="yNX-Y2-5P3" secondAttribute="top" constant="157" id="iO9-zg-4A0"/>
+                            <constraint firstItem="eRU-J1-ern" firstAttribute="top" secondItem="yNX-Y2-5P3" secondAttribute="top" constant="160" id="a0Y-bR-kMT"/>
+                            <constraint firstItem="bWl-D9-xaQ" firstAttribute="centerY" secondItem="eRU-J1-ern" secondAttribute="centerY" constant="3" id="zi7-xY-1Ta"/>
                         </constraints>
                     </view>
                     <connections>
