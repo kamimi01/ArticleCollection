@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         // ユーザー名入力欄の設定
-        usernameTextField.customizeTextField(.main, " user name")
+        usernameTextField.customizeTextField(.main, " ユーザー名")
     }
     
     private func setup() {
