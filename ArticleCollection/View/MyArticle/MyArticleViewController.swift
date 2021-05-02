@@ -86,13 +86,15 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         if articleStateManager.favoriteStatusList[indexRow] {
             print("表示切り替えが呼ばれる")
             // ピンクのハートを表示する
-            cell.animationView.isHidden = false
-            cell.animationView.play()
-            cell.favoriteImageView.isHidden = true
+//            cell.animationView.isHidden = false
+//            cell.animationView.play()
+//            cell.favoriteImageView.isHidden = true
+            cell.favoriteImageView.image = UIImage(named: "heartActive")
         } else {
             // 灰色画像を表示する
-            cell.animationView.isHidden = true
-            cell.favoriteImageView.isHidden = false
+//            cell.animationView.isHidden = true
+//            cell.favoriteImageView.isHidden = false
+            cell.favoriteImageView.image = UIImage(named: "heartInactive")
         }
 
         cell.selectionStyle = .none
