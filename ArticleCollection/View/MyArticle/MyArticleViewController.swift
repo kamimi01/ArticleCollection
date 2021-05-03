@@ -113,6 +113,11 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let indexRow = indexPath.row
+        let article = articleInfo[indexRow]
+        
+        // 表示するURLを次の画面へ渡す
+        articleStateManager.articleUrl = article["url"] as? String ?? ""
         // webViewに遷移する
         Transition.transitionDestination(self, "WebView", .fullScreen)
     }
