@@ -11,18 +11,11 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
 
     @IBOutlet weak var tableView: UITableView!
     
-    let siteNameList = ["Qiita", "note", "hatena"]
-    let displaySiteNameList = [" Qiita ", " note ", " Hatena Blog "]
-    let articleNameList = ["色んな人向けにバーチャルSNS - cluster - に関するリンクを広く浅くまとめてみた", "せるふ - いんとろだくしょん", "色んな人向けにバーチャルSNS - cluster - に関するリンクを広く浅くまとめてみた"]
-    let usernameList = ["kamimi01"]
-    let goodNameList = ["LGTM", "スキ", "いいね"]
-    let goodNumList = [45, 8, 10]
-    let userImageList = ["noUserImage", "noUserImage"]
-    let urlList = ["https://qiita.com/kamimi01/items/353ed9502ed62cbe9864", "https://note.com/kamimi01/n/n3f1bbf2c3d09", "https://qiita.com/kamimi01/items/7d9584cd9b5988421c4a"]
-    let iconImageList = ["https://avatars1.githubusercontent.com/u/47489629?v=4", "https://assets.st-note.com/production/uploads/images/41663416/profile_9c349fef5e606ef83cce8b4704a77620.jpg?fit=bounds&format=jpeg&quality=85&width=330", "https://avatars1.githubusercontent.com/u/47489629?v=4"]
-    let createdDateList = ["2021/10/10に", "2020/6/24に", "2020/6/24に"]
     // シングルトンのインスタンスを作成する
     let articleStateManager: ArticleStateManager = ArticleStateManager.shared
+
+    // 記事情報を取得する
+    var articleInfo = ArticleStateManager.shared.articleList
     
     let cellHeight = 157
     
@@ -45,8 +38,8 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         
         // 
         tableView.backgroundColor = UIColor.white
-        
-        articleStateManager.favoriteStatusList = [Bool](repeating: false, count: 3)
+
+        articleStateManager.favoriteStatusList = [Bool](repeating: false, count: articleInfo.count)
     }
     
     private func tableViewSetUp() {
@@ -61,21 +54,23 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articleNameList.count
+        return articleInfo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell", for: indexPath ) as! ArticleTableViewCell
         
         let indexRow = indexPath.row
+        
+        let article = articleInfo[indexRow]
 
-        cell.siteNameLabel.text = displaySiteNameList[indexRow]
-        cell.siteNameLabel.customizeLabel(.tag, siteNameList[indexRow])
-        cell.articleNameLabel.text = articleNameList[indexRow]
-        cell.createdDateLabel.text = createdDateList[indexRow]
-        cell.goodNameLabel.text = goodNameList[indexRow]
-        cell.goodNumLabel.text = String(goodNumList[indexRow])
-        cell.iconImageView.customizeImage(.urlShow, "", iconImageList[indexRow])
+        cell.siteNameLabel.text = "note"
+        cell.siteNameLabel.customizeLabel(.tag, article["service"] as? String ?? "")
+        cell.articleNameLabel.text = article["title"] as? String
+        cell.createdDateLabel.text = article["createdDate"] as? String
+        cell.goodNameLabel.text = "スキ"
+        cell.goodNumLabel.text = String(article["likesCount"] as? Int ?? 100)
+        cell.iconImageView.customizeImage(.urlShow, "", article["profileImageUrl"] as? String ?? "")
 
         cell.delegte = self
         cell.index = indexPath

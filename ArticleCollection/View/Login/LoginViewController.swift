@@ -60,6 +60,8 @@ class LoginViewController: UIViewController {
         // 記事情報を格納していく
         var articleLists: [[String: Any]] = []
         
+        let semaphore = DispatchSemaphore(value: 0)
+
         // リクエストの送信
         client.send(request: request) { result in
             switch result {
@@ -78,11 +80,15 @@ class LoginViewController: UIViewController {
                 }
                 // 共有オブジェクトに格納する
                 self.articleStateManager.articleList = articleLists
-                print(self.articleStateManager.articleList)
+                print("取得できた：", self.articleStateManager.articleList)
             case let .failure(error):
                 print(error)
             }
+            
+            semaphore.signal()
         }
+        // signalが呼ばれるまで待機する
+        semaphore.wait()
     }
     
     // はじめるボタンタップ時の挙動
