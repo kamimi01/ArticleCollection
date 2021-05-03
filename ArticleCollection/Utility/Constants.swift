@@ -28,13 +28,13 @@ class ArticleMetaInfo {
     init(siteNameType: siteNameType) {
         switch siteNameType {
         case .qiita:
-            self.siteName = "Qiita"
+            self.siteName = " Qiita "
             self.likeName = "LGTM"
         case .hatenaBlog:
-            self.siteName = "はてなブログ"
+            self.siteName = " はてなブログ "
             self.likeName = "いいね"
         case .note:
-            self.siteName = "note"
+            self.siteName = " note "
             self.likeName = "スキ"
         }
     }
