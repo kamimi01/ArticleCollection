@@ -14,4 +14,7 @@ final public class ArticleStateManager {
     
     // お気に入りかどうかのフラグリスト
     var favoriteStatusList: [Bool] = []
+    
+    // 記事情報
+    var articleList: [[String: Any]] = []
 }
