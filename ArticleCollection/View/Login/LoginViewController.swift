@@ -54,11 +54,26 @@ class LoginViewController: UIViewController {
         // リクエストの発行
         let request = ArticleApi.ArticleList(keyword: userName)
         
+        // 記事情報を格納していく
+        var articleLists: [[String: Any]] = []
+        
         // リクエストの送信
         client.send(request: request) { result in
             switch result {
             case let .success(response):
-                print(response)
+                for article in response.articleContents {
+                    // 記事の情報を格納
+                    articleLists.append([
+                        "service": article.service,
+                        "title": article.title,
+                        "userName": article.userName,
+                        "likesCount": article.likesCount,
+                        "profileImageUrl": article.profileImageUrl,
+                        "url": article.url,
+                        "createdDate": article.createdDate
+                    ])
+                }
+                print(articleLists)
             case let .failure(error):
                 print(error)
             }
