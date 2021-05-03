@@ -48,27 +48,6 @@ class LoginViewController: UIViewController {
     }
     
     private func getArticles(userName: String) {
-////        let urlString = "https://qiita.com/api/v2/users/" + userName + "/items"
-//
-//        let urlString = ApiConfig.baseUrl + ApiConfig.articlesPath + "?" +
-//            ApiConfig.articlesUserNamePram + "=" + userName
-//
-//        guard let url: URL = URL(string: urlString) else {
-//            return
-//        }
-//
-//        var request = URLRequest(url: url)
-//        request.addValue(apikey, forHTTPHeaderField: ApiConfig.apiKeyHeader)
-//        request.httpMethod = "GET"
-//
-//        let task: URLSessionTask = URLSession.shared.dataTask(with: request, completionHandler: {data, response, error in
-//            print("data: \(data)")
-//            print("response: \(response)")
-//            print("error: \(error)")
-//        })
-//
-//        task.resume()
-        
         // APIクライアントの生成
         let client = ArticleClient()
         
