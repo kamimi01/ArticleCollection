@@ -64,10 +64,27 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let article = articleInfo[indexRow]
 
+        let serviceName = article["service"] as? String ?? ""
+        var articleMetaInfo = ArticleMetaInfo.init(siteNameType: .qiita)
+
+        switch serviceName {
+        case "qiita":
+            articleMetaInfo = ArticleMetaInfo.init(siteNameType: .qiita)
+        case "note":
+            articleMetaInfo = ArticleMetaInfo.init(siteNameType: .note)
+        case "hatena":
+            articleMetaInfo = ArticleMetaInfo.init(siteNameType: .hatenaBlog)
+        default:
+            articleMetaInfo = ArticleMetaInfo.init(siteNameType: .qiita)
+        }
+        
+        cell.siteNameLabel.text = articleMetaInfo.siteName
+        cell.goodNameLabel.text = articleMetaInfo.likeName
+        
         cell.siteNameLabel.customizeLabel(.tag, article["service"] as? String ?? "")
         cell.articleNameLabel.text = article["title"] as? String
         cell.createdDateLabel.text = article["createdDate"] as? String
-        cell.goodNameLabel.text = "スキ"
+
         cell.goodNumLabel.text = String(article["likesCount"] as? Int ?? 100)
         cell.iconImageView.customizeImage(.urlShow, "", article["profileImageUrl"] as? String ?? "")
 
