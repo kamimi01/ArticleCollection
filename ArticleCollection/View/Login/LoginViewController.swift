@@ -95,6 +95,7 @@ class LoginViewController: UIViewController {
     @IBAction func nextButtionTap(_ sender: Any) {
         if usernameTextField.text!.isEmpty {
             showAlert()
+            return
         }
         
         // 入力したユーザー名の取得
