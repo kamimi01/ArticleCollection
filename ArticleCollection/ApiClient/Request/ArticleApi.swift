@@ -13,7 +13,7 @@ final class ArticleApi {
         let keyword: String
         
         // ArticleRequestが要求する連想型
-        typealias Response = ArticleListResponse
+        typealias Response = ArticleResponse<Article>
         
         var method: HttpMethod {
             return .get
@@ -25,6 +25,12 @@ final class ArticleApi {
         
         var queryItems: [URLQueryItem] {
             return [URLQueryItem(name: ApiConfig.articlesUserNamePram, value: keyword)]
+        }
+        
+        var headers: [String: String] {
+            return [
+                ApiConfig.apiKeyHeader: apikey
+            ]
         }
     }
 }

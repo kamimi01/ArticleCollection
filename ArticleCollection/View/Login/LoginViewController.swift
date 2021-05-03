@@ -48,26 +48,42 @@ class LoginViewController: UIViewController {
     }
     
     private func getArticles(userName: String) {
-//        let urlString = "https://qiita.com/api/v2/users/" + userName + "/items"
-
-        let urlString = ApiConfig.baseUrl + ApiConfig.articlesPath + "?" +
-            ApiConfig.articlesUserNamePram + "=" + userName
-
-        guard let url: URL = URL(string: urlString) else {
-            return
+////        let urlString = "https://qiita.com/api/v2/users/" + userName + "/items"
+//
+//        let urlString = ApiConfig.baseUrl + ApiConfig.articlesPath + "?" +
+//            ApiConfig.articlesUserNamePram + "=" + userName
+//
+//        guard let url: URL = URL(string: urlString) else {
+//            return
+//        }
+//
+//        var request = URLRequest(url: url)
+//        request.addValue(apikey, forHTTPHeaderField: ApiConfig.apiKeyHeader)
+//        request.httpMethod = "GET"
+//
+//        let task: URLSessionTask = URLSession.shared.dataTask(with: request, completionHandler: {data, response, error in
+//            print("data: \(data)")
+//            print("response: \(response)")
+//            print("error: \(error)")
+//        })
+//
+//        task.resume()
+        
+        // APIクライアントの生成
+        let client = ArticleClient()
+        
+        // リクエストの発行
+        let request = ArticleApi.ArticleList(keyword: userName)
+        
+        // リクエストの送信
+        client.send(request: request) { result in
+            switch result {
+            case let .success(response):
+                print(response)
+            case let .failure(error):
+                print(error)
+            }
         }
-
-        var request = URLRequest(url: url)
-        request.addValue(apikey, forHTTPHeaderField: ApiConfig.apiKeyHeader)
-        request.httpMethod = "GET"
-
-        let task: URLSessionTask = URLSession.shared.dataTask(with: request, completionHandler: {data, response, error in
-            print("data: \(data)")
-            print("response: \(response)")
-            print("error: \(error)")
-        })
-
-        task.resume()
     }
     
     // はじめるボタンタップ時の挙動

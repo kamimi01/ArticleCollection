@@ -27,8 +27,12 @@ class ArticleClient {
             case (_, _, let error?):
                 completion(Result(error: .connectionError(error)))
             case (let data?, let response?, _):
+                print("データとレスポンスがある")
+                print(response)
+                print(data)
                 do {
                     let response = try request.response(from: data, urlResponse: response)
+                    print(response)
                     completion(Result(value: response))
                 } catch let error as ArticleApiError {
                     completion(Result(error: .apiError(error)))
