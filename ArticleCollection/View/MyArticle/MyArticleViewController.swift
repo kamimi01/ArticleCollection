@@ -108,6 +108,6 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func reloadCell(index: IndexPath) {
         print("ここでは", articleStateManager.favoriteStatusList)
-        tableView.reloadRows(at: [index], with: .fade)
+        tableView.reloadRows(at: [index], with: .none)
     }
 }
