@@ -51,6 +51,7 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.register(nib, forCellReuseIdentifier: "ArticleTableViewCell")
         
         tableView.rowHeight = CGFloat(cellHeight)
+        tableView.separatorInset = UIEdgeInsets.zero
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
