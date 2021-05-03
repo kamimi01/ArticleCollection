@@ -64,7 +64,6 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let article = articleInfo[indexRow]
 
-        cell.siteNameLabel.text = "note"
         cell.siteNameLabel.customizeLabel(.tag, article["service"] as? String ?? "")
         cell.articleNameLabel.text = article["title"] as? String
         cell.createdDateLabel.text = article["createdDate"] as? String

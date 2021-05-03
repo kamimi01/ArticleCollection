@@ -21,24 +21,29 @@ extension UILabel {
     }
     
     enum ServiceType: String {
-        case qiita = "Qiita"
+        case qiita = "qiita"
         case note = "note"
         case hatena = "hatena"
     }
     
     func customizeLabel(_ type: LabelCustomType, _ serviceName: String) {
+        var articleMetaInfo = ArticleMetaInfo.init(siteNameType: .qiita)
         switch type {
         case .tag:
             switch serviceName {
             case ServiceType.qiita.rawValue:
                 self.layer.backgroundColor = UIColor.qiitaColor.cgColor
+                articleMetaInfo = ArticleMetaInfo.init(siteNameType: .qiita)
             case ServiceType.note.rawValue:
                 self.layer.backgroundColor = UIColor.noteColor.cgColor
+                articleMetaInfo = ArticleMetaInfo.init(siteNameType: .note)
             case ServiceType.hatena.rawValue:
+                articleMetaInfo = ArticleMetaInfo.init(siteNameType: .hatenaBlog)
                 self.layer.backgroundColor = UIColor.hatenaColor.cgColor
             default:
                 self.layer.backgroundColor = UIColor.boldGray.cgColor
             }
+            self.text = articleMetaInfo.siteName
             self.textColor = UIColor.white
             self.clipsToBounds = true
             self.numberOfLines = 1
