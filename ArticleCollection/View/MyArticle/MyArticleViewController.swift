@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Lottie
 
 class MyArticleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ArticleCellDelegate {
 

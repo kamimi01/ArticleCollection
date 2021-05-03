@@ -6,7 +6,6 @@ target 'ArticleCollection' do
   use_frameworks!
 
   # Pods for ArticleCollection
-  pod 'lottie-ios'
 
   target 'ArticleCollectionTests' do
     inherit! :search_paths

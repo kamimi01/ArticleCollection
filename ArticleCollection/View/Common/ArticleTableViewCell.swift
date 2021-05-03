@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Lottie
 
 protocol ArticleCellDelegate {
     func reloadCell(index: IndexPath)
