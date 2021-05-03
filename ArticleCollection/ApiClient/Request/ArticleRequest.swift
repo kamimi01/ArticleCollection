@@ -14,6 +14,7 @@ protocol ArticleRequest {
     var path: String { get }
     var method: HttpMethod { get }
     var queryItems: [URLQueryItem] { get }
+    var headers: [String: String] { get }
 }
 
 extension ArticleRequest {
@@ -36,6 +37,9 @@ extension ArticleRequest {
         var urlRequest = URLRequest(url: url)
         urlRequest.url = components?.url
         urlRequest.httpMethod = method.rawValue
+        headers.forEach {key, value in
+            urlRequest.addValue(value, forHTTPHeaderField: key)
+        }
         
         return urlRequest
     }
