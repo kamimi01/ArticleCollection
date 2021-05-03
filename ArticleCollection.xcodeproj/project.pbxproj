@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,7 +33,13 @@
 		D42E88DD252226A800403BE5 /* UIImageView+type.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E88DC252226A800403BE5 /* UIImageView+type.swift */; };
 		D4745BFD2638423900C0CDDC /* SecretConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4745BFC2638423900C0CDDC /* SecretConstants.swift */; };
 		D4745C0D263848CC00C0CDDC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4745C0C263848CC00C0CDDC /* Constants.swift */; };
-		D4745C162638567500C0CDDC /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4745C152638567500C0CDDC /* ApiClient.swift */; };
+		D47E5810263FEB90006B5A07 /* ArticleClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47E580F263FEB90006B5A07 /* ArticleClientError.swift */; };
+		D47E5818263FEC86006B5A07 /* ArticleApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47E5817263FEC86006B5A07 /* ArticleApiError.swift */; };
+		D47E5821263FEE1C006B5A07 /* ArticleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47E5820263FEE1C006B5A07 /* ArticleRequest.swift */; };
+		D47E5826263FEED7006B5A07 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47E5825263FEED7006B5A07 /* HttpMethod.swift */; };
+		D47E582B263FF0DF006B5A07 /* ArticleApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47E582A263FF0DF006B5A07 /* ArticleApi.swift */; };
+		D47E5833263FFB84006B5A07 /* ArticleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47E5832263FFB84006B5A07 /* ArticleClient.swift */; };
+		D47E583926400730006B5A07 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47E583826400730006B5A07 /* Result.swift */; };
 		D485109825239D0C007D6856 /* UIView+backgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D485109725239D0C007D6856 /* UIView+backgroundImage.swift */; };
 		D48F022C25207C5E00B2DE40 /* UITextView+type.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F022B25207C5E00B2DE40 /* UITextView+type.swift */; };
 		D48F02322520807200B2DE40 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D48F02312520807200B2DE40 /* TabBar.storyboard */; };
@@ -46,7 +52,7 @@
 		D4C53C47263AE8FA00B488D0 /* UILabel+type.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C53C46263AE8FA00B488D0 /* UILabel+type.swift */; };
 		D4F2CBC8263BC5E00023E5B2 /* heartAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = D4F2CBC7263BC5E00023E5B2 /* heartAnimation.json */; };
 		D4F2CBCD263BE7C00023E5B2 /* ArticleStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F2CBCC263BE7C00023E5B2 /* ArticleStateManager.swift */; };
-		D4F890642524B05D0000D916 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F890632524B05D0000D916 /* Article.swift */; };
+		D4F890642524B05D0000D916 /* ArticleListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F890632524B05D0000D916 /* ArticleListResponse.swift */; };
 		DF4AC43570C4755F4CEFDF9A /* Pods_ArticleCollectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A0C3C07C5111704CDBEAEE /* Pods_ArticleCollectionTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,7 +112,13 @@
 		D42E88DC252226A800403BE5 /* UIImageView+type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+type.swift"; sourceTree = "<group>"; };
 		D4745BFC2638423900C0CDDC /* SecretConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretConstants.swift; sourceTree = "<group>"; };
 		D4745C0C263848CC00C0CDDC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		D4745C152638567500C0CDDC /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		D47E580F263FEB90006B5A07 /* ArticleClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleClientError.swift; sourceTree = "<group>"; };
+		D47E5817263FEC86006B5A07 /* ArticleApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleApiError.swift; sourceTree = "<group>"; };
+		D47E5820263FEE1C006B5A07 /* ArticleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRequest.swift; sourceTree = "<group>"; };
+		D47E5825263FEED7006B5A07 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		D47E582A263FF0DF006B5A07 /* ArticleApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleApi.swift; sourceTree = "<group>"; };
+		D47E5832263FFB84006B5A07 /* ArticleClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleClient.swift; sourceTree = "<group>"; };
+		D47E583826400730006B5A07 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		D485109725239D0C007D6856 /* UIView+backgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+backgroundImage.swift"; sourceTree = "<group>"; };
 		D48F022B25207C5E00B2DE40 /* UITextView+type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+type.swift"; sourceTree = "<group>"; };
 		D48F02312520807200B2DE40 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
@@ -119,7 +131,7 @@
 		D4C53C46263AE8FA00B488D0 /* UILabel+type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+type.swift"; sourceTree = "<group>"; };
 		D4F2CBC7263BC5E00023E5B2 /* heartAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heartAnimation.json; sourceTree = "<group>"; };
 		D4F2CBCC263BE7C00023E5B2 /* ArticleStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleStateManager.swift; sourceTree = "<group>"; };
-		D4F890632524B05D0000D916 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		D4F890632524B05D0000D916 /* ArticleListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListResponse.swift; sourceTree = "<group>"; };
 		EE94D730C3353949F00AF271 /* Pods-ArticleCollectionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArticleCollectionTests.release.xcconfig"; path = "Target Support Files/Pods-ArticleCollectionTests/Pods-ArticleCollectionTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -251,7 +263,6 @@
 		D410A516252043BF00900114 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D4F890632524B05D0000D916 /* Article.swift */,
 				D4F2CBCC263BE7C00023E5B2 /* ArticleStateManager.swift */,
 			);
 			path = Model;
@@ -299,9 +310,40 @@
 		D4745C142638503100C0CDDC /* ApiClient */ = {
 			isa = PBXGroup;
 			children = (
-				D4745C152638567500C0CDDC /* ApiClient.swift */,
+				D47E581C263FEDF6006B5A07 /* Request */,
+				D47E580E263FEB61006B5A07 /* Error */,
+				D47E580D263FEAAD006B5A07 /* Response */,
+				D47E583826400730006B5A07 /* Result.swift */,
 			);
 			path = ApiClient;
+			sourceTree = "<group>";
+		};
+		D47E580D263FEAAD006B5A07 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				D4F890632524B05D0000D916 /* ArticleListResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		D47E580E263FEB61006B5A07 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				D47E580F263FEB90006B5A07 /* ArticleClientError.swift */,
+				D47E5817263FEC86006B5A07 /* ArticleApiError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		D47E581C263FEDF6006B5A07 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				D47E5820263FEE1C006B5A07 /* ArticleRequest.swift */,
+				D47E5825263FEED7006B5A07 /* HttpMethod.swift */,
+				D47E582A263FF0DF006B5A07 /* ArticleApi.swift */,
+				D47E5832263FFB84006B5A07 /* ArticleClient.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 		D48F02302520805C00B2DE40 /* Common */ = {
@@ -563,22 +605,28 @@
 				D4F2CBCD263BE7C00023E5B2 /* ArticleStateManager.swift in Sources */,
 				D404FFA4252380C4008387B5 /* WebViewController.swift in Sources */,
 				D48F024E25208E0400B2DE40 /* SettingViewController.swift in Sources */,
-				D4745C162638567500C0CDDC /* ApiClient.swift in Sources */,
+				D47E583926400730006B5A07 /* Result.swift in Sources */,
 				D410A533252066D700900114 /* UIColor+rgba.swift in Sources */,
-				D4F890642524B05D0000D916 /* Article.swift in Sources */,
+				D47E5810263FEB90006B5A07 /* ArticleClientError.swift in Sources */,
+				D4F890642524B05D0000D916 /* ArticleListResponse.swift in Sources */,
+				D47E582B263FF0DF006B5A07 /* ArticleApi.swift in Sources */,
 				D410A52E25204A0B00900114 /* LoginViewController.swift in Sources */,
 				D406B0EA2520CF33000F0A76 /* AppSettingTableViewCell.swift in Sources */,
 				D404FF9A25237E5F008387B5 /* FavoriteArticleViewController.swift in Sources */,
 				D48F025B2520913E00B2DE40 /* TabBarViewController.swift in Sources */,
+				D47E5818263FEC86006B5A07 /* ArticleApiError.swift in Sources */,
 				D485109825239D0C007D6856 /* UIView+backgroundImage.swift in Sources */,
 				D410A4E32520413F00900114 /* AppDelegate.swift in Sources */,
 				D410A4E52520413F00900114 /* SceneDelegate.swift in Sources */,
 				D410A53D252071B400900114 /* UIButton+type.swift in Sources */,
+				D47E5821263FEE1C006B5A07 /* ArticleRequest.swift in Sources */,
 				D42E88DD252226A800403BE5 /* UIImageView+type.swift in Sources */,
 				D4745BFD2638423900C0CDDC /* SecretConstants.swift in Sources */,
 				D42E88D72522233F00403BE5 /* ArticleTableViewCell.swift in Sources */,
+				D47E5826263FEED7006B5A07 /* HttpMethod.swift in Sources */,
 				D410A5422520734D00900114 /* UIAlertController+type.swift in Sources */,
 				D42E88D1252221D900403BE5 /* MyArticleViewController.swift in Sources */,
+				D47E5833263FFB84006B5A07 /* ArticleClient.swift in Sources */,
 				D48F022C25207C5E00B2DE40 /* UITextView+type.swift in Sources */,
 				D410A53825206FCD00900114 /* UITextField+type.swift in Sources */,
 			);
