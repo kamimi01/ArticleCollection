@@ -14,6 +14,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var appTitleLatterLabel: UILabel!
     
+    // シングルトンのインスタンスを作成する
+    let articleStateManager: ArticleStateManager = ArticleStateManager.shared
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -73,7 +76,9 @@ class LoginViewController: UIViewController {
                         "createdDate": article.createdDate
                     ])
                 }
-                print(articleLists)
+                // 共有オブジェクトに格納する
+                self.articleStateManager.articleList = articleLists
+                print(self.articleStateManager.articleList)
             case let .failure(error):
                 print(error)
             }
