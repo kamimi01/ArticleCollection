@@ -81,10 +81,12 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         
         cell.siteNameLabel.text = articleMetaInfo.siteName
         cell.goodNameLabel.text = articleMetaInfo.likeName
-        
         cell.siteNameLabel.customizeLabel(.tag, article["service"] as? String ?? "")
         cell.articleNameLabel.text = article["title"] as? String
-        cell.createdDateLabel.text = article["createdDate"] as? String
+
+        let createdDateString = article["createdDate"] as? String ?? "2020-01-01T20:32:58+09:00"
+        
+        cell.createdDateLabel.text = DateFormat.formatDateToString(.full, createdDateString) + "に"
 
         cell.goodNumLabel.text = String(article["likesCount"] as? Int ?? 100)
         cell.iconImageView.customizeImage(.urlShow, "", article["profileImageUrl"] as? String ?? "")
