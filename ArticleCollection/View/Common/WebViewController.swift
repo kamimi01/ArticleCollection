@@ -15,6 +15,9 @@ class WebViewController: UIViewController {
     @IBOutlet weak var refreshItem: UIBarButtonItem!
     @IBOutlet weak var closeItem: UIBarButtonItem!
     
+    // シングルトンのインスタンスを作成する
+    let articleStateManager: ArticleStateManager = ArticleStateManager.shared
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +25,10 @@ class WebViewController: UIViewController {
     }
     
     private func setup() {
-        if let url = NSURL(string: "https://qiita.com/kamimi01/items/353ed9502ed62cbe9864") {
+        
+        let articleUrl = articleStateManager.articleUrl
+
+        if let url = NSURL(string: articleUrl) {
                     let request = NSURLRequest(url: url as URL)
                     webView.load(request as URLRequest)
         }
