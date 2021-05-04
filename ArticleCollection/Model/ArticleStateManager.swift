@@ -19,7 +19,7 @@ final public class ArticleStateManager {
     var favoriteStatusListForFavorites: [Bool] = []
     
     // ホーム画面のセルタップかどうかを判定する
-    var isHomeScreen = false
+    var isHomeScreen = true
     
     // 記事情報
     var articleList: [[String: Any]] = []

@@ -29,6 +29,13 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         setup()
     }
     
+    // 画面再表示
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        articleStateManager.isHomeScreen = true
+    }
+    
     private func setup() {
         // ナビゲーションバーの設定
         let navBar = self.navigationController?.navigationBar
