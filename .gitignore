@@ -1,4 +1,5 @@
 ./ArticleCollection/SecretConstants.swift
+./ArticleCollection/GoogleService-Info.plist
 Pods/*
 xcuserdata
 *.xcappdata/*
