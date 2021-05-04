@@ -44,6 +44,8 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.backgroundColor = UIColor.white
 
         articleStateManager.favoriteStatusList = [Bool](repeating: false, count: articleInfo.count)
+        
+        articleStateManager.isHomeScreen = true
     }
     
     private func tableViewSetUp() {

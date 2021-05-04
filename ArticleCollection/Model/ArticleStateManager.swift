@@ -15,6 +15,12 @@ final public class ArticleStateManager {
     // お気に入りかどうかのフラグリスト
     var favoriteStatusList: [Bool] = []
     
+    // お気に入りかどうかのフラグリスト（お気に入りタブ用）
+    var favoriteStatusListForFavorites: [Bool] = []
+    
+    // ホーム画面のセルタップかどうかを判定する
+    var isHomeScreen = false
+    
     // 記事情報
     var articleList: [[String: Any]] = []
     

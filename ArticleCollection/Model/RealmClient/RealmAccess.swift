@@ -69,4 +69,28 @@ class RealmAccess {
         }
         return false
     }
+    
+    func readAll() -> [[String: Any]] {
+        var articles: [[String: Any]] = []
+        
+        // Realmから全記事情報を取得する
+        let articlesRealmObject = realm.objects(ArticleForRealm.self).sorted(byKeyPath: "createdAt", ascending: false)
+        
+        for article in articlesRealmObject {
+            // 記事の情報を格納
+            articles.append([
+                "service": article.service,
+                "title": article.title,
+                "userName": article.userName,
+                "likesCount": article.likesCount,
+                "profileImageUrl": article.profileImageUrl,
+                "url": article.url,
+                "createdDate": article.createdDate
+            ])
+        }
+        
+        print(articles)
+        
+        return articles
+    }
 }

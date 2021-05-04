@@ -74,19 +74,37 @@ class ArticleTableViewCell: UITableViewCell {
 
     // ImageViewタップ時のイベント
     @objc func imageViewTapped(sender:UITapGestureRecognizer){
-        // お気に入り状態の切り替え
-        print("タップされたのは：", index)
+        let isHomeScreen = articleStateManager.isHomeScreen
         
-        var favoriteStatusListForMyArticleCell = articleStateManager.favoriteStatusList
+        if isHomeScreen {
+            // ホーム画面の処理
+            // お気に入り状態の切り替え
+            print("タップされたのは：", index)
+            
+            var favoriteStatusListForMyArticleCell = articleStateManager.favoriteStatusList
 
-        favoriteStatusListForMyArticleCell[index[1]] = !favoriteStatusListForMyArticleCell[index[1]]
-        
-        print("タップ後：", favoriteStatusListForMyArticleCell[index[1]])
-        
-        // 共有オブジェクトに保存
-        articleStateManager.favoriteStatusList[index[1]] = favoriteStatusListForMyArticleCell[index[1]]
-        print(favoriteStatusListForMyArticleCell)
-        // セルの更新をviewcontrollerに移譲する
+            favoriteStatusListForMyArticleCell[index[1]] = !favoriteStatusListForMyArticleCell[index[1]]
+            
+            print("タップ後：", favoriteStatusListForMyArticleCell[index[1]])
+            
+            // 共有オブジェクトに保存
+            articleStateManager.favoriteStatusList[index[1]] = favoriteStatusListForMyArticleCell[index[1]]
+            print(favoriteStatusListForMyArticleCell)
+        } else {
+            // お気に入り画面の処理
+            // お気に入り状態の切り替え
+            print("タップされたのは：", index)
+            
+            var favoriteStatusListForMyArticleCell = articleStateManager.favoriteStatusListForFavorites
+
+            favoriteStatusListForMyArticleCell[index[1]] = !favoriteStatusListForMyArticleCell[index[1]]
+            
+            print("タップ後：", favoriteStatusListForMyArticleCell[index[1]])
+            
+            // 共有オブジェクトに保存
+            articleStateManager.favoriteStatusListForFavorites[index[1]] = favoriteStatusListForMyArticleCell[index[1]]
+            print(favoriteStatusListForMyArticleCell)
+        }
         delegte?.reloadCell(index: index)
     }
     
