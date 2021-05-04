@@ -14,6 +14,9 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // シングルトンのインスタンスを作成する
     let articleStateManager: ArticleStateManager = ArticleStateManager.shared
+    
+    // Realmアクセス用のインスタンスを作成する
+    let realmAccess = RealmAccess()
 
     // 記事情報を取得する
     var articleInfo = ArticleStateManager.shared.articleList
@@ -41,26 +44,6 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.backgroundColor = UIColor.white
 
         articleStateManager.favoriteStatusList = [Bool](repeating: false, count: articleInfo.count)
-
-//        let realm = try! Realm()
-//
-//        let article = ArticleForRealm()
-//
-//        article.articleId = NSUUID().uuidString
-//        article.service = "qiita"
-//        article.title = "title"
-//        article.userName = "hogehoge"
-//        article.likesCount = 100
-//        article.profileImageUrl = "https://hogehoge"
-//        article.url = "https://fugafuga"
-//        article.createdDate = "2020-01-01"
-//        article.createdAt = Date()
-//
-//        try! realm.write() {
-//            realm.add(article)
-//        }
-//
-//        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
     private func tableViewSetUp() {
@@ -123,17 +106,28 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
 //            cell.animationView.isHidden = false
 //            cell.animationView.play()
 //            cell.favoriteImageView.isHidden = true
-            cell.favoriteImageView.image = UIImage(named: "heartActive")
+//            cell.favoriteImageView.image = UIImage(named: "heartActive")
             
             // Realmにデータを保存する
+            let result = realmAccess.save(article)
             
+            if result {
+                cell.favoriteImageView.image = UIImage(named: "heartActive")
+            } else {
+                cell.favoriteImageView.image = UIImage(named: "heartInactive")
+            }
         } else {
             // 灰色画像を表示する
 //            cell.animationView.isHidden = true
 //            cell.favoriteImageView.isHidden = false
-            cell.favoriteImageView.image = UIImage(named: "heartInactive")
+//            cell.favoriteImageView.image = UIImage(named: "heartInactive")
             
             // Realmからデータを削除する
+            let result = realmAccess.removeByArticleInfo(article)
+            
+            if result {
+                cell.favoriteImageView.image = UIImage(named: "heartInactive")
+            }
         }
 
         cell.selectionStyle = .none

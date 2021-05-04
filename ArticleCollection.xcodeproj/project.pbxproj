@@ -54,6 +54,7 @@
 		D4C53C47263AE8FA00B488D0 /* UILabel+type.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C53C46263AE8FA00B488D0 /* UILabel+type.swift */; };
 		D4F2CBCD263BE7C00023E5B2 /* ArticleStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F2CBCC263BE7C00023E5B2 /* ArticleStateManager.swift */; };
 		D4F890642524B05D0000D916 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F890632524B05D0000D916 /* Article.swift */; };
+		D4FF09E22640FE74001D0A8F /* RealmAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FF09E12640FE74001D0A8F /* RealmAccess.swift */; };
 		DF4AC43570C4755F4CEFDF9A /* Pods_ArticleCollectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A0C3C07C5111704CDBEAEE /* Pods_ArticleCollectionTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +135,7 @@
 		D4C53C46263AE8FA00B488D0 /* UILabel+type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+type.swift"; sourceTree = "<group>"; };
 		D4F2CBCC263BE7C00023E5B2 /* ArticleStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleStateManager.swift; sourceTree = "<group>"; };
 		D4F890632524B05D0000D916 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		D4FF09E12640FE74001D0A8F /* RealmAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmAccess.swift; sourceTree = "<group>"; };
 		EE94D730C3353949F00AF271 /* Pods-ArticleCollectionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArticleCollectionTests.release.xcconfig"; path = "Target Support Files/Pods-ArticleCollectionTests/Pods-ArticleCollectionTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,7 +215,6 @@
 		D410A4E12520413F00900114 /* ArticleCollection */ = {
 			isa = PBXGroup;
 			children = (
-				D4745C142638503100C0CDDC /* ApiClient */,
 				D4745C042638475100C0CDDC /* Resource */,
 				D410A518252043D000900114 /* View */,
 				D410A517252043C700900114 /* Utility */,
@@ -265,6 +266,8 @@
 		D410A516252043BF00900114 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D4FF09E02640FE48001D0A8F /* RealmClient */,
+				D4745C142638503100C0CDDC /* ApiClient */,
 				D4F2CBCC263BE7C00023E5B2 /* ArticleStateManager.swift */,
 			);
 			path = Model;
@@ -389,6 +392,14 @@
 				D406B0E92520CF33000F0A76 /* AppSettingTableViewCell.xib */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		D4FF09E02640FE48001D0A8F /* RealmClient */ = {
+			isa = PBXGroup;
+			children = (
+				D4FF09E12640FE74001D0A8F /* RealmAccess.swift */,
+			);
+			path = RealmClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -656,6 +667,7 @@
 				D485109825239D0C007D6856 /* UIView+backgroundImage.swift in Sources */,
 				D410A4E32520413F00900114 /* AppDelegate.swift in Sources */,
 				D47E584E26404E78006B5A07 /* DateFormat.swift in Sources */,
+				D4FF09E22640FE74001D0A8F /* RealmAccess.swift in Sources */,
 				D410A4E52520413F00900114 /* SceneDelegate.swift in Sources */,
 				D410A53D252071B400900114 /* UIButton+type.swift in Sources */,
 				D47E5821263FEE1C006B5A07 /* ArticleRequest.swift in Sources */,

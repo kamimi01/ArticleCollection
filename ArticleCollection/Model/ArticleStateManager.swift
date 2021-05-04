@@ -18,6 +18,9 @@ final public class ArticleStateManager {
     // 記事情報
     var articleList: [[String: Any]] = []
     
+    // お気に入りの記事情報
+    var favoriteArticleList: [[String: Any]] = []
+    
     // 記事のURL
     var articleUrl: String = ""
 }
