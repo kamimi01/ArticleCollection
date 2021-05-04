@@ -10,7 +10,8 @@ import UIKit
 class FavoriteArticleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ArticleCellDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var noArticlesView: NoArticles!
+
     // シングルトンのインスタンスを作成する
     let articleStateManager: ArticleStateManager = ArticleStateManager.shared
     
@@ -45,13 +46,21 @@ class FavoriteArticleViewController: UIViewController, UITableViewDelegate, UITa
             .foregroundColor: UIColor.white
         ]
         
+        // Realm内のデータを取得する
+        let favoriteArticleLists = realmAccess.readAll()
+        
+        if favoriteArticleLists.isEmpty {
+            // Realm内のデータが空の場合は記事がない画面を表示
+            noArticlesView.isHidden = false
+            noArticlesView.animationView.play()
+            return
+        }
+        noArticlesView.isHidden = true
+        
         // tableViewの設定
         tableViewSetUp()
 
         tableView.backgroundColor = UIColor.white
-        
-        // Realm内のデータを取得する
-        let favoriteArticleLists = realmAccess.readAll()
 
         // 共有オブジェクトに格納
         articleStateManager.favoriteArticleList = favoriteArticleLists

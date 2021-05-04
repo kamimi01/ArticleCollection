@@ -31,8 +31,11 @@
 		D42E88D72522233F00403BE5 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E88D52522233F00403BE5 /* ArticleTableViewCell.swift */; };
 		D42E88D82522233F00403BE5 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D42E88D62522233F00403BE5 /* ArticleTableViewCell.xib */; };
 		D42E88DD252226A800403BE5 /* UIImageView+type.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E88DC252226A800403BE5 /* UIImageView+type.swift */; };
+		D469AA7726419DF700D20601 /* NoArticles.xib in Resources */ = {isa = PBXBuildFile; fileRef = D469AA7626419DF700D20601 /* NoArticles.xib */; };
+		D469AA7C26419ED300D20601 /* NoArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D469AA7B26419ED300D20601 /* NoArticles.swift */; };
 		D4745BFD2638423900C0CDDC /* SecretConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4745BFC2638423900C0CDDC /* SecretConstants.swift */; };
 		D4745C0D263848CC00C0CDDC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4745C0C263848CC00C0CDDC /* Constants.swift */; };
+		D47573A02641A753002B0523 /* emptyState.json in Resources */ = {isa = PBXBuildFile; fileRef = D475739F2641A753002B0523 /* emptyState.json */; };
 		D47E5810263FEB90006B5A07 /* ArticleClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47E580F263FEB90006B5A07 /* ArticleClientError.swift */; };
 		D47E5818263FEC86006B5A07 /* ArticleApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47E5817263FEC86006B5A07 /* ArticleApiError.swift */; };
 		D47E5821263FEE1C006B5A07 /* ArticleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47E5820263FEE1C006B5A07 /* ArticleRequest.swift */; };
@@ -113,8 +116,11 @@
 		D42E88D52522233F00403BE5 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		D42E88D62522233F00403BE5 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 		D42E88DC252226A800403BE5 /* UIImageView+type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+type.swift"; sourceTree = "<group>"; };
+		D469AA7626419DF700D20601 /* NoArticles.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoArticles.xib; sourceTree = "<group>"; };
+		D469AA7B26419ED300D20601 /* NoArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoArticles.swift; sourceTree = "<group>"; };
 		D4745BFC2638423900C0CDDC /* SecretConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretConstants.swift; sourceTree = "<group>"; };
 		D4745C0C263848CC00C0CDDC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D475739F2641A753002B0523 /* emptyState.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emptyState.json; sourceTree = "<group>"; };
 		D47E580F263FEB90006B5A07 /* ArticleClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleClientError.swift; sourceTree = "<group>"; };
 		D47E5817263FEC86006B5A07 /* ArticleApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleApiError.swift; sourceTree = "<group>"; };
 		D47E5820263FEE1C006B5A07 /* ArticleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRequest.swift; sourceTree = "<group>"; };
@@ -310,6 +316,7 @@
 		D4745C042638475100C0CDDC /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				D475739F2641A753002B0523 /* emptyState.json */,
 				D410A4EB2520413F00900114 /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -364,6 +371,8 @@
 				D42E88D62522233F00403BE5 /* ArticleTableViewCell.xib */,
 				D404FF9E25238017008387B5 /* WebView.storyboard */,
 				D404FFA3252380C4008387B5 /* WebViewController.swift */,
+				D469AA7626419DF700D20601 /* NoArticles.xib */,
+				D469AA7B26419ED300D20601 /* NoArticles.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -523,9 +532,11 @@
 				D404FF9F25238017008387B5 /* WebView.storyboard in Resources */,
 				D410A4EF2520413F00900114 /* LaunchScreen.storyboard in Resources */,
 				D406B0EB2520CF33000F0A76 /* AppSettingTableViewCell.xib in Resources */,
+				D47573A02641A753002B0523 /* emptyState.json in Resources */,
 				D410A4EC2520413F00900114 /* Assets.xcassets in Resources */,
 				D410A4EA2520413F00900114 /* Main.storyboard in Resources */,
 				D48F024925208A8000B2DE40 /* Setting.storyboard in Resources */,
+				D469AA7726419DF700D20601 /* NoArticles.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,6 +712,7 @@
 				D410A5422520734D00900114 /* UIAlertController+type.swift in Sources */,
 				D42E88D1252221D900403BE5 /* MyArticleViewController.swift in Sources */,
 				D47E5833263FFB84006B5A07 /* ArticleClient.swift in Sources */,
+				D469AA7C26419ED300D20601 /* NoArticles.swift in Sources */,
 				D48F022C25207C5E00B2DE40 /* UITextView+type.swift in Sources */,
 				D410A53825206FCD00900114 /* UITextField+type.swift in Sources */,
 			);

@@ -12,6 +12,8 @@ target 'ArticleCollection' do
   # add pods for any other desired Firebase products
   # https://firebase.google.com/docs/ios/setup#available-pods
   pod 'Firebase/Crashlytics'
+  # Animation
+  pod 'lottie-ios'
 
   target 'ArticleCollectionTests' do
     inherit! :search_paths

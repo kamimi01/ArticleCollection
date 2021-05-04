@@ -30,12 +30,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lR8-LP-auo" customClass="NoArticles" customModule="ArticleCollection" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1zX-gz-amv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="CYY-0g-cdw" firstAttribute="bottom" secondItem="1zX-gz-amv" secondAttribute="bottom" id="5kj-St-d0M"/>
+                            <constraint firstItem="lR8-LP-auo" firstAttribute="trailing" secondItem="1zX-gz-amv" secondAttribute="trailing" id="ExP-Pg-WrQ"/>
+                            <constraint firstItem="lR8-LP-auo" firstAttribute="bottom" secondItem="1zX-gz-amv" secondAttribute="bottom" id="FGS-Ve-gb2"/>
+                            <constraint firstItem="lR8-LP-auo" firstAttribute="top" secondItem="1zX-gz-amv" secondAttribute="top" id="Lyk-cd-2Te"/>
                             <constraint firstItem="CYY-0g-cdw" firstAttribute="leading" secondItem="1zX-gz-amv" secondAttribute="leading" id="TCv-xY-1WP"/>
+                            <constraint firstItem="lR8-LP-auo" firstAttribute="leading" secondItem="1zX-gz-amv" secondAttribute="leading" id="WWw-O5-nHd"/>
                             <constraint firstItem="CYY-0g-cdw" firstAttribute="top" secondItem="1zX-gz-amv" secondAttribute="top" id="dJR-A8-wug"/>
                             <constraint firstItem="CYY-0g-cdw" firstAttribute="trailing" secondItem="1zX-gz-amv" secondAttribute="trailing" id="u8Q-Lf-reg"/>
                         </constraints>
@@ -43,6 +51,7 @@
                     <navigationItem key="navigationItem" title="お気に入り" id="sLg-wO-RAB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="noArticlesView" destination="lR8-LP-auo" id="ENo-ID-2zE"/>
                         <outlet property="tableView" destination="CYY-0g-cdw" id="pW9-UT-shj"/>
                         <segue destination="VLQ-Iu-5d4" kind="show" id="gnP-Qz-FiE"/>
                     </connections>
