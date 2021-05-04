@@ -21,9 +21,12 @@ extension UIImageView {
             self.image = UIImage(named: imageName)
         case .urlShow:
             self.layer.cornerRadius = self.frame.height / 2
-            let url = URL(string: imageUrl)
+            guard let url = URL(string: imageUrl) else {
+                self.image = UIImage(named: "noUserImage")
+                return
+            }
             do {
-                let data = try Data(contentsOf: url!)
+                let data = try Data(contentsOf: url)
                 self.image = UIImage(data: data)
                 return
             } catch let err {
