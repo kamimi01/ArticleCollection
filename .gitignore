@@ -1,3 +1,4 @@
 ./ArticleCollection/SecretConstants.swift
 Pods/*
 xcuserdata
+*.xcappdata/*

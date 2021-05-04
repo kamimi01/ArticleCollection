@@ -16,6 +16,8 @@ class LoginViewController: UIViewController {
     
     // シングルトンのインスタンスを作成する
     let articleStateManager: ArticleStateManager = ArticleStateManager.shared
+    
+    var result = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +52,13 @@ class LoginViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    private func getArticles(userName: String) {
+    // API通信でエラーが起きた場合はアラート画面を表示する
+    private func showAlertForApiError() {
+        let alert = UIAlertController.singleBtnAlertWithTitle(title: "存在しないユーザー名です。\n正しいユーザー名を入力してください。", message: "", okActionTitle: "OK", completion: {})
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func getArticles(userName: String) -> Bool {
         // APIクライアントの生成
         let client = ArticleClient()
         
@@ -81,14 +89,18 @@ class LoginViewController: UIViewController {
                 // 共有オブジェクトに格納する
                 self.articleStateManager.articleList = articleLists
                 print("取得できた：", self.articleStateManager.articleList)
+                self.result = true
             case let .failure(error):
                 print(error)
+                self.result = false
             }
             
             semaphore.signal()
         }
         // signalが呼ばれるまで待機する
         semaphore.wait()
+        
+        return result
     }
     
     // はじめるボタンタップ時の挙動
@@ -105,7 +117,12 @@ class LoginViewController: UIViewController {
         UserDefaults.standard.set(userName, forKey: "userName")
         
         // APIを呼び出す
-        getArticles(userName: userName)
+        let getArticlesApiResult = getArticles(userName: userName)
+        
+        if !getArticlesApiResult {
+            showAlertForApiError()
+            return
+        }
         
         // Tabbar画面に遷移
         Transition.transitionDestination(self, "TabBar", .fullScreen)
