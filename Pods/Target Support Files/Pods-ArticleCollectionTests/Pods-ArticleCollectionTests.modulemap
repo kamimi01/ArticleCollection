@@ -1,6 +1,0 @@
-framework module Pods_ArticleCollectionTests {
-  umbrella header "Pods-ArticleCollectionTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
