@@ -51,6 +51,7 @@
 		D48F024925208A8000B2DE40 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D48F024825208A8000B2DE40 /* Setting.storyboard */; };
 		D48F024E25208E0400B2DE40 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F024D25208E0400B2DE40 /* SettingViewController.swift */; };
 		D48F025B2520913E00B2DE40 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F025A2520913E00B2DE40 /* TabBarViewController.swift */; };
+		D49C7BAB26417F8000CD3972 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D49C7BAA26417F8000CD3972 /* GoogleService-Info.plist */; };
 		D4C53C47263AE8FA00B488D0 /* UILabel+type.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C53C46263AE8FA00B488D0 /* UILabel+type.swift */; };
 		D4F2CBCD263BE7C00023E5B2 /* ArticleStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F2CBCC263BE7C00023E5B2 /* ArticleStateManager.swift */; };
 		D4F890642524B05D0000D916 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F890632524B05D0000D916 /* Article.swift */; };
@@ -132,6 +133,7 @@
 		D48F024825208A8000B2DE40 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		D48F024D25208E0400B2DE40 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		D48F025A2520913E00B2DE40 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		D49C7BAA26417F8000CD3972 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D4C53C46263AE8FA00B488D0 /* UILabel+type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+type.swift"; sourceTree = "<group>"; };
 		D4F2CBCC263BE7C00023E5B2 /* ArticleStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleStateManager.swift; sourceTree = "<group>"; };
 		D4F890632524B05D0000D916 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		D410A4E12520413F00900114 /* ArticleCollection */ = {
 			isa = PBXGroup;
 			children = (
+				D49C7BAA26417F8000CD3972 /* GoogleService-Info.plist */,
 				D4745C042638475100C0CDDC /* Resource */,
 				D410A518252043D000900114 /* View */,
 				D410A517252043C700900114 /* Utility */,
@@ -414,6 +417,7 @@
 				D410A4DC2520413F00900114 /* Frameworks */,
 				D410A4DD2520413F00900114 /* Resources */,
 				83BF836EE01C37D0E7F26104 /* [CP] Embed Pods Frameworks */,
+				D48D623426418183009C0983 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -515,6 +519,7 @@
 				D48F02322520807200B2DE40 /* TabBar.storyboard in Resources */,
 				D48F023D25208A0800B2DE40 /* MyArticle.storyboard in Resources */,
 				D410A51E2520487800900114 /* Login.storyboard in Resources */,
+				D49C7BAB26417F8000CD3972 /* GoogleService-Info.plist in Resources */,
 				D404FF9F25238017008387B5 /* WebView.storyboard in Resources */,
 				D410A4EF2520413F00900114 /* LaunchScreen.storyboard in Resources */,
 				D406B0EB2520CF33000F0A76 /* AppSettingTableViewCell.xib in Resources */,
@@ -640,6 +645,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ArticleCollection-ArticleCollectionUITests/Pods-ArticleCollection-ArticleCollectionUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D48D623426418183009C0983 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -858,6 +880,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 95L82PNXV3;
 				INFOPLIST_FILE = ArticleCollection/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -7,6 +7,11 @@ target 'ArticleCollection' do
 
   # Pods for ArticleCollection
   pod 'RealmSwift'
+  # add the Firebase pod for Google Analytics
+  pod 'Firebase/Analytics'
+  # add pods for any other desired Firebase products
+  # https://firebase.google.com/docs/ios/setup#available-pods
+  pod 'Firebase/Crashlytics'
 
   target 'ArticleCollectionTests' do
     inherit! :search_paths
