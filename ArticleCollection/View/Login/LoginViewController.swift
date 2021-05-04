@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var appTitleLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -37,6 +37,9 @@ class LoginViewController: UIViewController {
         appTitleLabel.textColor = UIColor.white
         appTitleLatterLabel.textColor = UIColor.white
         
+        // キーボードのリターンキーを押下した時の設定
+        usernameTextField.delegate = self
+
         // はじめるボタンの設定
         nextButton.customizeButton(.mainActive, "はじめる")
     }
@@ -103,8 +106,8 @@ class LoginViewController: UIViewController {
         return result
     }
     
-    // はじめるボタンタップ時の挙動
-    @IBAction func nextButtionTap(_ sender: Any) {
+    // キーボードのリターンまたは始めるボタンタップ時の挙動
+    private func startApp() {
         if usernameTextField.text!.isEmpty {
             showAlert()
             return
@@ -126,5 +129,16 @@ class LoginViewController: UIViewController {
         
         // Tabbar画面に遷移
         Transition.transitionDestination(self, "TabBar", .fullScreen)
+    }
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        startApp()
+        return true
+    }
+    
+    // はじめるボタンタップ時の挙動
+    @IBAction func nextButtionTap(_ sender: Any) {
+        startApp()
     }
 }
