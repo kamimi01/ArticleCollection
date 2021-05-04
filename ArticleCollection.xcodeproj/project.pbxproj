@@ -307,7 +307,6 @@
 		D4745C042638475100C0CDDC /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				D4F2CBC7263BC5E00023E5B2 /* heartAnimation.json */,
 				D410A4EB2520413F00900114 /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -518,7 +517,6 @@
 				D410A51E2520487800900114 /* Login.storyboard in Resources */,
 				D404FF9F25238017008387B5 /* WebView.storyboard in Resources */,
 				D410A4EF2520413F00900114 /* LaunchScreen.storyboard in Resources */,
-				D4F2CBC8263BC5E00023E5B2 /* heartAnimation.json in Resources */,
 				D406B0EB2520CF33000F0A76 /* AppSettingTableViewCell.xib in Resources */,
 				D410A4EC2520413F00900114 /* Assets.xcassets in Resources */,
 				D410A4EA2520413F00900114 /* Main.storyboard in Resources */,
@@ -866,6 +864,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.kamimi01.ArticleCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -886,6 +885,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.kamimi01.ArticleCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
