@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MyArticleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ArticleCellDelegate {
 
@@ -40,6 +41,26 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.backgroundColor = UIColor.white
 
         articleStateManager.favoriteStatusList = [Bool](repeating: false, count: articleInfo.count)
+
+//        let realm = try! Realm()
+//
+//        let article = ArticleForRealm()
+//
+//        article.articleId = NSUUID().uuidString
+//        article.service = "qiita"
+//        article.title = "title"
+//        article.userName = "hogehoge"
+//        article.likesCount = 100
+//        article.profileImageUrl = "https://hogehoge"
+//        article.url = "https://fugafuga"
+//        article.createdDate = "2020-01-01"
+//        article.createdAt = Date()
+//
+//        try! realm.write() {
+//            realm.add(article)
+//        }
+//
+//        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
     private func tableViewSetUp() {
@@ -103,11 +124,16 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
 //            cell.animationView.play()
 //            cell.favoriteImageView.isHidden = true
             cell.favoriteImageView.image = UIImage(named: "heartActive")
+            
+            // Realmにデータを保存する
+            
         } else {
             // 灰色画像を表示する
 //            cell.animationView.isHidden = true
 //            cell.favoriteImageView.isHidden = false
             cell.favoriteImageView.image = UIImage(named: "heartInactive")
+            
+            // Realmからデータを削除する
         }
 
         cell.selectionStyle = .none
