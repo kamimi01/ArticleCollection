@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L2O-5x-Mmo">
-                                <rect key="frame" x="0.0" y="113" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="113" width="414" height="205"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="Su7-hY-oYM"/>
+                                    <constraint firstAttribute="height" constant="205" id="Su7-hY-oYM"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Ola-eq-2dr" customClass="AppSettingTableViewCell" customModule="ArticleCollection" customModuleProvider="target">
@@ -34,50 +34,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ohy-58-A2P">
-                                <rect key="frame" x="0.0" y="216" width="414" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="バージョン" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEO-Vi-t4R">
-                                        <rect key="frame" x="17" y="16.5" width="84" height="17"/>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAS-Na-t5v">
-                                        <rect key="frame" x="322" y="14.5" width="55" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="aEO-Vi-t4R" firstAttribute="leading" secondItem="Ohy-58-A2P" secondAttribute="leading" constant="17" id="8wd-4p-KmG"/>
-                                    <constraint firstItem="aEO-Vi-t4R" firstAttribute="centerY" secondItem="Ohy-58-A2P" secondAttribute="centerY" id="GqQ-zk-urv"/>
-                                    <constraint firstItem="CAS-Na-t5v" firstAttribute="centerY" secondItem="Ohy-58-A2P" secondAttribute="centerY" id="SyL-0A-Sw0"/>
-                                    <constraint firstAttribute="height" constant="50" id="wjq-KL-1Us"/>
-                                    <constraint firstAttribute="trailing" secondItem="CAS-Na-t5v" secondAttribute="trailing" constant="37" id="ztt-4l-9kc"/>
-                                </constraints>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="バージョン 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGU-tO-mDL">
+                                <rect key="frame" x="151" y="763.5" width="112" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a4f-3P-qhU"/>
                         <color key="backgroundColor" red="0.91333609819999995" green="0.88689535860000002" blue="0.84313136339999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="Ohy-58-A2P" firstAttribute="trailing" secondItem="a4f-3P-qhU" secondAttribute="trailing" id="3Bf-4q-Iry"/>
-                            <constraint firstItem="Ohy-58-A2P" firstAttribute="top" secondItem="L2O-5x-Mmo" secondAttribute="bottom" constant="28" id="HkD-rd-trS"/>
+                            <constraint firstItem="a4f-3P-qhU" firstAttribute="bottom" secondItem="hGU-tO-mDL" secondAttribute="bottom" constant="31.5" id="WpP-mL-FLc"/>
+                            <constraint firstItem="hGU-tO-mDL" firstAttribute="centerX" secondItem="ocU-LZ-nw8" secondAttribute="centerX" id="Y3K-bc-xjI"/>
                             <constraint firstItem="L2O-5x-Mmo" firstAttribute="trailing" secondItem="a4f-3P-qhU" secondAttribute="trailing" id="Znz-yD-cdo"/>
                             <constraint firstItem="L2O-5x-Mmo" firstAttribute="top" secondItem="a4f-3P-qhU" secondAttribute="top" constant="25" id="beE-Kc-5Z4"/>
                             <constraint firstItem="L2O-5x-Mmo" firstAttribute="leading" secondItem="a4f-3P-qhU" secondAttribute="leading" id="cbr-hI-xGD"/>
-                            <constraint firstItem="Ohy-58-A2P" firstAttribute="leading" secondItem="a4f-3P-qhU" secondAttribute="leading" id="pcW-5a-8pl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="設定" id="Ieg-yg-Gi3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="L2O-5x-Mmo" id="SOn-gM-jtu"/>
-                        <outlet property="versionLabel" destination="aEO-Vi-t4R" id="UDn-DV-rjg"/>
-                        <outlet property="versionNowLabel" destination="CAS-Na-t5v" id="J1h-fq-hIk"/>
-                        <outlet property="versionView" destination="Ohy-58-A2P" id="zfJ-lr-Pbr"/>
+                        <outlet property="versionLabel" destination="hGU-tO-mDL" id="R2D-lK-NSv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YeY-6c-wMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

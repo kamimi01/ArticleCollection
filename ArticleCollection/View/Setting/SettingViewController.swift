@@ -10,14 +10,15 @@ import UIKit
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var versionView: UIView!
     @IBOutlet weak var versionLabel: UILabel!
-    @IBOutlet weak var versionNowLabel: UILabel!
     
-    let sectionNames = ["アプリ設定"]
-    let appSettingKind = ["ユーザー名"]
+    let sectionNames = ["設定", "その他"]
+    let appSettingKind = [["ユーザー名", "全てのお気に入り登録を解除"], ["このアプリについて"]]
     let cellHeight = 50
     let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+    // ログイン画面で入力したユーザー名の取得
+    let userName = UserDefaults.standard.string(forKey: "userName")
+    let displayContent = [[UserDefaults.standard.string(forKey: "userName"), ""], [""]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,10 +46,8 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableViewSetUp()
         
         // バージョンセルの設定
-        versionView.backgroundColor = UIColor.white
         versionLabel.textColor = UIColor.gray
-        versionNowLabel.textColor = UIColor.gray
-        versionNowLabel.text = version
+        versionLabel.text = "バージョン " + version
     }
     
     private func tableViewSetUp() {
@@ -63,8 +62,12 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.backgroundColor = UIColor.white
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return sectionNames.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return appSettingKind[section].count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -82,11 +85,10 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AppSettingTableViewCell", for: indexPath ) as! AppSettingTableViewCell
         
-        cell.usernameLabel.text = appSettingKind[indexPath.row]
+        cell.usernameLabel.text = appSettingKind[indexPath.section][indexPath.row]
         
-        // ログイン画面で入力したユーザー名の取得
-        let userName = UserDefaults.standard.string(forKey: "userName")
-        cell.usernameNowLabel.text = userName
+        
+        cell.usernameNowLabel.text = displayContent[indexPath.section][indexPath.row]
         
         cell.selectionStyle = .none
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
@@ -95,11 +97,14 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let indexRow = indexPath.row
+        let section = indexPath.section
         
-        switch indexRow {
-        case 0:
+        switch (section, indexRow) {
+        case (0, 0):
             // アラート画面を表示する
             showAlert()
+        case (0, 1):
+            showAlertForDeleteAllFovorites()
         default:
             print("選択された行番号：", indexRow)
         }
@@ -110,6 +115,13 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         let alert = UIAlertController.doubleBtnAlertWithTitle(title: "別のユーザーに\n切り替えますか？", message: "", okActionTitle: "OK", otherBtnTitle: "キャンセル", completion: {
             // ログイン画面に戻る
             Transition.transitionDestination(self, "Login", .fullScreen)
+        })
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func showAlertForDeleteAllFovorites() {
+        let alert = UIAlertController.doubleBtnAlertWithTitle(title: "全てのお気に入り登録を\n削除しますか？", message: "", okActionTitle: "OK", otherBtnTitle: "キャンセル", completion: {
+            // 何かする
         })
         self.present(alert, animated: true, completion: nil)
     }
