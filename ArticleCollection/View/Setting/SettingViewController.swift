@@ -105,8 +105,12 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
             showAlert()
         case (0, 1):
             showAlertForDeleteAllFovorites()
+        case (1, 0):
+            print("遷移する")
+            
+            Transition.transitionPushDestination(self, "AppInfo")
         default:
-            print("選択された行番号：", indexRow)
+            print("選択された行番号：", section, indexRow)
         }
     }
     

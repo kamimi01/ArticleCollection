@@ -70,11 +70,11 @@
             </objects>
             <point key="canvasLocation" x="1706" y="114"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--お気に入り-->
         <scene sceneID="rJ8-cL-HE1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KN2-sf-8rX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="suit.heart.fill" catalog="system" selectedImage="heart.fill" id="Mgj-Ou-7tu"/>
+                    <tabBarItem key="tabBarItem" title="お気に入り" image="suit.heart.fill" catalog="system" selectedImage="heart.fill" id="Mgj-Ou-7tu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wnZ-e6-p6m">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

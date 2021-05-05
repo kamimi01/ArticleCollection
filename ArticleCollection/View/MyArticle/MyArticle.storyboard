@@ -62,11 +62,11 @@
             </objects>
             <point key="canvasLocation" x="1784" y="147"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--ホーム-->
         <scene sceneID="TVv-Yk-JXn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Jk-BS-zTs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="homekit" catalog="system" selectedImage="homekit" id="tYr-WW-SFZ"/>
+                    <tabBarItem key="tabBarItem" title="ホーム" image="homekit" catalog="system" selectedImage="homekit" id="tYr-WW-SFZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="y5F-NI-QQW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

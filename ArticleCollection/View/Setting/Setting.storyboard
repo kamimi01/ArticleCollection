@@ -56,17 +56,28 @@
                     <connections>
                         <outlet property="tableView" destination="L2O-5x-Mmo" id="SOn-gM-jtu"/>
                         <outlet property="versionLabel" destination="hGU-tO-mDL" id="R2D-lK-NSv"/>
+                        <segue destination="iqH-cP-iFA" kind="show" id="EY7-ZA-VqX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YeY-6c-wMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1198.5507246376812" y="77.678571428571431"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--AppInfo-->
+        <scene sceneID="K8h-fn-8md">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AppInfo" id="iqH-cP-iFA" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ho2-6b-eT7"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r5h-HP-UWB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1820" y="78"/>
+        </scene>
+        <!--設定-->
         <scene sceneID="Vhb-Nf-epw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dPJ-yV-BTj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="gearshape" catalog="system" id="VYu-Kh-oJ9"/>
+                    <tabBarItem key="tabBarItem" title="設定" image="gearshape" catalog="system" id="VYu-Kh-oJ9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jsk-8c-jSV">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
