@@ -15,7 +15,6 @@ class NoArticles: UIView {
     @IBOutlet weak var noArticleLabel: UILabel!
     @IBOutlet weak var animationView: AnimationView!
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadNib()
@@ -36,7 +35,7 @@ class NoArticles: UIView {
     override func layoutSubviews() {
         backView.backgroundColor = UIColor.white
         animationView.backgroundColor = UIColor.white
-        noArticleLabel.textColor = UIColor.black
+        noArticleLabel.textColor = UIColor.boldGray
         
         // アニメーション表示
         // 1. Set animation content mode

@@ -53,6 +53,13 @@ class AppInfoViewController: UIViewController, UITextViewDelegate {
     }
     
     private func setup() {
+        // ナビゲーションバーの設定
+        let navBar = self.navigationController?.navigationBar
+        navBar?.titleTextAttributes = [
+            .foregroundColor: UIColor.boldGray,
+            .font: UIFont(name: "HiraMaruProN-W4", size: 20)!
+        ]
+
         privacyPolicyLabel.textColor = UIColor.gray
         licenseLabel.textColor = UIColor.gray
         animationLicenseLabel.textColor = UIColor.gray

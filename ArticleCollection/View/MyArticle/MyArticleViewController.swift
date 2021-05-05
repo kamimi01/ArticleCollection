@@ -53,7 +53,8 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         let navBar = self.navigationController?.navigationBar
         navBar?.barTintColor = UIColor.onion
         navBar?.titleTextAttributes = [
-            .foregroundColor: UIColor.white
+            .foregroundColor: UIColor.white,
+            .font: UIFont(name: "HiraMaruProN-W4", size: 20)!
         ]
         
         // tableViewの設定
