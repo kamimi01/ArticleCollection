@@ -14,6 +14,8 @@ target 'ArticleCollection' do
   pod 'Firebase/Crashlytics'
   # Animation
   pod 'lottie-ios'
+  # Library's License
+  pod 'LicensePlist'
 
   target 'ArticleCollectionTests' do
     inherit! :search_paths
