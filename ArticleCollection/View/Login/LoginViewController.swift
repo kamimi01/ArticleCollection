@@ -7,6 +7,7 @@
 
 import UIKit
 import SVProgressHUD
+import FirebaseAnalytics
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -28,6 +29,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
         // ユーザー名入力欄の設定
         usernameTextField.customizeTextField(.main, " ユーザー名")
+        
+        // イベント収集
+        // 画面名を計測する
+        Analytics.logEvent(
+            AnalyticsEventScreenView,
+            parameters: [
+                AnalyticsParameterScreenName: "StartScreen"
+            ]
+        )
     }
     
     private func setup() {

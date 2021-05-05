@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAnalytics
 
 class AppInfoViewController: UIViewController, UITextViewDelegate {
     
@@ -38,6 +39,17 @@ class AppInfoViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // イベント収集
+        // 画面名を計測する
+        Analytics.logEvent(
+            AnalyticsEventScreenView,
+            parameters: [
+                AnalyticsParameterScreenName: "AppInfoScreen"
+            ]
+        )
     }
     
     private func setup() {
@@ -77,6 +89,13 @@ class AppInfoViewController: UIViewController, UITextViewDelegate {
                       interaction: UITextItemInteraction) -> Bool {
 
         UIApplication.shared.open(URL)
+        
+        // イベント収集
+        var params: [String : Any] = [:]
+        params[AnalyticsParameterItemID] = "privacyPolicyDisplay"
+        params[AnalyticsParameterItemName] = "利用規約表示"
+
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
 
         return false
     }

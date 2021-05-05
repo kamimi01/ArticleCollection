@@ -7,6 +7,7 @@
 
 import UIKit
 import SVProgressHUD
+import FirebaseAnalytics
 
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -24,6 +25,17 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // イベント収集
+        // 画面名を計測する
+        Analytics.logEvent(
+            AnalyticsEventScreenView,
+            parameters: [
+                AnalyticsParameterScreenName: "SettingScreen"
+            ]
+        )
     }
     
     private func setup() {
@@ -126,6 +138,13 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private func showAlertForDeleteAllFovorites() {
         let alert = UIAlertController.doubleBtnAlertWithTitle(title: "全てのお気に入り登録を\n削除しますか？", message: "", okActionTitle: "OK", otherBtnTitle: "キャンセル", completion: {
+            // イベント収集
+            var params: [String : Any] = [:]
+            params[AnalyticsParameterItemID] = "deleteAllFavorites"
+            params[AnalyticsParameterItemName] = "全お気に入り記事削除"
+
+            Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
+
             // 全て削除する
             // Realmアクセス用のインスタンスを作成する
             let realmAccess = RealmAccess()

@@ -7,6 +7,7 @@
 
 import UIKit
 import SVProgressHUD
+import FirebaseAnalytics
 
 class FavoriteArticleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ArticleCellDelegate {
 
@@ -37,6 +38,17 @@ class FavoriteArticleViewController: UIViewController, UITableViewDelegate, UITa
         setup()
  
         tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // イベント収集
+        // 画面名を計測する
+        Analytics.logEvent(
+            AnalyticsEventScreenView,
+            parameters: [
+                AnalyticsParameterScreenName: "FavoriteScreen"
+            ]
+        )
     }
     
     private func setup() {
@@ -144,6 +156,13 @@ class FavoriteArticleViewController: UIViewController, UITableViewDelegate, UITa
 //            } else {
 //                cell.favoriteImageView.image = UIImage(named: "heartInactive")
 //            }
+
+            // イベント収集
+            var params: [String : Any] = [:]
+            params[AnalyticsParameterItemID] = "registerFavorite"
+            params[AnalyticsParameterItemName] = "お気に入りに登録"
+
+            Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
         } else {
             // Realmからデータを削除する
             let result = realmAccess.removeByArticleInfo(article)
@@ -151,6 +170,13 @@ class FavoriteArticleViewController: UIViewController, UITableViewDelegate, UITa
             if result {
                 cell.favoriteImageView.image = UIImage(named: "heartInactive")
             }
+            
+            // イベント収集
+            var params: [String : Any] = [:]
+            params[AnalyticsParameterItemID] = "unregisterFavorite"
+            params[AnalyticsParameterItemName] = "お気に入りから削除"
+
+            Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
         }
 
         cell.selectionStyle = .none
@@ -160,6 +186,13 @@ class FavoriteArticleViewController: UIViewController, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let indexRow = indexPath.row
         let article = articleInfo[indexRow]
+        
+        // イベント収集
+        var params: [String : Any] = [:]
+        params[AnalyticsParameterItemID] = "webViewDisplay"
+        params[AnalyticsParameterItemName] = "WebView表示"
+
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
 
         // 表示するURLを次の画面へ渡す
         articleStateManager.articleUrl = article["url"] as? String ?? ""
