@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -125,7 +126,19 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private func showAlertForDeleteAllFovorites() {
         let alert = UIAlertController.doubleBtnAlertWithTitle(title: "全てのお気に入り登録を\n削除しますか？", message: "", okActionTitle: "OK", otherBtnTitle: "キャンセル", completion: {
-            // 何かする
+            // 全て削除する
+            // Realmアクセス用のインスタンスを作成する
+            let realmAccess = RealmAccess()
+            
+            let result = realmAccess.deleteAll()
+            
+            if result {
+                SVProgressHUD.showSuccess(withStatus: "削除が完了しました")
+                SVProgressHUD.dismiss(withDelay: 1.0)
+                return
+            }
+            SVProgressHUD.showError(withStatus: "削除に失敗しました")
+            SVProgressHUD.dismiss(withDelay: 3)
         })
         self.present(alert, animated: true, completion: nil)
     }

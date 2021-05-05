@@ -93,4 +93,22 @@ class RealmAccess {
         
         return articles
     }
+    
+    func deleteAll() -> Bool {
+        
+        // articleIdとcreatedAt以外の値が一致しているデータを削除対象とする
+        let allArticle = realm.objects(ArticleForRealm.self)
+        
+        print("削除対象は：", allArticle)
+
+        do {
+            try realm.write() {
+                realm.delete(allArticle)
+            }
+            return true
+        } catch {
+            print("Realm Error")
+        }
+        return false
+    }
 }
