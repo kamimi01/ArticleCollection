@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class FavoriteArticleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ArticleCellDelegate {
 
@@ -39,6 +40,10 @@ class FavoriteArticleViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     private func setup() {
+        // HUDを表示する
+        SVProgressHUD.setDefaultMaskType(.clear)
+        SVProgressHUD.show()
+
         // ナビゲーションバーの設定
         let navBar = self.navigationController?.navigationBar
         navBar?.barTintColor = UIColor.onion
@@ -53,6 +58,7 @@ class FavoriteArticleViewController: UIViewController, UITableViewDelegate, UITa
             // Realm内のデータが空の場合は記事がない画面を表示
             noArticlesView.isHidden = false
             noArticlesView.animationView.play()
+            SVProgressHUD.dismiss()
             return
         }
         noArticlesView.isHidden = true
@@ -69,6 +75,8 @@ class FavoriteArticleViewController: UIViewController, UITableViewDelegate, UITa
         articleStateManager.favoriteStatusListForFavorites = [Bool](repeating: true, count: articleInfo.count)
         
         articleStateManager.isHomeScreen = false
+        
+        SVProgressHUD.dismiss()
     }
     
     private func tableViewSetUp() {

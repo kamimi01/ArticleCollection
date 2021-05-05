@@ -98,6 +98,7 @@ PODS:
   - Realm/Headers (10.7.4)
   - RealmSwift (10.7.4):
     - Realm (= 10.7.4)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -105,6 +106,7 @@ DEPENDENCIES:
   - LicensePlist
   - lottie-ios
   - RealmSwift
+  - SVProgressHUD
 
 SPEC REPOS:
   trunk:
@@ -123,6 +125,7 @@ SPEC REPOS:
     - PromisesObjC
     - Realm
     - RealmSwift
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   Firebase: c121feb35e4126c0b355e3313fa9b487d47319fd
@@ -140,7 +143,8 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Realm: f08ce1a85649a41303ecfe1cbd914c62e9e6d710
   RealmSwift: 60ec49d165f23d040ab48811d8dd177e09baf4d3
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: af0097487c20df364a68bc4a56a74c8dc2306ca1
+PODFILE CHECKSUM: 849347898bf7cfe6c0cfe576841b7e42c4ff9442
 
 COCOAPODS: 1.10.1

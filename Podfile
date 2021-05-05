@@ -14,6 +14,8 @@ target 'ArticleCollection' do
   pod 'Firebase/Crashlytics'
   # Animation
   pod 'lottie-ios'
+  # HUD
+  pod 'SVProgressHUD'
   # Library's License
   pod 'LicensePlist'
 

@@ -146,6 +146,18 @@ body: TABLE OF CONTENTS
 1…
 version: 10.7.4
 
+name: SVProgressHUD, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 2.2.5
+
+name: SVProgressHUD, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 2.2.5
+
 add-version-numbers: false
 
 LicensePlist Version: 3.0.7

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -113,6 +114,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        // HUDを表示する
+        SVProgressHUD.setDefaultMaskType(.clear)
+        SVProgressHUD.show()
+        
         // 入力したユーザー名の取得
         let userName = usernameTextField.text ?? ""
         
@@ -124,6 +129,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         if !getArticlesApiResult {
             showAlertForApiError()
+            SVProgressHUD.dismiss()
             return
         }
         
