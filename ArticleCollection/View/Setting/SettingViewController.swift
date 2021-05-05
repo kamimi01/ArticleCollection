@@ -15,7 +15,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var versionLabel: UILabel!
     
     let sectionNames = ["設定", "その他"]
-    let appSettingKind = [["ユーザー名", "全てのお気に入り登録を解除"], ["このアプリについて"]]
+    let appSettingKind = [["ユーザー名", "全てのお気に入り登録を削除"], ["このアプリについて"]]
     let cellHeight = 50
     let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
     // ログイン画面で入力したユーザー名の取得
@@ -137,7 +137,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     private func showAlertForDeleteAllFovorites() {
-        let alert = UIAlertController.doubleBtnAlertWithTitle(title: "全てのお気に入り登録を\n削除しますか？", message: "", okActionTitle: "OK", otherBtnTitle: "キャンセル", completion: {
+        let alert = UIAlertController.doubleBtnAlertWithTitle(title: "全てのお気に入り記事の\n登録情報を削除しますか？", message: "", okActionTitle: "OK", otherBtnTitle: "キャンセル", completion: {
             // イベント収集
             var params: [String : Any] = [:]
             params[AnalyticsParameterItemID] = "deleteAllFavorites"

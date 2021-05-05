@@ -81,6 +81,9 @@ class AppInfoViewController: UIViewController, UITextViewDelegate {
         privacyPolicyTextView.attributedText = attributedString
         privacyPolicyTextView.isSelectable = true
         privacyPolicyTextView.delegate = self
+        
+        // ナビゲーションコントローラーのバーの色
+        self.navigationController?.navigationBar.tintColor = UIColor.gray
     }
     
     func textView(_ textView: UITextView,
