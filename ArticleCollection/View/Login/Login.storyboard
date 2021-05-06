@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7xQ-NA-shK">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="xB2-SI-z7F">
+            <objects>
+                <viewController id="7xQ-NA-shK" customClass="LoginViewController" customModule="ArticleCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Vk-lO-aYO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kiji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRU-J1-ern">
+                                <rect key="frame" x="56" y="204" width="65" height="64"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q7R-yg-ga3">
+                                <rect key="frame" x="55" y="471.5" width="303" height="46"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="0Th-0N-Ykg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="webSearch" returnKeyType="go"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDT-2U-QTN">
+                                <rect key="frame" x="55" y="557.5" width="303" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="uG6-88-7rD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="20"/>
+                                <state key="normal" title="はじめる">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtionTap:" destination="7xQ-NA-shK" eventType="touchUpInside" id="hAk-0o-g9B"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ｺﾚ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWl-D9-xaQ">
+                                <rect key="frame" x="122.5" y="216.5" width="45" height="45"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yNX-Y2-5P3"/>
+                        <color key="backgroundColor" red="0.93903201820000004" green="0.61078369619999995" blue="0.3646451235" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="jDT-2U-QTN" firstAttribute="bottom" secondItem="yNX-Y2-5P3" secondAttribute="bottom" multiplier="0.7" id="0wM-St-SeZ"/>
+                            <constraint firstItem="bWl-D9-xaQ" firstAttribute="leading" secondItem="eRU-J1-ern" secondAttribute="trailing" constant="1.5" id="Blg-xP-8i9"/>
+                            <constraint firstItem="yNX-Y2-5P3" firstAttribute="trailing" secondItem="Q7R-yg-ga3" secondAttribute="trailing" constant="56" id="L4L-tq-aoU"/>
+                            <constraint firstItem="jDT-2U-QTN" firstAttribute="top" secondItem="Q7R-yg-ga3" secondAttribute="bottom" constant="40" id="Rb1-X3-kdy"/>
+                            <constraint firstItem="yNX-Y2-5P3" firstAttribute="trailing" secondItem="jDT-2U-QTN" secondAttribute="trailing" constant="56" id="Sh5-ro-2qT"/>
+                            <constraint firstItem="eRU-J1-ern" firstAttribute="leading" secondItem="yNX-Y2-5P3" secondAttribute="leading" constant="56" id="VUI-c9-mjQ"/>
+                            <constraint firstItem="Q7R-yg-ga3" firstAttribute="leading" secondItem="yNX-Y2-5P3" secondAttribute="leading" constant="55" id="W0N-kV-f7a"/>
+                            <constraint firstItem="jDT-2U-QTN" firstAttribute="leading" secondItem="yNX-Y2-5P3" secondAttribute="leading" constant="55" id="Z6p-KA-Vcc"/>
+                            <constraint firstItem="eRU-J1-ern" firstAttribute="top" secondItem="yNX-Y2-5P3" secondAttribute="top" constant="160" id="a0Y-bR-kMT"/>
+                            <constraint firstItem="bWl-D9-xaQ" firstAttribute="centerY" secondItem="eRU-J1-ern" secondAttribute="centerY" constant="3" id="zi7-xY-1Ta"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="appTitleLabel" destination="eRU-J1-ern" id="bWo-j8-pBn"/>
+                        <outlet property="appTitleLatterLabel" destination="bWl-D9-xaQ" id="MJ1-x9-fZy"/>
+                        <outlet property="nextButton" destination="jDT-2U-QTN" id="NjR-OK-6w9"/>
+                        <outlet property="usernameTextField" destination="Q7R-yg-ga3" id="sLG-J3-gMS"/>
+                        <segue destination="LFG-3L-yxi" kind="show" id="aJJ-zU-JVK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M5J-Ti-59b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="250.72463768115944" y="163.39285714285714"/>
+        </scene>
+        <!--TabBar-->
+        <scene sceneID="III-dz-ZWS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TabBar" id="LFG-3L-yxi" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="kDR-9m-xUP"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pyZ-nZ-ANf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="767" y="163"/>
+        </scene>
+    </scenes>
+</document>

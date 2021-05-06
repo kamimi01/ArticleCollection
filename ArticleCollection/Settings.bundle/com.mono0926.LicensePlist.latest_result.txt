@@ -1,0 +1,163 @@
+name: Firebase, nameSpecified: 
+body: 
+                   …
+version: 7.11.0
+
+name: Firebase, nameSpecified: 
+body: 
+                   …
+version: 7.11.0
+
+name: FirebaseAnalytics, nameSpecified: 
+body: Copyright 2021 Googl…
+version: 7.11.0
+
+name: FirebaseAnalytics, nameSpecified: 
+body: Copyright 2021 Googl…
+version: 7.11.0
+
+name: FirebaseCore, nameSpecified: 
+body: 
+                   …
+version: 7.11.0
+
+name: FirebaseCore, nameSpecified: 
+body: 
+                   …
+version: 7.11.0
+
+name: FirebaseCoreDiagnostics, nameSpecified: 
+body: 
+                   …
+version: 7.11.0
+
+name: FirebaseCoreDiagnostics, nameSpecified: 
+body: 
+                   …
+version: 7.11.0
+
+name: FirebaseCrashlytics, nameSpecified: 
+body: 
+                   …
+version: 7.11.0
+
+name: FirebaseCrashlytics, nameSpecified: 
+body: 
+                   …
+version: 7.11.0
+
+name: FirebaseInstallations, nameSpecified: 
+body: 
+                   …
+version: 7.11.0
+
+name: FirebaseInstallations, nameSpecified: 
+body: 
+                   …
+version: 7.11.0
+
+name: GoogleAppMeasurement, nameSpecified: 
+body: Copyright 2021 Googl…
+version: 7.11.0
+
+name: GoogleAppMeasurement, nameSpecified: 
+body: Copyright 2021 Googl…
+version: 7.11.0
+
+name: GoogleDataTransport, nameSpecified: 
+body: 
+                   …
+version: 8.4.0
+
+name: GoogleDataTransport, nameSpecified: 
+body: 
+                   …
+version: 8.4.0
+
+name: GoogleUtilities, nameSpecified: 
+body: 
+                   …
+version: 7.4.0
+
+name: GoogleUtilities, nameSpecified: 
+body: 
+                   …
+version: 7.4.0
+
+name: LicensePlist, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 3.11.0
+
+name: LicensePlist, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 3.11.0
+
+name: lottie-ios, nameSpecified: 
+body:                     …
+version: 3.2.1
+
+name: lottie-ios, nameSpecified: 
+body:                     …
+version: 3.2.1
+
+name: nanopb, nameSpecified: 
+body: Copyright (c) 2011 P…
+version: 2.30908.0
+
+name: nanopb, nameSpecified: 
+body: Copyright (c) 2011 P…
+version: 2.30908.0
+
+name: PromisesObjC, nameSpecified: 
+body: 
+                   …
+version: 1.2.12
+
+name: PromisesObjC, nameSpecified: 
+body: 
+                   …
+version: 1.2.12
+
+name: Realm, nameSpecified: 
+body: TABLE OF CONTENTS
+
+1…
+version: 10.7.4
+
+name: Realm, nameSpecified: 
+body: TABLE OF CONTENTS
+
+1…
+version: 10.7.4
+
+name: RealmSwift, nameSpecified: 
+body: TABLE OF CONTENTS
+
+1…
+version: 10.7.4
+
+name: RealmSwift, nameSpecified: 
+body: TABLE OF CONTENTS
+
+1…
+version: 10.7.4
+
+name: SVProgressHUD, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 2.2.5
+
+name: SVProgressHUD, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 2.2.5
+
+add-version-numbers: false
+
+LicensePlist Version: 3.0.7
