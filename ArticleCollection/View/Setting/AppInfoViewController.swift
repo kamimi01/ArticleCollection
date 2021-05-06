@@ -34,7 +34,7 @@ class AppInfoViewController: UIViewController, UITextViewDelegate {
         Rizwan Rasool19 on LottieFiles:
         https://lottiefiles.com/16656-empty-state
         """
-    let privacyPolicyUrl = "https://www.google.co.jp/"
+    let privacyPolicyUrl = "https://kamimi01.github.io/ArticleCollection/privacy_policy/ja.html"
     
     override func viewDidLoad() {
         super.viewDidLoad()
