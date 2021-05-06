@@ -57,7 +57,7 @@ class AppInfoViewController: UIViewController, UITextViewDelegate {
         let navBar = self.navigationController?.navigationBar
         navBar?.titleTextAttributes = [
             .foregroundColor: UIColor.boldGray,
-            .font: UIFont(name: "HiraMaruProN-W4", size: 20)!
+            .font: UIFont(name: "HiraMaruProN-W4", size: 17)!
         ]
 
         privacyPolicyLabel.textColor = UIColor.gray
