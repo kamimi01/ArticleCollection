@@ -47,7 +47,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         navBar?.barTintColor = UIColor.mushRoom
         navBar?.titleTextAttributes = [
             .foregroundColor: UIColor.boldGray,
-            .font: UIFont(name: "HiraMaruProN-W4", size: 20)!
+            .font: UIFont(name: "HiraMaruProN-W4", size: 17)!
         ]
         
         // ナビゲーションバーに下線を加える

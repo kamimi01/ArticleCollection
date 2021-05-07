@@ -61,7 +61,7 @@ class FavoriteArticleViewController: UIViewController, UITableViewDelegate, UITa
         navBar?.barTintColor = UIColor.onion
         navBar?.titleTextAttributes = [
             .foregroundColor: UIColor.white,
-            .font: UIFont(name: "HiraMaruProN-W4", size: 20)!
+            .font: UIFont(name: "HiraMaruProN-W4", size: 17)!
         ]
         
         // Realm内のデータを取得する
