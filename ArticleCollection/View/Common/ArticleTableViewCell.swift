@@ -71,15 +71,14 @@ class ArticleTableViewCell: UITableViewCell {
             // お気に入り状態の切り替え
             print("タップされたのは：", index)
             
-            var favoriteStatusListForMyArticleCell = articleStateManager.favoriteStatusList
-
-            favoriteStatusListForMyArticleCell[index[1]] = !favoriteStatusListForMyArticleCell[index[1]]
+            var favoriteStatus = articleStateManager.articleList[index[1]]["isFavorite"] as! Bool
             
-            print("タップ後：", favoriteStatusListForMyArticleCell[index[1]])
+            favoriteStatus = !favoriteStatus
+
+            print("タップ後：", favoriteStatus)
             
             // 共有オブジェクトに保存
-            articleStateManager.favoriteStatusList[index[1]] = favoriteStatusListForMyArticleCell[index[1]]
-            print(favoriteStatusListForMyArticleCell)
+            articleStateManager.articleList[index[1]]["isFavorite"] = favoriteStatus
         } else {
             // お気に入り画面の処理
             // お気に入り状態の切り替え
@@ -98,21 +97,21 @@ class ArticleTableViewCell: UITableViewCell {
         delegte?.reloadCell(index: index)
     }
     
-    @objc func animationViewTapped(sender:UITapGestureRecognizer) {
-        print("アニメーションタップされたよ")
-        print("タップされたのは：", index)
-        
-        var favoriteStatusListForMyArticleCell = articleStateManager.favoriteStatusList
-
-        favoriteStatusListForMyArticleCell[index[1]] = !favoriteStatusListForMyArticleCell[index[1]]
-        
-        print("タップ後：", favoriteStatusListForMyArticleCell[index[1]])
-        
-        // 共有オブジェクトに保存
-        articleStateManager.favoriteStatusList[index[1]] = favoriteStatusListForMyArticleCell[index[1]]
-        print(favoriteStatusListForMyArticleCell)
-        // セルの更新をviewcontrollerに移譲する
-        delegte?.reloadCell(index: index)
-    }
+//    @objc func animationViewTapped(sender:UITapGestureRecognizer) {
+//        print("アニメーションタップされたよ")
+//        print("タップされたのは：", index)
+//
+//        var favoriteStatusListForMyArticleCell = articleStateManager.favoriteStatusList
+//
+//        favoriteStatusListForMyArticleCell[index[1]] = !favoriteStatusListForMyArticleCell[index[1]]
+//
+//        print("タップ後：", favoriteStatusListForMyArticleCell[index[1]])
+//
+//        // 共有オブジェクトに保存
+//        articleStateManager.favoriteStatusList[index[1]] = favoriteStatusListForMyArticleCell[index[1]]
+//        print(favoriteStatusListForMyArticleCell)
+//        // セルの更新をviewcontrollerに移譲する
+//        delegte?.reloadCell(index: index)
+//    }
     
 }

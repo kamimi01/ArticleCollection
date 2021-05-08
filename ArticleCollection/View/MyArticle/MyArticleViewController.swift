@@ -38,6 +38,9 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        // 値を取得し直す
+        articleInfo = ArticleStateManager.shared.articleList
+        
         // イベント収集
         // 画面名を計測する
         Analytics.logEvent(
@@ -59,11 +62,8 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         
         // tableViewの設定
         tableViewSetUp()
-        
-        // 
-        tableView.backgroundColor = UIColor.white
 
-        articleStateManager.favoriteStatusList = [Bool](repeating: false, count: articleInfo.count)
+        tableView.backgroundColor = UIColor.white
         
         articleStateManager.isHomeScreen = true
     }
@@ -89,6 +89,8 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let indexRow = indexPath.row
         
+        // 値を取得し直す
+        articleInfo = ArticleStateManager.shared.articleList
         let article = articleInfo[indexRow]
 
         let serviceName = article["service"] as? String ?? ""
@@ -119,10 +121,10 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
 
         cell.delegte = self
         cell.index = indexPath
-        
-        print("tableviewどこが呼ばれてる？", articleStateManager.favoriteStatusList[indexRow])
-        
-        if articleStateManager.favoriteStatusList[indexRow] {
+
+        let isFavorite = article["isFavorite"] as! Bool
+        print("お気に入り登録状態：", isFavorite)
+        if (isFavorite) {
             print("表示切り替えが呼ばれる")
             
             // Realmにデータを保存する
@@ -179,7 +181,6 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func reloadCell(index: IndexPath) {
-        print("ここでは", articleStateManager.favoriteStatusList)
         tableView.reloadRows(at: [index], with: .none)
     }
 }
