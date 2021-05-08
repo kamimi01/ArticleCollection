@@ -43,22 +43,15 @@ class RealmAccess {
         return false
     }
     
-    func removeByArticleInfo(_ data: [String: Any]) -> Bool {
+    func removeByIdAndService(_ data: [String: Any]) -> Bool {
         print(data)
         
+        let id = data["id"] as! String
         let service = data["service"] as! String
-        let title = data["title"] as! String
-        let userName = data["userName"] as! String
-        let likesCount = data["likesCount"] as! Int
-        let profileImageUrl = data["profileImageUrl"] as! String
-        let url = data["url"] as! String
-        let createdDate = data["createdDate"] as! String
         
-        // articleIdとcreatedAt以外の値が一致しているデータを削除対象とする
         let targetArticle = realm.objects(ArticleForRealm.self)
-            .filter("service == %@ && title == %@ && userName == %@ && likesCount == %@ && profileImageUrl == %@ && url == %@ && createdDate == %@",
-                    service, title, userName, likesCount, profileImageUrl, url, createdDate)
-        
+            .filter("id == %@ && service == %@", id, service)
+
         print("削除対象は：", targetArticle)
 
         do {

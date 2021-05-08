@@ -134,7 +134,7 @@ class ArticleTableViewCell: UITableViewCell {
             Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
         } else {
             // Realmからデータを削除する
-            let result = realmAccess.removeByArticleInfo(targetArticle)
+            let result = realmAccess.removeByIdAndService(targetArticle)
             
             if result {
                 favoriteImageView.image = UIImage(named: "heartInactive")
