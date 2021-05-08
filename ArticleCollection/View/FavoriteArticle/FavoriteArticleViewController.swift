@@ -149,27 +149,8 @@ class FavoriteArticleViewController: UIViewController, UITableViewDelegate, UITa
         if articleStateManager.favoriteStatusListForFavorites[indexRow] {
             print("表示切り替えが呼ばれる")
             cell.favoriteImageView.image = UIImage(named: "heartActive")
-
-            // イベント収集
-            var params: [String : Any] = [:]
-            params[AnalyticsParameterItemID] = "registerFavorite"
-            params[AnalyticsParameterItemName] = "お気に入りに登録"
-
-            Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
         } else {
-            // Realmからデータを削除する
-            let result = realmAccess.removeByArticleInfo(article)
-            
-            if result {
-                cell.favoriteImageView.image = UIImage(named: "heartInactive")
-            }
-            
-            // イベント収集
-            var params: [String : Any] = [:]
-            params[AnalyticsParameterItemID] = "unregisterFavorite"
-            params[AnalyticsParameterItemName] = "お気に入りから削除"
-
-            Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
+            cell.favoriteImageView.image = UIImage(named: "heartInactive")
         }
 
         cell.selectionStyle = .none
