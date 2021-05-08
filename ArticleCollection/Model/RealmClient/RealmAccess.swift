@@ -13,10 +13,12 @@ class RealmAccess {
     
     func save(_ data: [String: Any]) -> Bool {
         let article = ArticleForRealm()
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         print(data)
 
         article.articleId = NSUUID().uuidString
+        article.id = data["id"] as! String
         article.createdAt = Date()
         // FIXME
         article.service = data["service"] as! String
@@ -79,6 +81,7 @@ class RealmAccess {
         for article in articlesRealmObject {
             // 記事の情報を格納
             articles.append([
+                "id": article.id,
                 "service": article.service,
                 "title": article.title,
                 "userName": article.userName,
