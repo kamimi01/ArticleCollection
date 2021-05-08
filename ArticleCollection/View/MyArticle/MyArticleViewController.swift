@@ -34,6 +34,7 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        tableView.reloadData()
         articleStateManager.isHomeScreen = true
     }
     
@@ -125,38 +126,9 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         let isFavorite = article["isFavorite"] as! Bool
         print("お気に入り登録状態：", isFavorite)
         if (isFavorite) {
-            print("表示切り替えが呼ばれる")
-            
-            // Realmにデータを保存する
-            let result = realmAccess.save(article)
-            
-            if result {
-                cell.favoriteImageView.image = UIImage(named: "heartActive")
-            } else {
-                cell.favoriteImageView.image = UIImage(named: "heartInactive")
-            }
-            
-            // イベント収集
-            var params: [String : Any] = [:]
-            params[AnalyticsParameterItemID] = "registerFavorite"
-            params[AnalyticsParameterItemName] = "お気に入りに登録"
-
-            Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
+            cell.favoriteImageView.image = UIImage(named: "heartActive")
         } else {
-            
-            // Realmからデータを削除する
-            let result = realmAccess.removeByArticleInfo(article)
-            
-            if result {
-                cell.favoriteImageView.image = UIImage(named: "heartInactive")
-            }
-            
-            // イベント収集
-            var params: [String : Any] = [:]
-            params[AnalyticsParameterItemID] = "unregisterFavorite"
-            params[AnalyticsParameterItemName] = "お気に入りから削除"
-
-            Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
+            cell.favoriteImageView.image = UIImage(named: "heartInactive")
         }
 
         cell.selectionStyle = .none

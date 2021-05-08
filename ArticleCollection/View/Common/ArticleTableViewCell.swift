@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAnalytics
 
 protocol ArticleCellDelegate {
     func reloadCell(index: IndexPath)
@@ -25,6 +26,9 @@ class ArticleTableViewCell: UITableViewCell {
     
     var delegte: ArticleCellDelegate?
     var index: IndexPath!
+    
+    // Realmアクセス用のインスタンスを作成する
+    let realmAccess = RealmAccess()
     
     // シングルトンのインスタンスを作成する
     let articleStateManager: ArticleStateManager = ArticleStateManager.shared
@@ -64,6 +68,10 @@ class ArticleTableViewCell: UITableViewCell {
 
     // ImageViewタップ時のイベント
     @objc func imageViewTapped(sender:UITapGestureRecognizer){
+        // 記事情報を取得する
+        let articleInfo = ArticleStateManager.shared.articleList
+        let article = articleInfo[index[1]]
+
         let isHomeScreen = articleStateManager.isHomeScreen
         
         if isHomeScreen {
@@ -72,6 +80,40 @@ class ArticleTableViewCell: UITableViewCell {
             print("タップされたのは：", index)
             
             var favoriteStatus = articleStateManager.articleList[index[1]]["isFavorite"] as! Bool
+            
+            // タップ時のお気に入り状態がfalseの場合
+            if !favoriteStatus {
+                // Realmの登録
+                // Realmにデータを保存する
+                let result = realmAccess.save(article)
+                
+                if result {
+                    favoriteImageView.image = UIImage(named: "heartActive")
+                } else {
+                    favoriteImageView.image = UIImage(named: "heartInactive")
+                }
+
+                // イベント収集
+                var params: [String : Any] = [:]
+                params[AnalyticsParameterItemID] = "registerFavorite"
+                params[AnalyticsParameterItemName] = "お気に入りに登録"
+
+                Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
+            } else {
+                // Realmからデータを削除する
+                let result = realmAccess.removeByArticleInfo(article)
+                
+                if result {
+                    favoriteImageView.image = UIImage(named: "heartInactive")
+                }
+                
+                // イベント収集
+                var params: [String : Any] = [:]
+                params[AnalyticsParameterItemID] = "unregisterFavorite"
+                params[AnalyticsParameterItemName] = "お気に入りから削除"
+
+                Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
+            }
             
             favoriteStatus = !favoriteStatus
 
@@ -96,22 +138,4 @@ class ArticleTableViewCell: UITableViewCell {
         }
         delegte?.reloadCell(index: index)
     }
-    
-//    @objc func animationViewTapped(sender:UITapGestureRecognizer) {
-//        print("アニメーションタップされたよ")
-//        print("タップされたのは：", index)
-//
-//        var favoriteStatusListForMyArticleCell = articleStateManager.favoriteStatusList
-//
-//        favoriteStatusListForMyArticleCell[index[1]] = !favoriteStatusListForMyArticleCell[index[1]]
-//
-//        print("タップ後：", favoriteStatusListForMyArticleCell[index[1]])
-//
-//        // 共有オブジェクトに保存
-//        articleStateManager.favoriteStatusList[index[1]] = favoriteStatusListForMyArticleCell[index[1]]
-//        print(favoriteStatusListForMyArticleCell)
-//        // セルの更新をviewcontrollerに移譲する
-//        delegte?.reloadCell(index: index)
-//    }
-    
 }
