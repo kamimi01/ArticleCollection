@@ -149,14 +149,6 @@ class FavoriteArticleViewController: UIViewController, UITableViewDelegate, UITa
         if articleStateManager.favoriteStatusListForFavorites[indexRow] {
             print("表示切り替えが呼ばれる")
             cell.favoriteImageView.image = UIImage(named: "heartActive")
-            // Realmにデータを保存する
-//            let result = realmAccess.save(article)
-//
-//            if result {
-//                cell.favoriteImageView.image = UIImage(named: "heartActive")
-//            } else {
-//                cell.favoriteImageView.image = UIImage(named: "heartInactive")
-//            }
 
             // イベント収集
             var params: [String : Any] = [:]
