@@ -124,11 +124,6 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         
         if articleStateManager.favoriteStatusList[indexRow] {
             print("表示切り替えが呼ばれる")
-            // ピンクのハートを表示する
-//            cell.animationView.isHidden = false
-//            cell.animationView.play()
-//            cell.favoriteImageView.isHidden = true
-//            cell.favoriteImageView.image = UIImage(named: "heartActive")
             
             // Realmにデータを保存する
             let result = realmAccess.save(article)
@@ -146,10 +141,6 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
 
             Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
         } else {
-            // 灰色画像を表示する
-//            cell.animationView.isHidden = true
-//            cell.favoriteImageView.isHidden = false
-//            cell.favoriteImageView.image = UIImage(named: "heartInactive")
             
             // Realmからデータを削除する
             let result = realmAccess.removeByArticleInfo(article)

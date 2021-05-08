@@ -26,9 +26,6 @@ class ArticleTableViewCell: UITableViewCell {
     var delegte: ArticleCellDelegate?
     var index: IndexPath!
     
-//    //AnimationViewの宣言
-//    var animationView = AnimationView()
-    
     // シングルトンのインスタンスを作成する
     let articleStateManager: ArticleStateManager = ArticleStateManager.shared
 
@@ -57,13 +54,6 @@ class ArticleTableViewCell: UITableViewCell {
         favoriteImageView.isUserInteractionEnabled = true
         // タップ時イベント設定
         favoriteImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageViewTapped)))
-        
-//        addAnimationView(cell: self)
-//        animationView.isHidden = true
-        // タップ検知のためisUserInteractionEnabledをtrueに
-//        animationView.isUserInteractionEnabled = true
-//        // タップ時イベント設定
-//        animationView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(animationViewTapped)))
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -107,26 +97,6 @@ class ArticleTableViewCell: UITableViewCell {
         }
         delegte?.reloadCell(index: index)
     }
-    
-    //アニメーションの準備
-//    private func addAnimationView(cell: ArticleTableViewCell) {
-//
-//        //アニメーションファイルの指定
-//        animationView = AnimationView(name: "heartAnimation")
-//
-//        print(cell.articleTableView.frame.size.width)
-//        //アニメーションの位置指定（画面中央）
-////        animationView.frame = CGRect(x: cell.articleTableView.frame.size.width - 93, y: 90, width: 50, height: 50)
-//        animationView.frame = CGRect(x: 282, y: 90, width: 50, height: 50)
-//
-//        //アニメーションのアスペクト比を指定＆ループで開始
-//        animationView.contentMode = .scaleAspectFit
-//        animationView.loopMode = .playOnce
-//        animationView.play()
-//
-//        //ViewControllerに配置
-//        cell.articleTableView.addSubview(animationView)
-//    }
     
     @objc func animationViewTapped(sender:UITapGestureRecognizer) {
         print("アニメーションタップされたよ")
