@@ -21,6 +21,9 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     // ログイン画面で入力したユーザー名の取得
     let userName = UserDefaults.standard.string(forKey: "userName")
     let displayContent = [[UserDefaults.standard.string(forKey: "userName"), ""], [""]]
+    
+    // シングルトンのインスタンスを作成する
+    let articleStateManager: ArticleStateManager = ArticleStateManager.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +65,8 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         // バージョンセルの設定
         versionLabel.textColor = UIColor.gray
         versionLabel.text = "バージョン " + version
+        
+        articleStateManager.isHomeScreen = false
     }
     
     private func tableViewSetUp() {
@@ -151,7 +156,14 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
             let realmAccess = RealmAccess()
             
             let result = realmAccess.deleteAll()
-            
+
+            var favoriteArticles = self.articleStateManager.favoriteArticleList
+            for (index, _) in favoriteArticles.enumerated() {
+                    // ホーム画面用記事情報の共有オブジェクトのお気に入りフラグを全てfalseに更新する
+                favoriteArticles[index]["isFavorite"] = false
+            }
+            self.articleStateManager.favoriteArticleList = favoriteArticles
+
             if result {
                 SVProgressHUD.showSuccess(withStatus: "削除が完了しました")
                 SVProgressHUD.dismiss(withDelay: 1.0)

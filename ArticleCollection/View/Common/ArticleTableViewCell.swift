@@ -82,7 +82,7 @@ class ArticleTableViewCell: UITableViewCell {
             var favoriteStatus = articleStateManager.articleList[index[1]]["isFavorite"] as! Bool
             
             // お気に入り状態の切り替え
-            switchFavoriteByStatus(targetArticle: article, favoriteStatus: favoriteStatus)
+            switchFavoriteByStatus(targetArticle: article, favoriteStatus: favoriteStatus, isHomeScreen: isHomeScreen)
             
             favoriteStatus = !favoriteStatus
 
@@ -92,14 +92,14 @@ class ArticleTableViewCell: UITableViewCell {
             articleStateManager.articleList[index[1]]["isFavorite"] = favoriteStatus
         } else {
             // お気に入り画面の記事情報を取得する
-            let favoriteArticleInfo = ArticleStateManager.shared.favoriteArticleList
+            let favoriteArticleInfo = articleStateManager.favoriteArticleList
             // お気に入り画面で取得できる記事情報1つ
             let favoriteArticle = favoriteArticleInfo[index[1]]
 
             var favoriteStatusForFavorite = articleStateManager.favoriteStatusListForFavorites[index[1]]
 
             // お気に入り状態の切り替え
-            switchFavoriteByStatus(targetArticle: favoriteArticle, favoriteStatus: favoriteStatusForFavorite)
+            switchFavoriteByStatus(targetArticle: favoriteArticle, favoriteStatus: favoriteStatusForFavorite, isHomeScreen: isHomeScreen)
 
             print("タップされたのは：", index)
             
@@ -114,7 +114,9 @@ class ArticleTableViewCell: UITableViewCell {
         delegte?.reloadCell(index: index)
     }
     
-    private func switchFavoriteByStatus (targetArticle: [String: Any], favoriteStatus: Bool) {
+    private func switchFavoriteByStatus (targetArticle: [String: Any], favoriteStatus: Bool, isHomeScreen: Bool) {
+        let id = targetArticle["id"] as! String
+
         if !favoriteStatus {
             // Realmの登録
             // Realmにデータを保存する
@@ -124,6 +126,19 @@ class ArticleTableViewCell: UITableViewCell {
                 favoriteImageView.image = UIImage(named: "heartActive")
             } else {
                 favoriteImageView.image = UIImage(named: "heartInactive")
+            }
+            
+            // お気に入り画面の場合は、共有オブジェクトのお気に入りフラグをtrueにする
+            if !isHomeScreen {
+                var favoriteArticleList = articleStateManager.favoriteArticleList
+                for (index, favorite) in favoriteArticleList.enumerated() {
+                    if (favorite["id"] as! String == id) {
+                        // 更新する
+                        favoriteArticleList[index]["isFavorite"] = true
+                    }
+                }
+                articleStateManager.favoriteArticleList = favoriteArticleList
+                print("追加後は：", articleStateManager.favoriteArticleList)
             }
 
             // イベント収集
@@ -138,6 +153,19 @@ class ArticleTableViewCell: UITableViewCell {
             
             if result {
                 favoriteImageView.image = UIImage(named: "heartInactive")
+            }
+            
+            // お気に入り画面の場合は、共有オブジェクトのお気に入りフラグをfalseにする
+            if !isHomeScreen {
+                var favoriteArticleList = articleStateManager.favoriteArticleList
+                for (index, favorite) in favoriteArticleList.enumerated() {
+                    if (favorite["id"] as! String == id) {
+                        // 更新する
+                        favoriteArticleList[index]["isFavorite"] = false
+                    }
+                }
+                articleStateManager.favoriteArticleList = favoriteArticleList
+                print("削除後は：", articleStateManager.favoriteArticleList)
             }
             
             // イベント収集

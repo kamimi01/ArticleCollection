@@ -81,7 +81,8 @@ class RealmAccess {
                 "likesCount": article.likesCount,
                 "profileImageUrl": article.profileImageUrl,
                 "url": article.url,
-                "createdDate": article.createdDate
+                "createdDate": article.createdDate,
+                "isFavorite": true
             ])
         }
         

@@ -35,7 +35,7 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewWillAppear(animated)
         
         tableView.reloadData()
-        articleStateManager.isHomeScreen = true
+        setup()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,6 +65,28 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         tableViewSetUp()
 
         tableView.backgroundColor = UIColor.white
+
+        // お気に入り画面からの遷移の場合のみ値を更新する
+        if !articleStateManager.isHomeScreen {
+            // お気に入り画面で最後にお気に入り状態となった記事のIDを取得する
+            let favoriteArticleIdList = articleStateManager.favoriteArticleList.filter({ $0["isFavorite"] as! Bool == true }).map({ $0["id"] }) as! [String]
+            
+            var articlesForHome = articleStateManager.articleList
+            for (index, articleForHome) in articlesForHome.enumerated() {
+                if favoriteArticleIdList.contains(articleForHome["id"] as! String) {
+                    // ホーム画面用記事情報の共有オブジェクトのお気に入りフラグをtrueに更新する
+                    articlesForHome[index]["isFavorite"] = true
+                } else {
+                    // ホーム画面用記事情報の共有オブジェクトのお気に入りフラグをfalseに更新する
+                    articlesForHome[index]["isFavorite"] = false
+                }
+            }
+            articleStateManager.articleList = articlesForHome
+            
+            print("お気に入りになっているのは：", favoriteArticleIdList)
+            
+            print("なにも意味ない")
+        }
         
         articleStateManager.isHomeScreen = true
     }
@@ -89,6 +111,8 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell", for: indexPath ) as! ArticleTableViewCell
         
         let indexRow = indexPath.row
+        
+        // あったIDはtrueに、ない場合はfalseに更新する
         
         // 値を取得し直す
         articleInfo = ArticleStateManager.shared.articleList
