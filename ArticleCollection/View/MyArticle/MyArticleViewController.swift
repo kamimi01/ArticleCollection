@@ -8,6 +8,7 @@
 import UIKit
 import RealmSwift
 import FirebaseAnalytics
+import SVProgressHUD
 
 class MyArticleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ArticleCellDelegate {
 
@@ -53,6 +54,10 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     private func setup() {
+        // HUDを表示する
+        SVProgressHUD.setDefaultMaskType(.clear)
+        SVProgressHUD.show()
+
         // ナビゲーションバーの設定
         let navBar = self.navigationController?.navigationBar
         navBar?.barTintColor = UIColor.onion
@@ -89,6 +94,8 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
         articleStateManager.isHomeScreen = true
+        
+        SVProgressHUD.dismiss()
     }
     
     private func tableViewSetUp() {
