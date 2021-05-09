@@ -12,9 +12,6 @@ final public class ArticleStateManager {
     public static let shared = ArticleStateManager()
     private init() {}
     
-    // お気に入りかどうかのフラグリスト
-    var favoriteStatusList: [Bool] = []
-    
     // お気に入りかどうかのフラグリスト（お気に入りタブ用）
     var favoriteStatusListForFavorites: [Bool] = []
     
