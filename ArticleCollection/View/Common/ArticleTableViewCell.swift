@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAnalytics
 
 protocol ArticleCellDelegate {
     func reloadCell(index: IndexPath)
@@ -26,8 +27,8 @@ class ArticleTableViewCell: UITableViewCell {
     var delegte: ArticleCellDelegate?
     var index: IndexPath!
     
-//    //AnimationViewの宣言
-//    var animationView = AnimationView()
+    // Realmアクセス用のインスタンスを作成する
+    let realmAccess = RealmAccess()
     
     // シングルトンのインスタンスを作成する
     let articleStateManager: ArticleStateManager = ArticleStateManager.shared
@@ -57,13 +58,6 @@ class ArticleTableViewCell: UITableViewCell {
         favoriteImageView.isUserInteractionEnabled = true
         // タップ時イベント設定
         favoriteImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageViewTapped)))
-        
-//        addAnimationView(cell: self)
-//        animationView.isHidden = true
-        // タップ検知のためisUserInteractionEnabledをtrueに
-//        animationView.isUserInteractionEnabled = true
-//        // タップ時イベント設定
-//        animationView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(animationViewTapped)))
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -74,75 +68,112 @@ class ArticleTableViewCell: UITableViewCell {
 
     // ImageViewタップ時のイベント
     @objc func imageViewTapped(sender:UITapGestureRecognizer){
+
         let isHomeScreen = articleStateManager.isHomeScreen
         
         if isHomeScreen {
-            // ホーム画面の処理
-            // お気に入り状態の切り替え
+            // ホーム画面の記事情報を取得する
+            let articleInfo = ArticleStateManager.shared.articleList
+            // ホーム画面で取得できる記事情報1つ
+            let article = articleInfo[index[1]]
+
             print("タップされたのは：", index)
             
-            var favoriteStatusListForMyArticleCell = articleStateManager.favoriteStatusList
-
-            favoriteStatusListForMyArticleCell[index[1]] = !favoriteStatusListForMyArticleCell[index[1]]
+            var favoriteStatus = articleStateManager.articleList[index[1]]["isFavorite"] as! Bool
             
-            print("タップ後：", favoriteStatusListForMyArticleCell[index[1]])
+            // お気に入り状態の切り替え
+            switchFavoriteByStatus(targetArticle: article, favoriteStatus: favoriteStatus, isHomeScreen: isHomeScreen)
+            
+            favoriteStatus = !favoriteStatus
+
+            print("タップ後：", favoriteStatus)
             
             // 共有オブジェクトに保存
-            articleStateManager.favoriteStatusList[index[1]] = favoriteStatusListForMyArticleCell[index[1]]
-            print(favoriteStatusListForMyArticleCell)
+            articleStateManager.articleList[index[1]]["isFavorite"] = favoriteStatus
         } else {
-            // お気に入り画面の処理
+            // お気に入り画面の記事情報を取得する
+            let favoriteArticleInfo = articleStateManager.favoriteArticleList
+            // お気に入り画面で取得できる記事情報1つ
+            let favoriteArticle = favoriteArticleInfo[index[1]]
+
+            var favoriteStatusForFavorite = articleStateManager.favoriteStatusListForFavorites[index[1]]
+
             // お気に入り状態の切り替え
+            switchFavoriteByStatus(targetArticle: favoriteArticle, favoriteStatus: favoriteStatusForFavorite, isHomeScreen: isHomeScreen)
+
             print("タップされたのは：", index)
             
-            var favoriteStatusListForMyArticleCell = articleStateManager.favoriteStatusListForFavorites
 
-            favoriteStatusListForMyArticleCell[index[1]] = !favoriteStatusListForMyArticleCell[index[1]]
+            favoriteStatusForFavorite = !favoriteStatusForFavorite
             
-            print("タップ後：", favoriteStatusListForMyArticleCell[index[1]])
+            print("タップ後：", favoriteStatusForFavorite)
             
             // 共有オブジェクトに保存
-            articleStateManager.favoriteStatusListForFavorites[index[1]] = favoriteStatusListForMyArticleCell[index[1]]
-            print(favoriteStatusListForMyArticleCell)
+            articleStateManager.favoriteStatusListForFavorites[index[1]] = favoriteStatusForFavorite
         }
         delegte?.reloadCell(index: index)
     }
     
-    //アニメーションの準備
-//    private func addAnimationView(cell: ArticleTableViewCell) {
-//
-//        //アニメーションファイルの指定
-//        animationView = AnimationView(name: "heartAnimation")
-//
-//        print(cell.articleTableView.frame.size.width)
-//        //アニメーションの位置指定（画面中央）
-////        animationView.frame = CGRect(x: cell.articleTableView.frame.size.width - 93, y: 90, width: 50, height: 50)
-//        animationView.frame = CGRect(x: 282, y: 90, width: 50, height: 50)
-//
-//        //アニメーションのアスペクト比を指定＆ループで開始
-//        animationView.contentMode = .scaleAspectFit
-//        animationView.loopMode = .playOnce
-//        animationView.play()
-//
-//        //ViewControllerに配置
-//        cell.articleTableView.addSubview(animationView)
-//    }
-    
-    @objc func animationViewTapped(sender:UITapGestureRecognizer) {
-        print("アニメーションタップされたよ")
-        print("タップされたのは：", index)
-        
-        var favoriteStatusListForMyArticleCell = articleStateManager.favoriteStatusList
+    private func switchFavoriteByStatus (targetArticle: [String: Any], favoriteStatus: Bool, isHomeScreen: Bool) {
+        let id = targetArticle["id"] as! String
 
-        favoriteStatusListForMyArticleCell[index[1]] = !favoriteStatusListForMyArticleCell[index[1]]
-        
-        print("タップ後：", favoriteStatusListForMyArticleCell[index[1]])
-        
-        // 共有オブジェクトに保存
-        articleStateManager.favoriteStatusList[index[1]] = favoriteStatusListForMyArticleCell[index[1]]
-        print(favoriteStatusListForMyArticleCell)
-        // セルの更新をviewcontrollerに移譲する
-        delegte?.reloadCell(index: index)
+        if !favoriteStatus {
+            // Realmの登録
+            // Realmにデータを保存する
+            let result = realmAccess.save(targetArticle)
+            
+            if result {
+                favoriteImageView.image = UIImage(named: "heartActive")
+            } else {
+                favoriteImageView.image = UIImage(named: "heartInactive")
+            }
+            
+            // お気に入り画面の場合は、共有オブジェクトのお気に入りフラグをtrueにする
+            if !isHomeScreen {
+                var favoriteArticleList = articleStateManager.favoriteArticleList
+                for (index, favorite) in favoriteArticleList.enumerated() {
+                    if (favorite["id"] as! String == id) {
+                        // 更新する
+                        favoriteArticleList[index]["isFavorite"] = true
+                    }
+                }
+                articleStateManager.favoriteArticleList = favoriteArticleList
+                print("追加後は：", articleStateManager.favoriteArticleList)
+            }
+
+            // イベント収集
+            var params: [String : Any] = [:]
+            params[AnalyticsParameterItemID] = "registerFavorite"
+            params[AnalyticsParameterItemName] = "お気に入りに登録"
+
+            Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
+        } else {
+            // Realmからデータを削除する
+            let result = realmAccess.removeByIdAndService(targetArticle)
+            
+            if result {
+                favoriteImageView.image = UIImage(named: "heartInactive")
+            }
+            
+            // お気に入り画面の場合は、共有オブジェクトのお気に入りフラグをfalseにする
+            if !isHomeScreen {
+                var favoriteArticleList = articleStateManager.favoriteArticleList
+                for (index, favorite) in favoriteArticleList.enumerated() {
+                    if (favorite["id"] as! String == id) {
+                        // 更新する
+                        favoriteArticleList[index]["isFavorite"] = false
+                    }
+                }
+                articleStateManager.favoriteArticleList = favoriteArticleList
+                print("削除後は：", articleStateManager.favoriteArticleList)
+            }
+            
+            // イベント収集
+            var params: [String : Any] = [:]
+            params[AnalyticsParameterItemID] = "unregisterFavorite"
+            params[AnalyticsParameterItemName] = "お気に入りから削除"
+
+            Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
+        }
     }
-    
 }

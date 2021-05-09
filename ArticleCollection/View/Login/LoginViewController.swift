@@ -68,11 +68,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // API通信でエラーが起きた場合はアラート画面を表示する
     private func showAlertForApiError() {
-        let alert = UIAlertController.singleBtnAlertWithTitle(title: "存在しないユーザー名です。\n正しいユーザー名を入力してください。", message: "", okActionTitle: "OK", completion: {})
+        let alert = UIAlertController.singleBtnAlertWithTitle(title: "ユーザーか存在しないか表示できる記事がありません。\n違うユーザー名を入力してください。", message: "", okActionTitle: "OK", completion: {})
         self.present(alert, animated: true, completion: nil)
     }
     
     private func getArticles(userName: String) -> Bool {
+        // Realmにアクセス
+        let realmAccess = RealmAccess()
+        let favoriteIdLists = realmAccess.readAll().map({ $0["id"] as! String })
+        
         // APIクライアントの生成
         let client = ArticleClient()
         
@@ -89,8 +93,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             switch result {
             case let .success(response):
                 for article in response.articleContents {
-                    // 記事の情報を格納
-                    articleLists.append([
+                    let articleList = [
+                        "id": article.id,
                         "service": article.service,
                         "title": article.title,
                         "userName": article.userName,
@@ -98,6 +102,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         "profileImageUrl": article.profileImageUrl,
                         "url": article.url,
                         "createdDate": article.createdDate
+                    ] as [String : Any]
+
+                    let articleContent = ArticleForHome(article: articleList, favoriteIdList: favoriteIdLists)
+                    // 記事の情報を格納
+                    articleLists.append([
+                        "id": articleContent.id,
+                        "service": articleContent.service,
+                        "title": articleContent.title,
+                        "userName": articleContent.userName,
+                        "likesCount": articleContent.likesCount,
+                        "profileImageUrl": articleContent.profileImageUrl,
+                        "url": articleContent.url,
+                        "createdDate": articleContent.createdDate,
+                        "isFavorite": articleContent.isFavorite
                     ])
                 }
                 // 共有オブジェクトに格納する

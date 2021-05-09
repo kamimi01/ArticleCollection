@@ -8,6 +8,7 @@
 import UIKit
 import RealmSwift
 import FirebaseAnalytics
+import SVProgressHUD
 
 class MyArticleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ArticleCellDelegate {
 
@@ -34,10 +35,14 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        articleStateManager.isHomeScreen = true
+        tableView.reloadData()
+        setup()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        // 値を取得し直す
+        articleInfo = ArticleStateManager.shared.articleList
+        
         // イベント収集
         // 画面名を計測する
         Analytics.logEvent(
@@ -49,6 +54,10 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     private func setup() {
+        // HUDを表示する
+        SVProgressHUD.setDefaultMaskType(.clear)
+        SVProgressHUD.show()
+
         // ナビゲーションバーの設定
         let navBar = self.navigationController?.navigationBar
         navBar?.barTintColor = UIColor.onion
@@ -59,13 +68,34 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         
         // tableViewの設定
         tableViewSetUp()
-        
-        // 
+
         tableView.backgroundColor = UIColor.white
 
-        articleStateManager.favoriteStatusList = [Bool](repeating: false, count: articleInfo.count)
+        // お気に入り画面からの遷移の場合のみ値を更新する
+        if !articleStateManager.isHomeScreen {
+            // お気に入り画面で最後にお気に入り状態となった記事のIDを取得する
+            let favoriteArticleIdList = articleStateManager.favoriteArticleList.filter({ $0["isFavorite"] as! Bool == true }).map({ $0["id"] }) as! [String]
+            
+            var articlesForHome = articleStateManager.articleList
+            for (index, articleForHome) in articlesForHome.enumerated() {
+                if favoriteArticleIdList.contains(articleForHome["id"] as! String) {
+                    // ホーム画面用記事情報の共有オブジェクトのお気に入りフラグをtrueに更新する
+                    articlesForHome[index]["isFavorite"] = true
+                } else {
+                    // ホーム画面用記事情報の共有オブジェクトのお気に入りフラグをfalseに更新する
+                    articlesForHome[index]["isFavorite"] = false
+                }
+            }
+            articleStateManager.articleList = articlesForHome
+            
+            print("お気に入りになっているのは：", favoriteArticleIdList)
+            
+            print("なにも意味ない")
+        }
         
         articleStateManager.isHomeScreen = true
+        
+        SVProgressHUD.dismiss()
     }
     
     private func tableViewSetUp() {
@@ -89,6 +119,10 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let indexRow = indexPath.row
         
+        // あったIDはtrueに、ない場合はfalseに更新する
+        
+        // 値を取得し直す
+        articleInfo = ArticleStateManager.shared.articleList
         let article = articleInfo[indexRow]
 
         let serviceName = article["service"] as? String ?? ""
@@ -119,51 +153,13 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
 
         cell.delegte = self
         cell.index = indexPath
-        
-        print("tableviewどこが呼ばれてる？", articleStateManager.favoriteStatusList[indexRow])
-        
-        if articleStateManager.favoriteStatusList[indexRow] {
-            print("表示切り替えが呼ばれる")
-            // ピンクのハートを表示する
-//            cell.animationView.isHidden = false
-//            cell.animationView.play()
-//            cell.favoriteImageView.isHidden = true
-//            cell.favoriteImageView.image = UIImage(named: "heartActive")
-            
-            // Realmにデータを保存する
-            let result = realmAccess.save(article)
-            
-            if result {
-                cell.favoriteImageView.image = UIImage(named: "heartActive")
-            } else {
-                cell.favoriteImageView.image = UIImage(named: "heartInactive")
-            }
-            
-            // イベント収集
-            var params: [String : Any] = [:]
-            params[AnalyticsParameterItemID] = "registerFavorite"
-            params[AnalyticsParameterItemName] = "お気に入りに登録"
 
-            Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
+        let isFavorite = article["isFavorite"] as! Bool
+        print("お気に入り登録状態：", isFavorite)
+        if (isFavorite) {
+            cell.favoriteImageView.image = UIImage(named: "heartActive")
         } else {
-            // 灰色画像を表示する
-//            cell.animationView.isHidden = true
-//            cell.favoriteImageView.isHidden = false
-//            cell.favoriteImageView.image = UIImage(named: "heartInactive")
-            
-            // Realmからデータを削除する
-            let result = realmAccess.removeByArticleInfo(article)
-            
-            if result {
-                cell.favoriteImageView.image = UIImage(named: "heartInactive")
-            }
-            
-            // イベント収集
-            var params: [String : Any] = [:]
-            params[AnalyticsParameterItemID] = "unregisterFavorite"
-            params[AnalyticsParameterItemName] = "お気に入りから削除"
-
-            Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
+            cell.favoriteImageView.image = UIImage(named: "heartInactive")
         }
 
         cell.selectionStyle = .none
@@ -188,7 +184,6 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func reloadCell(index: IndexPath) {
-        print("ここでは", articleStateManager.favoriteStatusList)
         tableView.reloadRows(at: [index], with: .none)
     }
 }
