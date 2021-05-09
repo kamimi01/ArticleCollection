@@ -68,7 +68,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // API通信でエラーが起きた場合はアラート画面を表示する
     private func showAlertForApiError() {
-        let alert = UIAlertController.singleBtnAlertWithTitle(title: "ユーザーか存在しないか表示できる記事がありません。\n違うユーザー名を入力してください。", message: "", okActionTitle: "OK", completion: {})
+        let alert = UIAlertController.singleBtnAlertWithTitle(title: "ユーザーか存在しないか\n表示できる記事がありません。\n違うユーザー名を\n入力してください。", message: "", okActionTitle: "OK", completion: {})
         self.present(alert, animated: true, completion: nil)
     }
     
