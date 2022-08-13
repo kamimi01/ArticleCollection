@@ -85,6 +85,8 @@ class SettingViewController: UIViewController {
         
         tableView.rowHeight = CGFloat(cellHeight)
         tableView.backgroundColor = UIColor.mushRoom
+        
+        tableView.isScrollEnabled = false
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

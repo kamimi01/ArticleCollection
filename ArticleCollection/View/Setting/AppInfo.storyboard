@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lhf-3G-slR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lhf-3G-slR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,36 +30,36 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQx-UX-KNr">
-                                <rect key="frame" x="16" y="259" width="382" height="1"/>
+                                <rect key="frame" x="16" y="264" width="382" height="1"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="TRV-c8-icZ"/>
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="本アプリケーションの使用にあたり、こちらをご確認ください。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xsb-wM-cCA">
-                                <rect key="frame" x="16" y="146" width="382" height="50"/>
+                                <rect key="frame" x="16" y="146" width="382" height="55"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="lb0-Qo-xdM"/>
+                                    <constraint firstAttribute="height" constant="55" id="lb0-Qo-xdM"/>
                                 </constraints>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ライセンス" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wxx-dF-oGG">
-                                <rect key="frame" x="24" y="236" width="79" height="16"/>
+                                <rect key="frame" x="24" y="241" width="79" height="16"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アニメーション" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wv-BB-1WG">
-                                <rect key="frame" x="24" y="500" width="112" height="16"/>
+                                <rect key="frame" x="24" y="505" width="112" height="16"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nkx-kH-UYS">
-                                <rect key="frame" x="16" y="270" width="382" height="200"/>
+                                <rect key="frame" x="16" y="275" width="382" height="200"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="WWe-Hp-ooC"/>
@@ -69,7 +70,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Rizwan Rasool19 on LottieFiles:Rizwan Rasool19 on LottieFiles:Rizwan Rasool19 on LottieFiles:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TFG-np-W4A">
-                                <rect key="frame" x="16" y="526" width="382" height="70"/>
+                                <rect key="frame" x="16" y="539" width="382" height="70"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="qdI-79-ZcC"/>
@@ -78,15 +79,26 @@
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFN-xY-VP5">
+                                <rect key="frame" x="16" y="528" width="382" height="1"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="jc6-GN-xEy"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nfU-cL-lf3"/>
                         <color key="backgroundColor" red="0.91333609819999995" green="0.88689535860000002" blue="0.84313136339999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="TFG-np-W4A" firstAttribute="leading" secondItem="nfU-cL-lf3" secondAttribute="leading" constant="16" id="0fC-Yf-RjB"/>
                             <constraint firstItem="jQx-UX-KNr" firstAttribute="leading" secondItem="hAF-xY-GL6" secondAttribute="leading" constant="16" id="3T7-g6-3lB"/>
+                            <constraint firstItem="TFG-np-W4A" firstAttribute="top" secondItem="SFN-xY-VP5" secondAttribute="bottom" constant="10" id="77l-dk-Zas"/>
                             <constraint firstItem="YvN-Dx-LhF" firstAttribute="top" secondItem="t0a-Sb-Qir" secondAttribute="bottom" constant="7" id="CGW-zg-N7Y"/>
+                            <constraint firstItem="SFN-xY-VP5" firstAttribute="leading" secondItem="hAF-xY-GL6" secondAttribute="leading" constant="16" id="Hfv-mv-Q8h"/>
                             <constraint firstItem="7wv-BB-1WG" firstAttribute="top" secondItem="nkx-kH-UYS" secondAttribute="bottom" constant="30" id="JFp-Ip-6jU"/>
                             <constraint firstItem="nfU-cL-lf3" firstAttribute="trailing" secondItem="Xsb-wM-cCA" secondAttribute="trailing" constant="16" id="LPT-7n-gvo"/>
+                            <constraint firstAttribute="trailing" secondItem="SFN-xY-VP5" secondAttribute="trailing" constant="16" id="cBq-HD-XTa"/>
+                            <constraint firstItem="SFN-xY-VP5" firstAttribute="top" secondItem="7wv-BB-1WG" secondAttribute="bottom" constant="7" id="cn3-C7-JK1"/>
                             <constraint firstItem="nfU-cL-lf3" firstAttribute="trailing" secondItem="TFG-np-W4A" secondAttribute="trailing" constant="16" id="e5V-dY-Wp0"/>
                             <constraint firstItem="YvN-Dx-LhF" firstAttribute="leading" secondItem="hAF-xY-GL6" secondAttribute="leading" constant="16" id="iJm-AX-PmA"/>
                             <constraint firstItem="Xsb-wM-cCA" firstAttribute="top" secondItem="YvN-Dx-LhF" secondAttribute="bottom" constant="10" id="iRo-Eu-tta"/>
@@ -95,7 +107,6 @@
                             <constraint firstItem="nfU-cL-lf3" firstAttribute="trailing" secondItem="YvN-Dx-LhF" secondAttribute="trailing" constant="16" id="leL-L6-pkS"/>
                             <constraint firstAttribute="trailing" secondItem="jQx-UX-KNr" secondAttribute="trailing" constant="16" id="p4n-dJ-mjZ"/>
                             <constraint firstItem="7wv-BB-1WG" firstAttribute="leading" secondItem="nfU-cL-lf3" secondAttribute="leading" constant="24" id="pyg-Pf-57R"/>
-                            <constraint firstItem="TFG-np-W4A" firstAttribute="top" secondItem="7wv-BB-1WG" secondAttribute="bottom" constant="10" id="sEV-Y2-7h7"/>
                             <constraint firstItem="Wxx-dF-oGG" firstAttribute="top" secondItem="Xsb-wM-cCA" secondAttribute="bottom" constant="40" id="sM1-7s-3xi"/>
                             <constraint firstItem="Xsb-wM-cCA" firstAttribute="leading" secondItem="nfU-cL-lf3" secondAttribute="leading" constant="16" id="suM-HK-zXh"/>
                             <constraint firstItem="nkx-kH-UYS" firstAttribute="leading" secondItem="nfU-cL-lf3" secondAttribute="leading" constant="16" id="txO-dk-RtE"/>
@@ -114,6 +125,7 @@
                         <outlet property="privacyPolicyLabel" destination="t0a-Sb-Qir" id="gu4-yx-Dbh"/>
                         <outlet property="privacyPolicyTextView" destination="Xsb-wM-cCA" id="oqw-v4-dIo"/>
                         <outlet property="separator2View" destination="jQx-UX-KNr" id="FH4-xF-efQ"/>
+                        <outlet property="separator3View" destination="SFN-xY-VP5" id="fPr-9G-p1t"/>
                         <outlet property="separatorView" destination="YvN-Dx-LhF" id="8cn-3X-lc7"/>
                     </connections>
                 </viewController>
