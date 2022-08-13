@@ -60,11 +60,16 @@ class MyArticleViewController: UIViewController, UITableViewDelegate, UITableVie
 
         // ナビゲーションバーの設定
         let navBar = self.navigationController?.navigationBar
-        navBar?.barTintColor = UIColor.onion
-        navBar?.titleTextAttributes = [
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .onion
+        appearance.titleTextAttributes = [
             .foregroundColor: UIColor.white,
-            .font: UIFont(name: "HiraMaruProN-W4", size: 17)!
+            .font: UIFont(name: "HiraMaruProN-W4", size: 17)!,
         ]
+        navBar?.standardAppearance = appearance
+        navBar?.scrollEdgeAppearance = appearance
         
         // tableViewの設定
         tableViewSetUp()
