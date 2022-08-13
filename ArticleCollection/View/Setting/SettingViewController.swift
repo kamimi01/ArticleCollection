@@ -9,10 +9,11 @@ import UIKit
 import SVProgressHUD
 import FirebaseAnalytics
 
-class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SettingViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var versionLabel: UILabel!
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
     let sectionNames = ["設定", "その他"]
     let appSettingKind = [["ユーザー名", "全てのお気に入り登録を削除"], ["このアプリについて"]]
@@ -39,6 +40,11 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
                 AnalyticsParameterScreenName: "SettingScreen"
             ]
         )
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        tableViewHeight.constant = CGFloat(tableView.contentSize.height)
     }
     
     private func setup() {
@@ -78,19 +84,18 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.register(nib, forCellReuseIdentifier: "AppSettingTableViewCell")
         
         tableView.rowHeight = CGFloat(cellHeight)
-        tableView.backgroundColor = UIColor.white
+        tableView.backgroundColor = UIColor.mushRoom
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionNames.count
     }
-    
+}
+
+// - MARK: UITableViewDelegate
+extension SettingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return appSettingKind[section].count
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionNames[section]
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -99,19 +104,6 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         let header = view as? UITableViewHeaderFooterView
         header?.textLabel?.textColor = UIColor.gray
         header?.textLabel?.font = UIFont(name: "HiraginoSans-W3", size: 13)
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AppSettingTableViewCell", for: indexPath ) as! AppSettingTableViewCell
-        
-        cell.usernameLabel.text = appSettingKind[indexPath.section][indexPath.row]
-        
-        
-        cell.usernameNowLabel.text = displayContent[indexPath.section][indexPath.row]
-        
-        cell.selectionStyle = .none
-        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -174,5 +166,24 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         })
         self.present(alert, animated: true, completion: nil)
     }
+}
 
+// - MARK: UITableViewDataSource
+extension SettingViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionNames[section]
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AppSettingTableViewCell", for: indexPath ) as! AppSettingTableViewCell
+        
+        cell.usernameLabel.text = appSettingKind[indexPath.section][indexPath.row]
+        
+        
+        cell.usernameNowLabel.text = displayContent[indexPath.section][indexPath.row]
+        
+        cell.selectionStyle = .none
+        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+        return cell
+    }
 }
