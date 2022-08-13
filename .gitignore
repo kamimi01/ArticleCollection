@@ -3,3 +3,4 @@ ArticleCollection/GoogleService-Info.plist
 Pods/*
 xcuserdata
 *.xcappdata/*
+.DS_Store
