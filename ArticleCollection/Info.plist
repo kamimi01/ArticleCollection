@@ -64,5 +64,7 @@
 	</array>
 	<key>User Interface Style</key>
 	<string>Light</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

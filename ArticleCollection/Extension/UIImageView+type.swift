@@ -25,14 +25,20 @@ extension UIImageView {
                 self.image = UIImage(named: "noUserImage")
                 return
             }
-            do {
-                let data = try Data(contentsOf: url)
-                self.image = UIImage(data: data)
-                return
-            } catch let err {
-                print("Error : \(err.localizedDescription)")
+            let imageLoader = ImageLoader()
+            imageLoader.load(url: url) { [weak self] (image) in
+                guard let self = self,
+                      let image = image
+                else {
+                    DispatchQueue.main.async {
+                        self?.image = UIImage(named: "noUserImage")
+                    }
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.image = image
+                }
             }
-            self.image = UIImage(named: "noUserImage")
         }
     }
 }

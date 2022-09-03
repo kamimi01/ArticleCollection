@@ -19,6 +19,7 @@ class AppInfoViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var animationLicenseTextView: UITextView!
     @IBOutlet weak var separatorView: UIView!
     @IBOutlet weak var separator2View: UIView!
+    @IBOutlet weak var separator3View: UIView!
     
     let privacyPolicyText = "本アプリケーションの使用にあたり、こちらの規約をご確認ください。"
     let licenseText = """
@@ -77,13 +78,24 @@ class AppInfoViewController: UIViewController, UITextViewDelegate {
         
         separatorView.backgroundColor = UIColor.gray
         separator2View.backgroundColor = UIColor.gray
+        separator3View.backgroundColor = UIColor.gray
+        
+        let attributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: UIFont(name: "HiraMaruProN-W3", size: 16.0) ?? UIFont.systemFont(ofSize: 16.0),
+            NSAttributedString.Key.foregroundColor: UIColor.boldGray
+        ]
         
         // textview内にリンクを設置
-        let attributedString = NSMutableAttributedString(string: privacyPolicyText)
+        let attributedString = NSMutableAttributedString(
+            string: privacyPolicyText,
+            attributes: attributes
+        )
 
-        attributedString.addAttribute(.link,
-                                      value: privacyPolicyUrl,
-                                      range: NSString(string: privacyPolicyText).range(of: "こちら"))
+        attributedString.addAttribute(
+            .link,
+            value: privacyPolicyUrl,
+            range: NSString(string: privacyPolicyText).range(of: "こちら")
+        )
         
         privacyPolicyTextView.attributedText = attributedString
         privacyPolicyTextView.isSelectable = true
